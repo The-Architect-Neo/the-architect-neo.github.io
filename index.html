@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Architect</title>
+<meta name="description" content="Logic systems thinking across Fraud, Energy, Telco and Operations. Turning operational experience into working solutions.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0a0a0c;
+    --bg-secondary: #111114;
+    --bg-card: #16161a;
+    --text-primary: #e8e6e3;
+    --text-secondary: #94929d;
+    --text-muted: #5a586a;
+    --accent-gold: #c9a84c;
+    --accent-gold-dim: rgba(201, 168, 76, 0.15);
+    --accent-green: #27ae60;
+    --accent-blue: #2980b9;
+    --border: #222228;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,12,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--accent-gold); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--accent-gold);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+    line-height: 1.15;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-gold);
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.85;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    transition: all 0.3s;
+  }
+
+  .tag:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 1s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--accent-gold-dim);
+    transition: left 0.4s;
+  }
+
+  .btn:hover::before { left: 0; }
+  .btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+  .btn-primary {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+    border-color: var(--accent-gold);
+    font-weight: 600;
+  }
+  .btn-primary::before { display: none; }
+  .btn-primary:hover {
+    background: #b8943f;
+    color: var(--bg-primary);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent-gold);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .section-description {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── ABOUT GRID ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+
+  .about-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--accent-gold);
+    transition: height 0.4s;
+  }
+
+  .about-card:hover::after { height: 100%; }
+  .about-card:hover { border-color: var(--border); transform: translateY(-2px); }
+
+  .about-card h3 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+  }
+
+  .about-card p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .about-card .detail-list {
+    list-style: none;
+    margin-top: 0.75rem;
+  }
+
+  .about-card .detail-list li {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(34,34,40,0.6);
+  }
+
+  .about-card .detail-list li::before {
+    content: '→ ';
+    color: var(--accent-gold);
+  }
+
+  /* ─── VENTURES ─── */
+  .ventures-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .venture-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    transition: all 0.4s;
+    position: relative;
+  }
+
+  .venture-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateX(4px);
+  }
+
+  .venture-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: var(--bg-secondary);
+    flex-shrink: 0;
+  }
+
+  .venture-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .venture-content .subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .venture-content p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .venture-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .venture-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+
+  .venture-status {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid;
+    white-space: nowrap;
+    height: fit-content;
+  }
+
+  .status-active { border-color: var(--accent-green); color: var(--accent-green); }
+  .status-building { border-color: var(--accent-blue); color: var(--accent-blue); }
+  .status-research { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+  /* ─── SIGNAL STRIP ─── */
+  .signal-strip {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 2rem;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .signal-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .signal-item .number {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--accent-gold);
+    line-height: 1;
+  }
+
+  .signal-item .label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 3rem;
+    margin-top: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .contact-block:hover { border-color: rgba(201,168,76,0.3); }
+
+  .contact-block p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+  }
+
+  .contact-block .btn { margin: 0 0.5rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .footer-line {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-motto {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .venture-card { grid-template-columns: 1fr; gap: 1rem; }
+    .venture-icon { display: none; }
+    .venture-status { width: fit-content; }
+    .signal-inner { grid-template-columns: repeat(3, 1fr); }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.72rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-cta { flex-direction: column; }
+    .signal-inner { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">The Architect</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-label">Operations &middot; Fraud &middot; Energy &middot; Telco &middot; Systems</div>
+    <h1>I've spent more than a decade inside<br><em>broken systems.</em><br>Now I help build better ones.</h1>
+    <p class="hero-description">
+      Inside broken systems for a decade. Now building the recovery.
+10+ years optimising Telecoms, Fraud, Insurance, Energy Systems and Regulated Operations. I’ve seen where the gears grind to a halt—now I engineer the fix.
+</p>
+<div class="section-label">Focus</div>
+    </p>
+    <br>
+    <div class="hero-tags">
+      <span class="tag">Operations</span>
+      <span class="tag">Fraud Deterrence</span>
+      <span class="tag">Clean Energy</span>
+      <span class="tag">Telco</span>
+      <span class="tag">Systems Thinking</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#ventures" class="btn btn-primary">What I'm Working On ↓</a>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Background</div>
+  <h2 class="section-title">What I Actually Know</h2>
+  <p class="section-description">
+    Not theory. Operational knowledge earned across industries where
+    I've lead teams, exceeded targets and analysed systems from the inside.
+  </p>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>Operations & Sales</h3>
+      <p>The core. 10+ Years across B2B telecoms, outsourced contact centre operations, insurance delivery, and regulated service / sales. I understand how revenue is made, how service is delivered, and where both go wrong.</p>
+      <ul class="detail-list">
+        <li>B2B Telco Sales</li>
+        <li>Contact Centre Operations</li>
+        <li>Insurance Operations</li>
+        <li>Water Sector (Accredited)</li>
+      </ul>
+    </div>
+
+    <div class="about-card">
+      <h3>Fraud & Accountability</h3>
+      <p>Direct experience with how fraud is reported, mishandled and deprioritised. I've seen the gaps firsthand. Now I'm reworking the methodology to help others help themselves.</p>
+      <ul class="detail-list">
+        <li>OSINT (Learning & Applying)</li>
+        <li>Fraud Reporting Landscape</li>
+        <li>Institutional Failure Analysis</li>
+        <li>Working Toward Qualifications</li>
+        <li>Coding Without Borders</li>
+      </ul>
+    </div>
+
+    <div class="about-card">
+      <h3>Energy & Applied Research</h3>
+      <p>Developing a new and innovative clean energy concept in the under utilised canal waterway space. Early stage proof of concept stage — grounded in real research, real partnerships and real engineering questions.</p>
+      <ul class="detail-list">
+        <li>Renewable Energy Concepts</li>
+        <li>Applied Research</li>
+        <li>Industry Partnerships</li>
+        <li>Funding Strategy</li>
+      </ul>
+    </div>
+
+    <div class="about-card">
+      <h3>Building & Learning</h3>
+      <p>Teaching myself to build the tools my ideas need. Not a senior developer — a incessantly determined one. Currently working in web technologies and growing fast.</p>
+      <ul class="detail-list">
+        <li>HTML, CSS, JavaScript</li>
+        <li>Node.js / Express</li>
+        <li>Python (Growing)</li>
+        <a href="https://the-architect-neo.github.io/scamscan/" target="_blank" style="text-decoration:none;color:inherit;">
+        <li>GitHub (New, Active & Deployed - Fraud Language Detector - "ScamScan")</li>
+        <a>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNAL STRIP -->
+<div class="signal-strip">
+  <div class="signal-inner">
+    <div class="signal-item">
+      <div class="number">10+</div>
+      <div class="label">Years in Operations</div>
+    </div>
+    <div class="signal-item">
+      <div class="number">5+</div>
+      <div class="label">Industries Deep</div>
+    </div>
+    <div class="signal-item">
+        <div class="number">1</div>
+        <div class="label">Mission</div>
+         </div>
+  </div>
+</div>
+
+<!-- VENTURES -->
+<section id="ventures">
+  <div class="section-label">In Progress</div>
+  <h2 class="section-title">What I'm Building</h2>
+  <p class="section-description">
+    Early-stage projects rooted in real problems I've encountered.
+    Nothing here is finished — all of it is in motion.
+  </p>
+
+  <div class="ventures-grid">
+
+    <div class="venture-card">
+      <div class="venture-icon">⚡</div>
+      <div class="venture-content">
+        <div class="subtitle">Fraud Intelligence</div>
+        <h3>Community Reporting Platform</h3>
+        <p>
+          A web-based tool for structured fraud reporting at the community
+          level. Born from direct frustration with how reports are handled
+          by existing institutions. Currently in active development.
+        </p>
+        <div class="venture-tags">
+          <span>Web App</span>
+          <span>Express.js</span>
+          <span>In Development</span>
+        </div>
+      </div>
+      <div class="venture-status status-building">Building</div>
+    </div>
+
+    <div class="venture-card">
+      <div class="venture-icon">🌊</div>
+      <div class="venture-content">
+        <div class="subtitle">Clean Energy</div>
+        <h3>Waterway Energy Concept</h3>
+        <p>
+          A renewable energy concept exploring distributed power generation
+          from underutilised waterway infrastructure. Early stage with
+          industry partnership in place and funding pathways mapped.
+        </p>
+        <div class="venture-tags">
+          <span>Concept Stage</span>
+          <span>Partnered</span>
+          <span>Grant Pathway</span>
+        </div>
+      </div>
+      <div class="venture-status status-active">Active</div>
+    </div>
+
+    <div class="venture-card">
+      <div class="venture-icon">🔍</div>
+      <div class="venture-content">
+        <div class="subtitle">Professional Development</div>
+        <h3>Fraud Deterrence Practice</h3>
+        <p>
+          Working toward building a legitimate fraud investigation and
+          deterrence practice. Currently in the research and qualification
+          phase — mapping the path from operational experience to
+          professional accreditation.
+        </p>
+        <div class="venture-tags">
+          <span>Research Phase</span>
+          <span>Qualification Pathway</span>
+          <span>Methodology</span>
+        </div>
+      </div>
+      <div class="venture-status status-research">Research</div>
+    </div>
+
+    <div class="venture-card">
+      <div class="venture-icon">🛠</div>
+      <div class="venture-content">
+        <div class="subtitle">Developer Tools</div>
+        <h3>AI Agent Skills</h3>
+        <p>
+          Exploring the GitHub Copilot skills ecosystem — applying domain
+          knowledge from operations and fraud into developer tools and
+          automation workflows. Learning the platform, building first
+          contributions.
+        </p>
+        <div class="venture-tags">
+          <span>Exploring</span>
+          <span>GitHub Ecosystem</span>
+          <span>Early Stage</span>
+        </div>
+      </div>
+      <div class="venture-status status-research">Exploring</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Connect</div>
+  <h2 class="section-title">Let's Talk</h2>
+  <p class="section-description">
+    I'm interested in conversations with people working on fraud
+    prevention, community energy, or anyone who values straight
+    talk and operational thinking.
+  </p>
+
+  <div class="contact-block">
+    <p>
+      Not looking for small talk. If you're working on something
+      that matters and want someone who thinks in systems,
+      reach out.
+    </p>
+    <a href="https://linkedin.com" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/the-architect-neo" class="btn" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-motto">"A splinter in fraud's foot."</p>
+  <p class="footer-line">&copy; 2026 The Architect. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.about-card, .venture-card, .contact-block, .signal-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
