@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Architect</title>
-<meta name="description" content="Logic systems thinking across Operations, Fraud, Energy & Telco. Turning operational experience into working solutions.">
+<title>The Architect — Fraud · Operations · Systems</title>
+<meta name="description" content="10+ years inside broken systems. Now building the tools to fix them. ScamScan, ScanVault, CodeSafe — fraud intelligence and IP protection built from operational experience.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -36,10 +36,7 @@
     overflow-x: hidden;
   }
 
-  ::selection {
-    background: var(--accent-gold);
-    color: var(--bg-primary);
-  }
+  ::selection { background: var(--accent-gold); color: var(--bg-primary); }
 
   /* ─── NAV ─── */
   nav {
@@ -109,12 +106,7 @@
     50% { transform: scale(1.15); opacity: 1; }
   }
 
-  .hero-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
 
   .hero-label {
     font-family: var(--font-mono);
@@ -130,11 +122,7 @@
     animation: fadeUp 0.8s 0.2s forwards;
   }
 
-  .hero-label::before {
-    content: '';
-    width: 40px; height: 1px;
-    background: var(--accent-gold);
-  }
+  .hero-label::before { content: ''; width: 40px; height: 1px; background: var(--accent-gold); }
 
   .hero h1 {
     font-family: var(--font-display);
@@ -146,10 +134,7 @@
     animation: fadeUp 0.8s 0.4s forwards;
   }
 
-  .hero h1 em {
-    font-style: italic;
-    color: var(--accent-gold);
-  }
+  .hero h1 em { font-style: italic; color: var(--accent-gold); }
 
   .hero-description {
     font-size: 1.05rem;
@@ -181,11 +166,7 @@
     background: var(--bg-secondary);
     transition: all 0.3s;
   }
-
-  .tag:hover {
-    border-color: var(--accent-gold);
-    color: var(--accent-gold);
-  }
+  .tag:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
 
   .hero-cta {
     display: flex; gap: 1rem;
@@ -231,10 +212,7 @@
     font-weight: 600;
   }
   .btn-primary::before { display: none; }
-  .btn-primary:hover {
-    background: #b8943f;
-    color: var(--bg-primary);
-  }
+  .btn-primary:hover { background: #b8943f; color: var(--bg-primary); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -260,11 +238,7 @@
     gap: 0.75rem;
   }
 
-  .section-label::before {
-    content: '';
-    width: 24px; height: 1px;
-    background: var(--accent-gold);
-  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent-gold); }
 
   .section-title {
     font-family: var(--font-display);
@@ -273,19 +247,10 @@
     font-weight: 400;
   }
 
-  .section-description {
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin-bottom: 3rem;
-  }
+  .section-description { color: var(--text-secondary); max-width: 600px; margin-bottom: 3rem; }
 
   /* ─── ABOUT GRID ─── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
 
   .about-card {
     background: var(--bg-card);
@@ -306,7 +271,7 @@
   }
 
   .about-card:hover::after { height: 100%; }
-  .about-card:hover { border-color: var(--border); transform: translateY(-2px); }
+  .about-card:hover { transform: translateY(-2px); }
 
   .about-card h3 {
     font-family: var(--font-mono);
@@ -317,16 +282,9 @@
     margin-bottom: 1rem;
   }
 
-  .about-card p {
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.75;
-  }
+  .about-card p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.75; }
 
-  .about-card .detail-list {
-    list-style: none;
-    margin-top: 0.75rem;
-  }
+  .about-card .detail-list { list-style: none; margin-top: 0.75rem; }
 
   .about-card .detail-list li {
     font-family: var(--font-mono);
@@ -336,17 +294,10 @@
     border-bottom: 1px solid rgba(34,34,40,0.6);
   }
 
-  .about-card .detail-list li::before {
-    content: '→ ';
-    color: var(--accent-gold);
-  }
+  .about-card .detail-list li::before { content: '→ '; color: var(--accent-gold); }
 
   /* ─── VENTURES ─── */
-  .ventures-grid {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
+  .ventures-grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
 
   .venture-card {
     background: var(--bg-card);
@@ -358,12 +309,11 @@
     align-items: start;
     transition: all 0.4s;
     position: relative;
+    text-decoration: none;
+    color: inherit;
   }
 
-  .venture-card:hover {
-    border-color: rgba(201,168,76,0.3);
-    transform: translateX(4px);
-  }
+  .venture-card:hover { border-color: rgba(201,168,76,0.3); transform: translateX(4px); }
 
   .venture-icon {
     width: 48px; height: 48px;
@@ -376,11 +326,7 @@
     flex-shrink: 0;
   }
 
-  .venture-content h3 {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
+  .venture-content h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.5rem; }
 
   .venture-content .subtitle {
     font-family: var(--font-mono);
@@ -391,18 +337,9 @@
     margin-bottom: 0.75rem;
   }
 
-  .venture-content p {
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.75;
-  }
+  .venture-content p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.75; }
 
-  .venture-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1rem;
-  }
+  .venture-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
 
   .venture-tags span {
     font-family: var(--font-mono);
@@ -423,9 +360,10 @@
     height: fit-content;
   }
 
-  .status-active { border-color: var(--accent-green); color: var(--accent-green); }
-  .status-building { border-color: var(--accent-blue); color: var(--accent-blue); }
-  .status-research { border-color: var(--accent-gold); color: var(--accent-gold); }
+  .status-live     { border-color: var(--accent-green); color: var(--accent-green); }
+  .status-active   { border-color: var(--accent-green); color: var(--accent-green); }
+  .status-building { border-color: var(--accent-blue);  color: var(--accent-blue); }
+  .status-research { border-color: var(--accent-gold);  color: var(--accent-gold); }
 
   /* ─── SIGNAL STRIP ─── */
   .signal-strip {
@@ -446,12 +384,7 @@
     text-align: center;
   }
 
-  .signal-item .number {
-    font-family: var(--font-display);
-    font-size: 2.2rem;
-    color: var(--accent-gold);
-    line-height: 1;
-  }
+  .signal-item .number { font-family: var(--font-display); font-size: 2.2rem; color: var(--accent-gold); line-height: 1; }
 
   .signal-item .label {
     font-family: var(--font-mono);
@@ -461,6 +394,24 @@
     color: var(--text-muted);
     margin-top: 0.5rem;
   }
+
+  /* ─── SUPPORT ─── */
+  .support-strip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .support-text { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+  .support-text strong { color: var(--text-primary); }
+  .support-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
   /* ─── CONTACT ─── */
   .contact-block {
@@ -482,14 +433,10 @@
     line-height: 1.8;
   }
 
-  .contact-block .btn { margin: 0 0.5rem; }
+  .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
 
   /* ─── FOOTER ─── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    text-align: center;
-  }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
 
   .footer-line {
     font-family: var(--font-mono);
@@ -515,12 +462,14 @@
     .signal-inner { grid-template-columns: repeat(3, 1fr); }
     .nav-links { gap: 1rem; }
     .nav-links a { font-size: 0.72rem; }
+    .support-strip { flex-direction: column; gap: 1rem; }
   }
 
   @media (max-width: 480px) {
     .hero-cta { flex-direction: column; }
     .signal-inner { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+    .contact-links { flex-direction: column; align-items: center; }
   }
 </style>
 </head>
@@ -532,6 +481,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#support">Support</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -540,14 +490,10 @@
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-label">Operations &middot; Fraud &middot; Energy &middot; Telco &middot; Systems</div>
-    <h1>I've spent more than a decade inside<br><em>broken systems.</em><br>Now I help build better ones.</h1>
+    <h1>I've spent more than a decade inside<br><em>broken systems.</em><br>Now I build the tools to fix them.</h1>
     <p class="hero-description">
-      Inside broken systems for a decade. Now building the recovery.
-10+ years optimising Telecoms, Fraud, Insurance, Energy Systems and Regulated Operations. I’ve seen where the gears grind to a halt—now I engineer the fix.
-</p>
-<div class="section-label">Focus</div>
+      10+ years inside telecoms, fraud, insurance, energy and regulated operations — seeing where the gears grind to a halt. Now engineering the recovery: fraud detection tools, IP protection, and forensic infrastructure built from the inside out.
     </p>
-    <br>
     <div class="hero-tags">
       <span class="tag">Operations</span>
       <span class="tag">Fraud Deterrence</span>
@@ -556,7 +502,7 @@
       <span class="tag">Systems Thinking</span>
     </div>
     <div class="hero-cta">
-      <a href="#ventures" class="btn btn-primary">What I'm Working On ↓</a>
+      <a href="#ventures" class="btn btn-primary">What I'm Building ↓</a>
       <a href="#contact" class="btn">Get in Touch</a>
     </div>
   </div>
@@ -568,13 +514,13 @@
   <h2 class="section-title">What I Actually Know</h2>
   <p class="section-description">
     Not theory. Operational knowledge earned across industries where
-    I've lead teams, exceeded targets and analysed systems from the inside.
+    I've led teams, exceeded targets and analysed systems from the inside.
   </p>
 
   <div class="about-grid">
     <div class="about-card">
       <h3>Operations & Sales</h3>
-      <p>The core. 10+ Years across B2B telecoms, outsourced contact centre operations, insurance delivery, and regulated service / sales. I understand how revenue is made, how service is delivered, and where both go wrong.</p>
+      <p>The core. 10+ years across B2B telecoms, outsourced contact centre operations, insurance delivery, and regulated service and sales. I understand how revenue is made, how service is delivered, and where both go wrong.</p>
       <ul class="detail-list">
         <li>B2B Telco Sales</li>
         <li>Contact Centre Operations</li>
@@ -585,19 +531,18 @@
 
     <div class="about-card">
       <h3>Fraud & Accountability</h3>
-      <p>Direct experience with how fraud is reported, mishandled and deprioritised. I've seen the gaps firsthand. Now I'm reworking the methodology to help others help themselves.</p>
+      <p>Direct experience with how fraud is reported, mishandled and deprioritised. I've seen the gaps firsthand — now building the tools to close them, and the forensic infrastructure to back it up.</p>
       <ul class="detail-list">
         <li>OSINT (Learning & Applying)</li>
-        <li>Fraud Reporting Landscape</li>
+        <li>Fraud Pattern Analysis</li>
+        <li>Forensic Evidence Architecture</li>
         <li>Institutional Failure Analysis</li>
-        <li>Working Toward Qualifications</li>
-        <li>Coding Without Borders</li>
       </ul>
     </div>
 
     <div class="about-card">
       <h3>Energy & Applied Research</h3>
-      <p>Developing a new and innovative clean energy concept in the under utilised canal waterway space. Early stage proof of concept stage — grounded in real research, real partnerships and real engineering questions.</p>
+      <p>Developing a new and innovative clean energy concept in the underutilised canal waterway space. Early-stage proof of concept — grounded in real research, real partnerships and real engineering questions.</p>
       <ul class="detail-list">
         <li>Renewable Energy Concepts</li>
         <li>Applied Research</li>
@@ -607,15 +552,14 @@
     </div>
 
     <div class="about-card">
-      <h3>Building & Learning</h3>
-      <p>Teaching myself to build the tools my ideas need. Not a senior developer — an incessantly determined one. Immersed in web technologies, utilising agentic AI to deduce code & growing fast.</p>
+      <h3>Building & Shipping</h3>
+      <p>Taught myself to build the tools my ideas need. Three live deployed projects: fraud detection, IP protection, and forensic backend infrastructure. Not a senior developer — an incessantly determined one.</p>
       <ul class="detail-list">
-        <li>HTML, JavaScript</li>
-        <li>Node.js, Microsoft VS Code</li>
-        <li>Python (Growing)</li>
-        <a href="https://the-architect-neo.github.io/scamscan/" target="_blank" style="text-decoration:none;color:inherit;">
-        <li>GitHub (New, Active & Deployed on Github - Fraud Language Detection Utility - "ScamScan")</li>
-        <a>
+        <li>TypeScript, Node.js, Express</li>
+        <li>Prisma ORM, PostgreSQL (Neon)</li>
+        <li>HTML, JavaScript, GitHub Pages</li>
+        <li>Railway, AES-256 encryption</li>
+        <li>Agentic AI (Claude Code)</li>
       </ul>
     </div>
   </div>
@@ -633,9 +577,9 @@
       <div class="label">Industries Deep</div>
     </div>
     <div class="signal-item">
-        <div class="number">1</div>
-        <div class="label">Mission</div>
-         </div>
+      <div class="number">3</div>
+      <div class="label">Live Deployed Projects</div>
+    </div>
   </div>
 </div>
 
@@ -644,43 +588,76 @@
   <div class="section-label">In Progress</div>
   <h2 class="section-title">What I'm Building</h2>
   <p class="section-description">
-    Early-stage projects rooted in real problems I've encountered.
-    Nothing here is finalised — all of it is in motion.
+    Live tools and active research rooted in real problems I've encountered.
+    Built from operational experience — not academic theory.
   </p>
 
   <div class="ventures-grid">
 
-    <div class="venture-card">
+    <a class="venture-card" href="https://the-architect-neo.github.io/scamscan/" target="_blank" rel="noopener">
       <div class="venture-icon">⚡</div>
       <div class="venture-content">
-        <div class="subtitle">Fraud Intelligence</div>
-        <h3>Fraud Language Detection Utility - ScamScan</h3>
+        <div class="subtitle">Fraud Intelligence · Live</div>
+        <h3>ScamScan</h3>
         <p>
-          A web-based tool for structured fraud reporting at the community
-          level. Born from direct frustration with how reports are handled
-          by existing institutions. Actively deployed on Github.
+          Browser-based fraud language pattern detector. 80+ detection patterns, threat scoring, six-stage fraud anatomy framework, and evidence pack generation — all running entirely in the browser. Zero data transmitted without consent. Backed by the ScanVault forensic ledger.
         </p>
         <div class="venture-tags">
-          <span>Web App</span>
-          <span>HTML</span>
-          <span>Deployed on Github</span>
+          <span>Free & Open Access</span>
+          <span>Browser-Based</span>
+          <span>80+ Patterns</span>
+          <span>Evidence Export</span>
         </div>
       </div>
-      <div class="venture-status status-deployed">Deployed</div>
+      <div class="venture-status status-live">Live</div>
+    </a>
+
+    <div class="venture-card">
+      <div class="venture-icon">🔒</div>
+      <div class="venture-content">
+        <div class="subtitle">Forensic Backend · Live</div>
+        <h3>ScanVault</h3>
+        <p>
+          Encrypted forensic ledger powering ScamScan. Evidence-grade PostgreSQL database with AES-256-GCM field encryption, dual cryptographic integrity sealing, and chain-of-custody architecture. Built for potential handoff to a regulatory or law enforcement body.
+        </p>
+        <div class="venture-tags">
+          <span>TypeScript</span>
+          <span>Prisma + Neon</span>
+          <span>AES-256-GCM</span>
+          <span>Railway</span>
+        </div>
+      </div>
+      <div class="venture-status status-live">Live</div>
     </div>
+
+    <a class="venture-card" href="https://the-architect-neo.github.io/codesafe-site" target="_blank" rel="noopener">
+      <div class="venture-icon">🔐</div>
+      <div class="venture-content">
+        <div class="subtitle">IP Protection · Live</div>
+        <h3>CodeSafe</h3>
+        <p>
+          Cryptographic IP timestamping via a 15-minute screen-share session. A practical alternative to IP solicitors — permanent protection for creators, founders and inventors at £150 one-time. No subscriptions. No lawyers. No lock-in.
+        </p>
+        <div class="venture-tags">
+          <span>£150 One-Time</span>
+          <span>15-Minute Session</span>
+          <span>Creators & Founders</span>
+          <span>No Recurring Cost</span>
+        </div>
+      </div>
+      <div class="venture-status status-live">Live</div>
+    </a>
 
     <div class="venture-card">
       <div class="venture-icon">🌊</div>
       <div class="venture-content">
-        <div class="subtitle">Clean Energy</div>
+        <div class="subtitle">Clean Energy · Active</div>
         <h3>Waterway Energy Concept</h3>
         <p>
-          A renewable energy concept exploring distributed power generation
-          from underutilised waterway infrastructure. Early stage with
-          industry partnership pending and funding pathways mapped.
+          A renewable energy concept exploring distributed power generation from underutilised waterway infrastructure. Early stage with industry partnerships pending and funding pathways mapped.
         </p>
         <div class="venture-tags">
-          <span>Proof of Concept Stage</span>
+          <span>Proof of Concept</span>
           <span>Seeking Partners</span>
           <span>Grant Pathway</span>
         </div>
@@ -691,42 +668,50 @@
     <div class="venture-card">
       <div class="venture-icon">🔍</div>
       <div class="venture-content">
-        <div class="subtitle">Professional Development</div>
+        <div class="subtitle">Professional Development · Research</div>
         <h3>Fraud Deterrence Protocols</h3>
         <p>
-          Working toward building a legitimate fraud investigation and
-          deterrence protocol. Currently in the research and development
-          phase — mapping the path from operational experience to
-          professional accreditation.
+          Working toward a legitimate fraud investigation and deterrence framework — mapping the path from 10+ years of operational experience to formal professional accreditation and an acquirable methodology.
         </p>
         <div class="venture-tags">
           <span>Research Phase</span>
-          <span>Qualification Pathway</span>
+          <span>Accreditation Pathway</span>
           <span>Methodology</span>
         </div>
       </div>
       <div class="venture-status status-research">Research</div>
     </div>
 
-    <div class="venture-card">
-      <div class="venture-icon">🛠</div>
-      <div class="venture-content">
-        <div class="subtitle">Developer Tools</div>
-        <h3>DevOps / Agentic AI </h3>
-        <p>
-          Exploring the GitHub ecosystem as a creative developer utilising agentic AI — 
-          applying domain knowledge from fraud, telco and varied operations into developer tools and
-          digital assets. Learning the platform, building first contributions.
-        </p>
-        <div class="venture-tags">
-          <span>Exploring</span>
-          <span>GitHub Ecosystem</span>
-          <span>Early Stage</span>
-        </div>
-      </div>
-      <div class="venture-status status-exploring">Exploring</div>
-    </div>
+  </div>
+</section>
 
+<!-- SUPPORT -->
+<section id="support" style="padding-top: 0;">
+  <div class="section-label">Support the Work</div>
+  <h2 class="section-title">Back the Mission</h2>
+  <p class="section-description">
+    ScamScan is free, open access, and built for people who need it most.
+    If the work has value to you, here's how to keep it going.
+  </p>
+
+  <div class="support-strip">
+    <div class="support-text">
+      <strong>GitHub Sponsors</strong><br>
+      Support ongoing development directly through GitHub. Every contribution funds research, infrastructure, and new detection patterns.
+    </div>
+    <div class="support-actions">
+      <a href="https://github.com/sponsors/The-Architect-Neo" class="btn btn-primary" target="_blank" rel="noopener">Sponsor on GitHub</a>
+    </div>
+  </div>
+
+  <div class="support-strip" style="margin-top: 1rem;">
+    <div class="support-text">
+      <strong>CodeSafe — IP Protection</strong><br>
+      Need to protect an idea, invention or creative work? Book a 15-minute session. £150 one-time. Permanent.
+    </div>
+    <div class="support-actions">
+      <a href="https://the-architect-neo.github.io/codesafe-site" class="btn" target="_blank" rel="noopener">Book CodeSafe — £150</a>
+    </div>
   </div>
 </section>
 
@@ -735,18 +720,22 @@
   <div class="section-label">Connect</div>
   <h2 class="section-title">Let's Talk</h2>
   <p class="section-description">
-    I'm interested in conversations with people working in fraud
-    prevention, community energy, or anyone who values straight
-    talk & operational thinking.
+    Open to conversations on fraud prevention, community energy,
+    systems thinking, or anything that values straight talk and operational experience.
   </p>
 
- <div class="contact-block"> 
-  <p> Not looking for small talk. If you're working on something that matters and want someone who thinks in systems, reach out. </p> 
-  <a href="https://www.linkedin.com/in/g-c-8b4b6b298" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a> 
-  <a href="https://github.com/the-architect-neo" class="btn" target="_blank" rel="noopener">GitHub</a> 
-  <a href="mailto:axion-project@protonmail.com" class="btn">Email</a> 
-  <a href="https://dev.to/thearchitectneo" class="btn" target="_blank" rel="noopener">Dev.to</a> 
-  <a href="https://the-architect-neo.github.io/scamscan/" class="btn" target="_blank" rel="noopener">SCAMSCAN</a> </div> </section>
+  <div class="contact-block">
+    <p>Not looking for small talk. If you're working on something that matters and want someone who thinks in systems — reach out.</p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/g-c-8b4b6b298" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/The-Architect-Neo" class="btn" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:axion-project@proton.me" class="btn">Email</a>
+      <a href="https://the-architect-neo.github.io/scamscan/" class="btn" target="_blank" rel="noopener">ScamScan</a>
+      <a href="https://the-architect-neo.github.io/codesafe-site" class="btn" target="_blank" rel="noopener">CodeSafe</a>
+      <a href="https://dev.to/thearchitectneo" class="btn" target="_blank" rel="noopener">Dev.to</a>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -764,7 +753,7 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.about-card, .venture-card, .contact-block, .signal-item').forEach(el => {
+  document.querySelectorAll('.about-card, .venture-card, .contact-block, .signal-item, .support-strip').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
