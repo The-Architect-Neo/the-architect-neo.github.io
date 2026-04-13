@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Architect — Fraud · Operations · Systems</title>
-<meta name="description" content="10+ years inside broken systems. Now building the tools to fix them. ScamScan, ScanVault — fraud intelligence and forensic infrastructure built from operational experience.">
+<meta name="description" content="10+ years inside broken systems. Now building the tools to fix them. Corporate intelligence, quantum security, fraud deterrence — built from operational experience.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -297,15 +297,15 @@
   .about-card .detail-list li::before { content: '→ '; color: var(--accent-gold); }
 
   /* ─── VENTURES ─── */
-  .ventures-grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
+  .ventures-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
 
   .venture-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    padding: 2.5rem;
+    padding: 1.5rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 2rem;
+    gap: 1.2rem;
     align-items: start;
     transition: all 0.4s;
     position: relative;
@@ -316,28 +316,28 @@
   .venture-card:hover { border-color: rgba(201,168,76,0.3); transform: translateX(4px); }
 
   .venture-icon {
-    width: 48px; height: 48px;
+    width: 36px; height: 36px;
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background: var(--bg-secondary);
     flex-shrink: 0;
   }
 
-  .venture-content h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .venture-content h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.3rem; }
 
   .venture-content .subtitle {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--accent-gold);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
-  .venture-content p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.75; }
+  .venture-content p { color: var(--text-secondary); font-size: 0.84rem; line-height: 1.6; }
 
   .venture-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
 
@@ -456,6 +456,7 @@
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     .about-grid { grid-template-columns: 1fr; }
+    .ventures-grid { grid-template-columns: 1fr; }
     .venture-card { grid-template-columns: 1fr; gap: 1rem; }
     .venture-icon { display: none; }
     .venture-status { width: fit-content; }
@@ -704,17 +705,16 @@
 
 <!-- SUPPORT -->
 <section id="support" style="padding-top: 0;">
-  <div class="section-label">Support the Work</div>
-  <h2 class="section-title">Back the Mission</h2>
+  <div class="section-label">Work With Me</div>
+  <h2 class="section-title">Get Involved</h2>
   <p class="section-description">
-    ScamScan is free, open access, and built for people who need it most.
-    If the work has value to you, here's how to keep it going.
+    Tools in active development. Consultations available. Open to partners, collaborators and early adopters.
   </p>
 
   <div class="support-strip">
     <div class="support-text">
       <strong>GitHub Sponsors</strong><br>
-      Support ongoing development directly through GitHub. Every contribution funds research, infrastructure, and new detection patterns.
+      Support ongoing development directly. Every contribution funds research, infrastructure and new tooling.
     </div>
     <div class="support-actions">
       <a href="https://github.com/sponsors/The-Architect-Neo" class="btn btn-primary" target="_blank" rel="noopener">Sponsor on GitHub</a>
@@ -724,7 +724,7 @@
   <div class="support-strip" style="margin-top: 1rem;">
     <div class="support-text">
       <strong>Fraud Consultation — £150</strong><br>
-      Suspicious contact, active scam, or not sure what you're dealing with? Book a 45-minute session. Evidence pack and reporting guidance included.
+      Suspicious contact, active scam, or not sure what you're dealing with? 45-minute session — evidence pack and reporting guidance included.
     </div>
     <div class="support-actions">
       <a href="mailto:axion-project@proton.me?subject=Fraud Consultation Request" class="btn">Book a Session — £150</a>
@@ -747,7 +747,8 @@
       <a href="https://www.linkedin.com/in/g-c-8b4b6b298" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/The-Architect-Neo" class="btn" target="_blank" rel="noopener">GitHub</a>
       <a href="mailto:axion-project@proton.me" class="btn">Email</a>
-      <a href="https://the-architect-neo.github.io/scamscan/" class="btn" target="_blank" rel="noopener">ScamScan</a>
+      <a href="https://investigator-production-3d5b.up.railway.app" class="btn" target="_blank" rel="noopener">INVEST👁GATOR</a>
+      <a href="https://quantumprotection-production.up.railway.app" class="btn" target="_blank" rel="noopener">QuantumProtect</a>
       <a href="mailto:axion-project@proton.me?subject=Fraud Consultation Request" class="btn">Consultation — £150</a>
       <a href="https://dev.to/thearchitectneo" class="btn" target="_blank" rel="noopener">Dev.to</a>
     </div>
