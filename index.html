@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Architect — Fraud · Operations · Systems</title>
-<meta name="description" content="10+ years inside broken systems. Now building the tools to fix them. Corporate intelligence, quantum security, fraud deterrence — built from operational experience.">
+<title>The Architect</title>
+<meta name="description" content="Logic systems thinking across Operations, Fraud, Energy & Telco. Turning operational experience into working solutions.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -36,7 +36,10 @@
     overflow-x: hidden;
   }
 
-  ::selection { background: var(--accent-gold); color: var(--bg-primary); }
+  ::selection {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+  }
 
   /* ─── NAV ─── */
   nav {
@@ -106,7 +109,12 @@
     50% { transform: scale(1.15); opacity: 1; }
   }
 
-  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
 
   .hero-label {
     font-family: var(--font-mono);
@@ -122,7 +130,11 @@
     animation: fadeUp 0.8s 0.2s forwards;
   }
 
-  .hero-label::before { content: ''; width: 40px; height: 1px; background: var(--accent-gold); }
+  .hero-label::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--accent-gold);
+  }
 
   .hero h1 {
     font-family: var(--font-display);
@@ -134,7 +146,10 @@
     animation: fadeUp 0.8s 0.4s forwards;
   }
 
-  .hero h1 em { font-style: italic; color: var(--accent-gold); }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-gold);
+  }
 
   .hero-description {
     font-size: 1.05rem;
@@ -166,7 +181,11 @@
     background: var(--bg-secondary);
     transition: all 0.3s;
   }
-  .tag:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+  .tag:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
 
   .hero-cta {
     display: flex; gap: 1rem;
@@ -212,7 +231,10 @@
     font-weight: 600;
   }
   .btn-primary::before { display: none; }
-  .btn-primary:hover { background: #b8943f; color: var(--bg-primary); }
+  .btn-primary:hover {
+    background: #b8943f;
+    color: var(--bg-primary);
+  }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -238,7 +260,11 @@
     gap: 0.75rem;
   }
 
-  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent-gold); }
+  .section-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent-gold);
+  }
 
   .section-title {
     font-family: var(--font-display);
@@ -247,10 +273,19 @@
     font-weight: 400;
   }
 
-  .section-description { color: var(--text-secondary); max-width: 600px; margin-bottom: 3rem; }
+  .section-description {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
 
   /* ─── ABOUT GRID ─── */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 
   .about-card {
     background: var(--bg-card);
@@ -271,7 +306,7 @@
   }
 
   .about-card:hover::after { height: 100%; }
-  .about-card:hover { transform: translateY(-2px); }
+  .about-card:hover { border-color: var(--border); transform: translateY(-2px); }
 
   .about-card h3 {
     font-family: var(--font-mono);
@@ -282,9 +317,16 @@
     margin-bottom: 1rem;
   }
 
-  .about-card p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.75; }
+  .about-card p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
 
-  .about-card .detail-list { list-style: none; margin-top: 0.75rem; }
+  .about-card .detail-list {
+    list-style: none;
+    margin-top: 0.75rem;
+  }
 
   .about-card .detail-list li {
     font-family: var(--font-mono);
@@ -294,52 +336,73 @@
     border-bottom: 1px solid rgba(34,34,40,0.6);
   }
 
-  .about-card .detail-list li::before { content: '→ '; color: var(--accent-gold); }
+  .about-card .detail-list li::before {
+    content: '→ ';
+    color: var(--accent-gold);
+  }
 
   /* ─── VENTURES ─── */
-  .ventures-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .ventures-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
 
   .venture-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    padding: 1.5rem;
+    padding: 2.5rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 1.2rem;
+    gap: 2rem;
     align-items: start;
     transition: all 0.4s;
     position: relative;
-    text-decoration: none;
-    color: inherit;
   }
 
-  .venture-card:hover { border-color: rgba(201,168,76,0.3); transform: translateX(4px); }
+  .venture-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateX(4px);
+  }
 
   .venture-icon {
-    width: 36px; height: 36px;
+    width: 48px; height: 48px;
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     background: var(--bg-secondary);
     flex-shrink: 0;
   }
 
-  .venture-content h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.3rem; }
-
-  .venture-content .subtitle {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
+  .venture-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }
 
-  .venture-content p { color: var(--text-secondary); font-size: 0.84rem; line-height: 1.6; }
+  .venture-content .subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 0.75rem;
+  }
 
-  .venture-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+  .venture-content p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .venture-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
 
   .venture-tags span {
     font-family: var(--font-mono);
@@ -360,10 +423,9 @@
     height: fit-content;
   }
 
-  .status-live     { border-color: var(--accent-green); color: var(--accent-green); }
-  .status-active   { border-color: var(--accent-green); color: var(--accent-green); }
-  .status-building { border-color: var(--accent-blue);  color: var(--accent-blue); }
-  .status-research { border-color: var(--accent-gold);  color: var(--accent-gold); }
+  .status-active { border-color: var(--accent-green); color: var(--accent-green); }
+  .status-building { border-color: var(--accent-blue); color: var(--accent-blue); }
+  .status-research { border-color: var(--accent-gold); color: var(--accent-gold); }
 
   /* ─── SIGNAL STRIP ─── */
   .signal-strip {
@@ -384,7 +446,12 @@
     text-align: center;
   }
 
-  .signal-item .number { font-family: var(--font-display); font-size: 2.2rem; color: var(--accent-gold); line-height: 1; }
+  .signal-item .number {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--accent-gold);
+    line-height: 1;
+  }
 
   .signal-item .label {
     font-family: var(--font-mono);
@@ -394,24 +461,6 @@
     color: var(--text-muted);
     margin-top: 0.5rem;
   }
-
-  /* ─── SUPPORT ─── */
-  .support-strip {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent-gold);
-    padding: 1.5rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  .support-text { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
-  .support-text strong { color: var(--text-primary); }
-  .support-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
   /* ─── CONTACT ─── */
   .contact-block {
@@ -433,10 +482,14 @@
     line-height: 1.8;
   }
 
-  .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+  .contact-block .btn { margin: 0 0.5rem; }
 
   /* ─── FOOTER ─── */
-  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
 
   .footer-line {
     font-family: var(--font-mono);
@@ -456,21 +509,18 @@
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     .about-grid { grid-template-columns: 1fr; }
-    .ventures-grid { grid-template-columns: 1fr; }
     .venture-card { grid-template-columns: 1fr; gap: 1rem; }
     .venture-icon { display: none; }
     .venture-status { width: fit-content; }
     .signal-inner { grid-template-columns: repeat(3, 1fr); }
     .nav-links { gap: 1rem; }
     .nav-links a { font-size: 0.72rem; }
-    .support-strip { flex-direction: column; gap: 1rem; }
   }
 
   @media (max-width: 480px) {
     .hero-cta { flex-direction: column; }
     .signal-inner { grid-template-columns: 1fr; }
     .nav-links { display: none; }
-    .contact-links { flex-direction: column; align-items: center; }
   }
 </style>
 </head>
@@ -482,7 +532,6 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#ventures">Ventures</a></li>
-    <li><a href="#support">Support</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -491,9 +540,9 @@
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-label">Operations &middot; Fraud &middot; Energy &middot; Telco &middot; Systems</div>
-    <h1>I've spent more than a decade inside<br><em>broken systems.</em><br>Now I build the tools to fix them.</h1>
+    <h1>I've spent more than a decade inside<br><em>broken systems.</em><br>Now I help build better ones.</h1>
     <p class="hero-description">
-      10+ years inside telecoms, fraud, insurance, energy and regulated operations — seeing where the gears grind to a halt. Now engineering the recovery: fraud detection tools, IP protection, and forensic infrastructure built from the inside out.
+      10+ years inside telecoms, fraud, insurance, energy and regulated operations — seeing exactly where the gears grind to a halt. Now engineering the recovery: live deployed tools, forensic infrastructure, and corporate intelligence built from the inside out.
     </p>
     <div class="hero-tags">
       <span class="tag">Operations</span>
@@ -503,7 +552,7 @@
       <span class="tag">Systems Thinking</span>
     </div>
     <div class="hero-cta">
-      <a href="#ventures" class="btn btn-primary">What I'm Building ↓</a>
+      <a href="#ventures" class="btn btn-primary">What I'm Working On ↓</a>
       <a href="#contact" class="btn">Get in Touch</a>
     </div>
   </div>
@@ -521,7 +570,7 @@
   <div class="about-grid">
     <div class="about-card">
       <h3>Operations & Sales</h3>
-      <p>The core. 10+ years across B2B telecoms, outsourced contact centre operations, insurance delivery, and regulated service and sales. I understand how revenue is made, how service is delivered, and where both go wrong.</p>
+      <p>The core. 10+ Years across B2B telecoms, outsourced contact centre operations, insurance delivery, and regulated service / sales. I understand how revenue is made, how service is delivered, and where both go wrong.</p>
       <ul class="detail-list">
         <li>B2B Telco Sales</li>
         <li>Contact Centre Operations</li>
@@ -532,18 +581,19 @@
 
     <div class="about-card">
       <h3>Fraud & Accountability</h3>
-      <p>Direct experience with how fraud is reported, mishandled and deprioritised. I've seen the gaps firsthand — now building the tools to close them, and the forensic infrastructure to back it up.</p>
+      <p>Direct experience with how fraud is reported, mishandled and deprioritised. Built working tools — not theory. ScanVault forensic ledger, ScamScan language detection, and a live investigator pulling 16 public intelligence sources in parallel.</p>
       <ul class="detail-list">
-        <li>OSINT (Learning & Applying)</li>
-        <li>Fraud Pattern Analysis</li>
-        <li>Forensic Evidence Architecture</li>
-        <li>Institutional Failure Analysis</li>
+        <li>OSINT — Applied & Building</li>
+        <li>Forensic Evidence Chains</li>
+        <li>Companies House / FCA / AbuseIPDB</li>
+        <li>NIF Framework (Nominee / Insolvent / Fraud)</li>
+        <li>Director Fraud & Entity Mapping</li>
       </ul>
     </div>
 
     <div class="about-card">
       <h3>Energy & Applied Research</h3>
-      <p>Developing a new and innovative clean energy concept in the underutilised canal waterway space. Early-stage proof of concept — grounded in real research, real partnerships and real engineering questions.</p>
+      <p>Developing a new and innovative clean energy concept in the under utilised canal waterway space. Early stage proof of concept stage — grounded in real research, real partnerships and real engineering questions.</p>
       <ul class="detail-list">
         <li>Renewable Energy Concepts</li>
         <li>Applied Research</li>
@@ -554,12 +604,13 @@
 
     <div class="about-card">
       <h3>Building & Shipping</h3>
-      <p>Taught myself to build the tools my ideas need. Three live deployed projects: fraud detection, IP protection, and forensic backend infrastructure. Not a senior developer — an incessantly determined one.</p>
+      <p>Taught myself to build the tools my ideas need. Six live deployed products across Railway, GitHub Pages and local infrastructure — frontend, backend, database, encryption, and live API integrations. Not a senior developer — an incessantly determined one.</p>
       <ul class="detail-list">
         <li>TypeScript, Node.js, Express</li>
+        <li>Python, Flask, Chart.js</li>
         <li>Prisma ORM, PostgreSQL (Neon)</li>
-        <li>HTML, JavaScript, GitHub Pages</li>
-        <li>Railway, AES-256 encryption</li>
+        <li>AES-256-GCM Encryption / SHA-3-256</li>
+        <li>REST API Design, Railway, GitHub Pages</li>
         <li>Agentic AI (Claude Code)</li>
       </ul>
     </div>
@@ -578,8 +629,8 @@
       <div class="label">Industries Deep</div>
     </div>
     <div class="signal-item">
-      <div class="number">5</div>
-      <div class="label">Live Deployed Projects</div>
+        <div class="number">6</div>
+        <div class="label">Products Built & Deployed</div>
     </div>
   </div>
 </div>
@@ -589,25 +640,28 @@
   <div class="section-label">In Progress</div>
   <h2 class="section-title">What I'm Building</h2>
   <p class="section-description">
-    Live tools and active research rooted in real problems I've encountered.
-    Built from operational experience — not academic theory.
+    Early-stage projects rooted in real problems I've encountered.
+    Nothing here is finalised — all of it is in motion.
   </p>
 
   <div class="ventures-grid">
 
     <div class="venture-card">
-      <div class="venture-icon">⚡</div>
+      <div class="venture-icon">🔍</div>
       <div class="venture-content">
-        <div class="subtitle">Fraud Intelligence · Held</div>
-        <h3>ScamScan</h3>
-        <p>Browser-based fraud language pattern detector. 80+ detection patterns, threat scoring, and evidence pack generation — runs entirely in the browser. Backed by the ScanVault forensic ledger.</p>
+        <div class="subtitle">Corporate Intelligence · Live</div>
+        <h3>INVESTiGATOR</h3>
+        <p>
+          Director trail intelligence tool deployed on Railway. Search by company, person, domain, IP, phone or postcode — fans out to 8+ public sources concurrently: Companies House, FCA Register, FCA Warning List, VirusTotal, AbuseIPDB, RDAP/WHOIS, IPinfo and Postcodes.io. Surfaces red flags including dissolved associations, director at dissolution, phoenix patterns and disqualification status.
+        </p>
         <div class="venture-tags">
-          <span>Held Pending ICO Registration</span>
-          <span>Browser-Based</span>
-          <span>Evidence Export</span>
+          <span>TypeScript</span>
+          <span>Node.js / Express</span>
+          <span>Companies House API</span>
+          <span>Railway</span>
         </div>
       </div>
-      <div class="venture-status status-active">Held — ICO</div>
+      <div class="venture-status status-active">Live</div>
     </div>
 
     <div class="venture-card">
@@ -615,89 +669,52 @@
       <div class="venture-content">
         <div class="subtitle">Forensic Backend · Live</div>
         <h3>ScanVault</h3>
-        <p>Encrypted forensic ledger powering ScamScan. Evidence-grade database with field encryption, cryptographic integrity sealing, and chain-of-custody architecture.</p>
+        <p>
+          Encrypted forensic evidence ledger deployed on Railway. 14 forensic tables — cases, messages, linguistic analysis, psychological profiles, entity tracking, chain of custody, and forensic reports. AES-256-GCM field encryption, SHA-3-256 integrity hashing, canary token breach detection, and a locally-hosted CRM-style admin vault for case management. Backed by PostgreSQL on Neon.
+        </p>
         <div class="venture-tags">
-          <span>TypeScript</span>
-          <span>PostgreSQL</span>
+          <span>TypeScript / Prisma</span>
+          <span>PostgreSQL (Neon)</span>
+          <span>AES-256-GCM</span>
           <span>Railway</span>
         </div>
       </div>
-      <div class="venture-status status-live">Live</div>
-    </div>
-
-    <a class="venture-card" href="https://investigator-production-3d5b.up.railway.app" target="_blank" rel="noopener">
-      <div class="venture-icon">🔍</div>
-      <div class="venture-content">
-        <div class="subtitle">Corporate Intelligence · Live</div>
-        <h3>INVEST👁GATOR</h3>
-        <p>Director trail intelligence tool surfacing red flags on individuals and companies from public register data. Built for commercial due diligence and fraud investigation.</p>
-        <div class="venture-tags">
-          <span>Public Data</span>
-          <span>Due Diligence</span>
-          <span>Railway</span>
-        </div>
-      </div>
-      <div class="venture-status status-live">Live</div>
-    </a>
-
-    <a class="venture-card" href="https://quantumprotection-production.up.railway.app" target="_blank" rel="noopener">
-      <div class="venture-icon">🛡️</div>
-      <div class="venture-content">
-        <div class="subtitle">Cybersecurity · Live</div>
-        <h3>QuantumProtect</h3>
-        <p>Two-click quantum threat assessment for businesses. Plain-English risk score, sector breach cost estimate, and concrete defence plan — no technical knowledge required.</p>
-        <div class="venture-tags">
-          <span>Post-Quantum Cryptography</span>
-          <span>Cybersecurity</span>
-          <span>Railway</span>
-        </div>
-      </div>
-      <div class="venture-status status-live">Live</div>
-    </a>
-
-    <a class="venture-card" href="https://donate.stripe.com/5kQ28k1gs0rl2Lqfri8og00" target="_blank" rel="noopener">
-      <div class="venture-icon">🧭</div>
-      <div class="venture-content">
-        <div class="subtitle">Fraud Consultation · Available</div>
-        <h3>Fraud Assessment Session</h3>
-        <p>Suspicious contact or active scam? 45-minute session — identify the fraud type, build your evidence pack, map the reporting steps. Operational expertise, not a script.</p>
-        <div class="venture-tags">
-          <span>£150 Per Session</span>
-          <span>45 Minutes</span>
-          <span>Evidence Pack Included</span>
-        </div>
-      </div>
-      <div class="venture-status status-live">Available</div>
-    </a>
-
-    <div class="venture-card">
-      <div class="venture-icon">🌊</div>
-      <div class="venture-content">
-        <div class="subtitle">Clean Energy · Active</div>
-        <h3>Waterway Energy Concept</h3>
-        <p>Renewable energy concept exploring distributed power generation from underutilised waterway infrastructure. Industry partnerships pending, funding pathways mapped.</p>
-        <div class="venture-tags">
-          <span>Proof of Concept</span>
-          <span>Seeking Partners</span>
-          <span>Grant Pathway</span>
-        </div>
-      </div>
-      <div class="venture-status status-active">Active</div>
+      <div class="venture-status status-active">Live</div>
     </div>
 
     <div class="venture-card">
-      <div class="venture-icon">⚖️</div>
+      <div class="venture-icon">⚡</div>
       <div class="venture-content">
-        <div class="subtitle">Fraud Deterrence · Building</div>
-        <h3>Fraud Deterrence Protocols</h3>
-        <p>Building a legitimate fraud investigation and deterrence framework — 10+ years of operational experience into a formal, accreditable methodology.</p>
+        <div class="subtitle">Fraud Detection · Held — ICO</div>
+        <h3>ScamScan</h3>
+        <p>
+          Browser-based fraud language detector with 80+ detection patterns, 6-stage scam anatomy scoring (Hook → Fear → Trust → Urgency → Extraction → Isolation), threat scoring and evidence pack generation. Runs entirely in the browser — no server, no data stored. Held pending ICO registration as data controller.
+        </p>
         <div class="venture-tags">
-          <span>In Development</span>
-          <span>Accreditation Pathway</span>
-          <span>Methodology</span>
+          <span>JavaScript</span>
+          <span>Browser-Based</span>
+          <span>GitHub Pages</span>
+          <span>ICO Pending</span>
         </div>
       </div>
-      <div class="venture-status status-building">Building</div>
+      <div class="venture-status status-research">Held — ICO</div>
+    </div>
+
+    <div class="venture-card">
+      <div class="venture-icon">🔐</div>
+      <div class="venture-content">
+        <div class="subtitle">IP Protection · Live</div>
+        <h3>CodeSafe</h3>
+        <p>
+          Cryptographic IP timestamping for developers and creators. SHA-256 fingerprint of code or documents sealed with a blockchain timestamp — an auditable, tamper-evident prior art record at a fraction of the cost of an IP solicitor. £150 one-time via 15-minute screen share. Built and deployed on GitHub Pages.
+        </p>
+        <div class="venture-tags">
+          <span>SHA-256</span>
+          <span>Blockchain Timestamp</span>
+          <span>GitHub Pages</span>
+        </div>
+      </div>
+      <div class="venture-status status-active">Live</div>
     </div>
 
     <div class="venture-card">
@@ -705,45 +722,36 @@
       <div class="venture-content">
         <div class="subtitle">Portfolio Intelligence · Private</div>
         <h3>TradeDesk</h3>
-        <p>Live portfolio tracker applying systematic trading rules to crypto and equity holdings. Real-time price feeds, EMA trend lines, RSI and MACD signals — built for disciplined, rule-based execution.</p>
+        <p>
+          Live portfolio tracker applying systematic trading rules to crypto and equity holdings. Real-time GBP prices via Kraken REST, 60-day Chart.js sparklines, EMA trend signals, RSI and MACD — built for disciplined, rule-based execution. Python/Flask backend, locally hosted.
+        </p>
         <div class="venture-tags">
-          <span>Python</span>
-          <span>Live Prices</span>
-          <span>Technical Analysis</span>
+          <span>Python / Flask</span>
+          <span>Chart.js</span>
+          <span>Kraken API</span>
+          <span>yfinance</span>
         </div>
       </div>
-      <div class="venture-status status-live">Live</div>
+      <div class="venture-status status-building">Private</div>
     </div>
 
-  </div>
-</section>
+    <div class="venture-card">
+      <div class="venture-icon">🌊</div>
+      <div class="venture-content">
+        <div class="subtitle">Clean Energy · Active Research</div>
+        <h3>Waterway Energy Concept</h3>
+        <p>
+          Renewable energy concept exploring distributed power generation from underutilised canal waterway infrastructure. Early-stage proof of concept — grounded in real research, industry partnerships pending, and funding pathways mapped.
+        </p>
+        <div class="venture-tags">
+          <span>Proof of Concept</span>
+          <span>Seeking Partners</span>
+          <span>Grant Pathway</span>
+        </div>
+      </div>
+      <div class="venture-status status-research">Active</div>
+    </div>
 
-<!-- SUPPORT -->
-<section id="support" style="padding-top: 0;">
-  <div class="section-label">Work With Me</div>
-  <h2 class="section-title">Get Involved</h2>
-  <p class="section-description">
-    Tools in active development. Consultations available. Open to partners, collaborators and early adopters.
-  </p>
-
-  <div class="support-strip">
-    <div class="support-text">
-      <strong>GitHub Sponsors</strong><br>
-      Support ongoing development directly. Every contribution funds research, infrastructure and new tooling.
-    </div>
-    <div class="support-actions">
-      <a href="https://github.com/sponsors/The-Architect-Neo" class="btn btn-primary" target="_blank" rel="noopener">Sponsor on GitHub</a>
-    </div>
-  </div>
-
-  <div class="support-strip" style="margin-top: 1rem;">
-    <div class="support-text">
-      <strong>Fraud Consultation — £150</strong><br>
-      Suspicious contact, active scam, or not sure what you're dealing with? 45-minute session — evidence pack and reporting guidance included.
-    </div>
-    <div class="support-actions">
-      <a href="https://donate.stripe.com/5kQ28k1gs0rl2Lqfri8og00" class="btn" target="_blank" rel="noopener">Book a Session — £150</a>
-    </div>
   </div>
 </section>
 
@@ -752,21 +760,18 @@
   <div class="section-label">Connect</div>
   <h2 class="section-title">Let's Talk</h2>
   <p class="section-description">
-    Open to conversations on fraud prevention, community energy,
-    systems thinking, or anything that values straight talk and operational experience.
+    I'm interested in conversations with people working in fraud
+    prevention, community energy, or anyone who values straight
+    talk & operational thinking.
   </p>
 
   <div class="contact-block">
-    <p>Not looking for small talk. If you're working on something that matters and want someone who thinks in systems — reach out.</p>
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/g-c-8b4b6b298" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/The-Architect-Neo" class="btn" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:axion-project@proton.me" class="btn">Email</a>
-      <a href="https://investigator-production-3d5b.up.railway.app" class="btn" target="_blank" rel="noopener">INVEST👁GATOR</a>
-      <a href="https://quantumprotection-production.up.railway.app" class="btn" target="_blank" rel="noopener">QuantumProtect</a>
-      <a href="https://donate.stripe.com/5kQ28k1gs0rl2Lqfri8og00" class="btn" target="_blank" rel="noopener">Consultation — £150</a>
-      <a href="https://dev.to/thearchitectneo" class="btn" target="_blank" rel="noopener">Dev.to</a>
-    </div>
+    <p>Not looking for small talk. If you're working on something that matters and want someone who thinks in systems, reach out.</p>
+    <a href="https://www.linkedin.com/in/g-c-8b4b6b298" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/The-Architect-Neo" class="btn" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:axion-project@proton.me" class="btn">Email</a>
+    <a href="https://investigator-production-3d5b.up.railway.app" class="btn" target="_blank" rel="noopener">INVESTiGATOR</a>
+    <a href="https://dev.to/thearchitectneo" class="btn" target="_blank" rel="noopener">Dev.to</a>
   </div>
 </section>
 
@@ -786,7 +791,7 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.about-card, .venture-card, .contact-block, .signal-item, .support-strip').forEach(el => {
+  document.querySelectorAll('.about-card, .venture-card, .contact-block, .signal-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
