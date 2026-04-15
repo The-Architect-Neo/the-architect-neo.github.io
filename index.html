@@ -7,6 +7,7 @@
 <meta name="description" content="Logic systems thinking across Operations, Fraud, Energy & Telco. Turning operational experience into working solutions.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  /* ─── DARK (default) ─── */
   :root {
     --bg-primary: #0a0a0c;
     --bg-secondary: #111114;
@@ -19,9 +20,42 @@
     --accent-green: #27ae60;
     --accent-blue: #2980b9;
     --border: #222228;
+    --nav-bg: rgba(10,10,12,0.85);
     --font-display: 'DM Serif Display', Georgia, serif;
     --font-body: 'Outfit', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  /* ─── LIGHT ─── */
+  [data-theme="light"] {
+    --bg-primary: #f5f4f0;
+    --bg-secondary: #eceae4;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1e;
+    --text-secondary: #4a4857;
+    --text-muted: #8a8898;
+    --accent-gold: #a07828;
+    --accent-gold-dim: rgba(160, 120, 40, 0.1);
+    --accent-green: #1a8a45;
+    --accent-blue: #1a6494;
+    --border: #d8d6ce;
+    --nav-bg: rgba(245,244,240,0.92);
+  }
+
+  /* ─── WARM ─── */
+  [data-theme="warm"] {
+    --bg-primary: #1a1410;
+    --bg-secondary: #221c16;
+    --bg-card: #2a221a;
+    --text-primary: #f0e8d8;
+    --text-secondary: #b09880;
+    --text-muted: #706050;
+    --accent-gold: #d4a855;
+    --accent-gold-dim: rgba(212, 168, 85, 0.15);
+    --accent-green: #4aae72;
+    --accent-blue: #4a9ec4;
+    --border: #3a2e22;
+    --nav-bg: rgba(26,20,16,0.88);
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -46,7 +80,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(10,10,12,0.85);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     padding: 0 2rem;
@@ -75,6 +109,29 @@
     transition: color 0.3s;
   }
   .nav-links a:hover { color: var(--accent-gold); }
+
+  /* ─── PALETTE TOGGLE ─── */
+  .palette-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 1.5rem;
+  }
+
+  .palette-btn {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .palette-btn:hover { transform: scale(1.2); }
+  .palette-btn.active { border-color: var(--accent-gold); }
+  .palette-btn[data-palette="dark"]  { background: #0a0a0c; box-shadow: inset 0 0 0 1px #444; }
+  .palette-btn[data-palette="light"] { background: #f5f4f0; box-shadow: inset 0 0 0 1px #ccc; }
+  .palette-btn[data-palette="warm"]  { background: #2a221a; box-shadow: inset 0 0 0 1px #6a4a2a; }
 
   /* ─── HERO ─── */
   .hero {
@@ -536,6 +593,11 @@
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="palette-toggle" title="Switch colour palette">
+    <button class="palette-btn active" data-palette="dark"  aria-label="Dark theme"></button>
+    <button class="palette-btn"        data-palette="light" aria-label="Light theme"></button>
+    <button class="palette-btn"        data-palette="warm"  aria-label="Warm theme"></button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -814,6 +876,23 @@
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // ─── PALETTE SWITCHER ───
+  const paletteBtns = document.querySelectorAll('.palette-btn');
+
+  function applyPalette(palette) {
+    document.documentElement.setAttribute('data-theme', palette === 'dark' ? '' : palette);
+    paletteBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.palette === palette));
+    localStorage.setItem('architect-palette', palette);
+  }
+
+  paletteBtns.forEach(btn => {
+    btn.addEventListener('click', () => applyPalette(btn.dataset.palette));
+  });
+
+  // Restore saved preference on load
+  const savedPalette = localStorage.getItem('architect-palette') || 'dark';
+  applyPalette(savedPalette);
 </script>
 
 </body>
