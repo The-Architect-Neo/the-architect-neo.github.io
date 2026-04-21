@@ -1,156 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Architect</title>
-<meta name="description" content="Logic systems thinking across Operations, Fraud, Energy & Telco. Turning operational experience into working solutions.">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  /* ─── DARK (default) ─── */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garry Crichton — Operational Systems Specialist | The Architect</title>
+  <meta name="description" content="Garry Crichton — 10+ years in fraud prevention, telecoms operations and regulated industries. Building live forensic tools, corporate intelligence systems and clean energy concepts from operational experience.">
+  <meta name="author" content="Garry Crichton">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://the-architect-neo.github.io/portfolio/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="profile">
+  <meta property="og:title"       content="Garry Crichton — Operational Systems Specialist | The Architect">
+  <meta property="og:description" content="10+ years in fraud, telecoms, insurance and energy. Building forensic tools, intelligence systems and deployed technology from operational insight.">
+  <meta property="og:url"         content="https://the-architect-neo.github.io/portfolio/">
+  <meta property="og:locale"      content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Garry Crichton — Operational Systems Specialist | The Architect">
+  <meta name="twitter:description" content="Fraud intelligence. Operational systems. Live deployed tools. The Architect.">
+
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Garry Crichton",
+    "alternateName": "The Architect",
+    "jobTitle": "Operational Systems Specialist",
+    "description": "Operational intelligence specialist with 10+ years across telecoms, fraud prevention, insurance and energy. Building live forensic tools, detection systems and clean energy concepts.",
+    "url": "https://the-architect-neo.github.io/portfolio/",
+    "email": "axion-project@proton.me",
+    "knowsAbout": [
+      "Fraud Detection and Prevention",
+      "Operational Management",
+      "Systems Thinking",
+      "Telecommunications",
+      "Corporate Intelligence",
+      "Cybersecurity",
+      "OSINT",
+      "Clean Energy"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/g-c-8b4b6b298",
+      "https://github.com/The-Architect-Neo",
+      "https://dev.to/thearchitectneo"
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+  /* ─────────────────────────────────────────
+     TOKENS — light default / dark override
+  ───────────────────────────────────────── */
   :root {
-    --bg-primary: #0a0a0c;
-    --bg-secondary: #111114;
-    --bg-card: #16161a;
-    --text-primary: #e8e6e3;
-    --text-secondary: #94929d;
-    --text-muted: #5a586a;
-    --accent-gold: #c9a84c;
-    --accent-gold-dim: rgba(201, 168, 76, 0.15);
-    --accent-green: #27ae60;
-    --accent-blue: #2980b9;
-    --border: #222228;
-    --nav-bg: rgba(10,10,12,0.85);
-    --font-display: 'DM Serif Display', Georgia, serif;
-    --font-body: 'Outfit', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --accent:      #0047AB;
+    --accent-deep: #0039A6;
+    --live:        #059669;
+    --held:        #D97706;
+    --building:    #3B82F6;
+    --font-main:   'Space Grotesk', system-ui, sans-serif;
+    --font-mono:   'Space Mono', monospace;
+
+    /* light */
+    --bg:          #F2F0EB;
+    --surface:     #FFFFFF;
+    --line:        #DDDBD5;
+    --ink:         #0C0C0C;
+    --muted:       #7A7670;
+    --tag-bg:      #ECEAE5;
+    --tag-text:    #6A6866;
   }
 
-  /* ─── LIGHT ─── */
-  [data-theme="light"] {
-    --bg-primary: #f5f4f0;
-    --bg-secondary: #eceae4;
-    --bg-card: #ffffff;
-    --text-primary: #1a1a1e;
-    --text-secondary: #4a4857;
-    --text-muted: #8a8898;
-    --accent-gold: #a07828;
-    --accent-gold-dim: rgba(160, 120, 40, 0.1);
-    --accent-green: #1a8a45;
-    --accent-blue: #1a6494;
-    --border: #d8d6ce;
-    --nav-bg: rgba(245,244,240,0.92);
+  [data-theme="dark"] {
+    --bg:          #0C0C0C;
+    --surface:     #111111;
+    --line:        #242420;
+    --ink:         #F2F0EB;
+    --muted:       #6A6866;
+    --tag-bg:      #1A1A18;
+    --tag-text:    #5A5856;
   }
 
-  /* ─── WARM ─── */
-  [data-theme="warm"] {
-    --bg-primary: #1a1410;
-    --bg-secondary: #221c16;
-    --bg-card: #2a221a;
-    --text-primary: #f0e8d8;
-    --text-secondary: #b09880;
-    --text-muted: #706050;
-    --accent-gold: #d4a855;
-    --accent-gold-dim: rgba(212, 168, 85, 0.15);
-    --accent-green: #4aae72;
-    --accent-blue: #4a9ec4;
-    --border: #3a2e22;
-    --nav-bg: rgba(26,20,16,0.88);
-  }
-
+  /* ─────────────────────────────────────────
+     RESET
+  ───────────────────────────────────────── */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; font-size: 16px; }
-
   body {
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    line-height: 1.7;
+    font-family: var(--font-main);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
   }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  ::selection { background: var(--accent); color: #fff; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-  ::selection {
-    background: var(--accent-gold);
-    color: var(--bg-primary);
-  }
-
-  /* ─── NAV ─── */
-  nav {
+  /* ─────────────────────────────────────────
+     NAV
+  ───────────────────────────────────────── */
+  .nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: var(--nav-bg);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 60px;
+    height: 54px;
+    background: #080808;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 2.5rem;
   }
 
-  .nav-brand {
+  .nav-logo {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--accent-gold);
+    color: #F2F0EB;
+  }
+  .nav-logo em {
+    font-style: normal;
+    color: var(--accent);
+    font-size: 0.65rem;
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
   }
 
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-right { display: flex; align-items: center; gap: 2.2rem; }
+
+  .nav-links { display: flex; gap: 1.8rem; }
   .nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.82rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
-    transition: color 0.3s;
+    color: rgba(242,240,235,0.45);
+    transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--accent-gold); }
+  .nav-links a:hover { color: #F2F0EB; }
 
-  /* ─── PALETTE TOGGLE ─── */
-  .palette-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-left: 1.5rem;
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.45rem 1.1rem;
+    transition: background 0.2s;
+    display: inline-block;
   }
+  .nav-cta:hover { background: var(--accent-deep); }
 
-  .palette-btn {
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    border: 2px solid transparent;
+  .theme-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(242,240,235,0.4);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.7rem;
     cursor: pointer;
-    transition: border-color 0.2s, transform 0.2s;
-    flex-shrink: 0;
+    transition: all 0.2s;
   }
+  .theme-btn:hover { border-color: rgba(255,255,255,0.3); color: #F2F0EB; }
 
-  .palette-btn:hover { transform: scale(1.2); }
-  .palette-btn.active { border-color: var(--accent-gold); }
-  .palette-btn[data-palette="dark"]  { background: #0a0a0c; box-shadow: inset 0 0 0 1px #444; }
-  .palette-btn[data-palette="light"] { background: #f5f4f0; box-shadow: inset 0 0 0 1px #ccc; }
-  .palette-btn[data-palette="warm"]  { background: #2a221a; box-shadow: inset 0 0 0 1px #6a4a2a; }
-
-  /* ─── HERO ─── */
+  /* ─────────────────────────────────────────
+     HERO — always dark
+  ───────────────────────────────────────── */
   .hero {
     min-height: 100vh;
+    background: #080808;
     display: flex;
-    align-items: center;
-    padding: 0 2rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 9rem 2.5rem 5.5rem;
     position: relative;
     overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -20%; right: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse 8s ease-in-out infinite;
   }
 
   .hero::after {
@@ -158,739 +199,842 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
   }
 
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.15); opacity: 1; }
-  }
-
-  .hero-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-label {
+  .hero-eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.25em;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
-  }
-
-  .hero-label::before {
-    content: '';
-    width: 40px; height: 1px;
-    background: var(--accent-gold);
+    color: var(--accent);
+    margin-bottom: 2.2rem;
   }
 
   .hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5.5vw, 4.2rem);
-    line-height: 1.15;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.4s forwards;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: #F2F0EB;
+    max-width: 860px;
+    margin-bottom: 2rem;
   }
 
   .hero h1 em {
-    font-style: italic;
-    color: var(--accent-gold);
+    font-style: normal;
+    color: var(--accent);
   }
 
-  .hero-description {
+  .hero-desc {
     font-size: 1.05rem;
-    color: var(--text-secondary);
+    font-weight: 300;
+    color: rgba(242,240,235,0.5);
     max-width: 600px;
-    line-height: 1.85;
+    line-height: 1.8;
     margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.6s forwards;
   }
 
   .hero-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.8s forwards;
-  }
-
-  .tag {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    padding: 0.4rem 0.9rem;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--text-secondary);
-    background: var(--bg-secondary);
-    transition: all 0.3s;
-  }
-
-  .tag:hover {
-    border-color: var(--accent-gold);
-    color: var(--accent-gold);
-  }
-
-  .hero-cta {
-    display: flex; gap: 1rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 1s forwards;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.8rem;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: var(--accent-gold-dim);
-    transition: left 0.4s;
-  }
-
-  .btn:hover::before { left: 0; }
-  .btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
-
-  .btn-primary {
-    background: var(--accent-gold);
-    color: var(--bg-primary);
-    border-color: var(--accent-gold);
-    font-weight: 600;
-  }
-  .btn-primary::before { display: none; }
-  .btn-primary:hover {
-    background: #b8943f;
-    color: var(--bg-primary);
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ─── SECTIONS ─── */
-  section {
-    padding: 6rem 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .section-label::before {
-    content: '';
-    width: 24px; height: 1px;
-    background: var(--accent-gold);
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    margin-bottom: 1rem;
-    font-weight: 400;
-  }
-
-  .section-description {
-    color: var(--text-secondary);
-    max-width: 600px;
+    gap: 0.45rem;
     margin-bottom: 3rem;
   }
 
-  /* ─── ABOUT GRID ─── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.7rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(242,240,235,0.38);
   }
 
-  .about-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s;
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  .about-card::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 0;
-    background: var(--accent-gold);
-    transition: height 0.4s;
-  }
-
-  .about-card:hover::after { height: 100%; }
-  .about-card:hover { border-color: var(--border); transform: translateY(-2px); }
-
-  .about-card h3 {
+  .btn-solid {
     font-family: var(--font-mono);
     font-size: 0.72rem;
-    letter-spacing: 0.15em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-bottom: 1rem;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border: 1px solid var(--accent);
+    transition: background 0.2s, border-color 0.2s;
+    display: inline-block;
   }
+  .btn-solid:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
 
-  .about-card p {
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.75;
-  }
-
-  .about-card .detail-list {
-    list-style: none;
-    margin-top: 0.75rem;
-  }
-
-  .about-card .detail-list li {
+  .btn-ghost {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    padding: 0.35rem 0;
-    border-bottom: 1px solid rgba(34,34,40,0.6);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: transparent;
+    color: rgba(242,240,235,0.6);
+    padding: 0.9rem 2rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.45); color: #F2F0EB; }
+
+  /* decorative large background initials */
+  .hero-bg-mark {
+    position: absolute;
+    bottom: -1rem;
+    right: 1.5rem;
+    font-size: clamp(12rem, 22vw, 20rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    color: rgba(255,255,255,0.025);
+    user-select: none;
+    pointer-events: none;
+    font-family: var(--font-mono);
   }
 
-  .about-card .detail-list li::before {
-    content: '→ ';
-    color: var(--accent-gold);
-  }
-
-  /* ─── VENTURES ─── */
-  .ventures-grid {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .venture-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 2.5rem;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 2rem;
-    align-items: start;
-    transition: all 0.4s;
-    position: relative;
-  }
-
-  .venture-card:hover {
-    border-color: rgba(201,168,76,0.3);
-    transform: translateX(4px);
-  }
-
-  .venture-icon {
-    width: 48px; height: 48px;
-    border: 1px solid var(--border);
+  /* ─────────────────────────────────────────
+     SECTION DIVIDERS
+  ───────────────────────────────────────── */
+  .divider {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    height: 52px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    background: var(--bg-secondary);
+    gap: 1.5rem;
+    padding: 0 2.5rem;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .div-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
     flex-shrink: 0;
   }
 
-  .venture-content h3 {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+  .div-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
   }
 
-  .venture-content .subtitle {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-bottom: 0.75rem;
-  }
-
-  .venture-content p {
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.75;
-  }
-
-  .venture-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1rem;
-  }
-
-  .venture-tags span {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    padding: 0.25rem 0.6rem;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-  }
-
-  .venture-status {
+  .div-label {
     font-family: var(--font-mono);
     font-size: 0.68rem;
-    letter-spacing: 0.1em;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    padding: 0.3rem 0.8rem;
-    border: 1px solid;
-    white-space: nowrap;
-    height: fit-content;
+    flex-shrink: 0;
   }
 
-  .status-active { border-color: var(--accent-green); color: var(--accent-green); }
-  .status-building { border-color: var(--accent-blue); color: var(--accent-blue); }
-  .status-research { border-color: var(--accent-gold); color: var(--accent-gold); }
-
-  /* ─── SIGNAL STRIP ─── */
-  .signal-strip {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 3rem 2rem;
-    margin: 0;
-    max-width: 100%;
+  /* ─────────────────────────────────────────
+     EXPERTISE — horizontal rows, not cards
+  ───────────────────────────────────────── */
+  .expertise {
+    background: var(--surface);
+    padding: 5rem 2.5rem;
+    transition: background 0.3s;
   }
 
-  .signal-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    text-align: center;
+  .section-intro {
+    max-width: 700px;
+    margin-bottom: 4rem;
   }
 
-  .signal-item .number {
-    font-family: var(--font-display);
-    font-size: 2.2rem;
-    color: var(--accent-gold);
-    line-height: 1;
+  .section-intro h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
   }
 
-  .signal-item .label {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 0.5rem;
-  }
-
-  /* ─── CONTACT ─── */
-  .contact-block {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 3rem;
-    margin-top: 2rem;
-    text-align: center;
-    transition: all 0.3s;
-  }
-
-  .contact-block:hover { border-color: rgba(201,168,76,0.3); }
-
-  .contact-block p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    max-width: 500px;
-    margin: 0 auto 2rem;
+  .section-intro p {
+    font-size: 0.98rem;
+    color: var(--muted);
     line-height: 1.8;
   }
 
-  .contact-block .btn { margin: 0 0.5rem; }
-  .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-
-  /* ─── FOOTER ─── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    text-align: center;
+  .exp-rows {
+    border-top: 1px solid var(--line);
   }
 
-  .footer-line {
+  .exp-row {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 3rem;
+    padding: 2.8rem 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+
+  .exp-lhs { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .exp-idx {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .exp-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .exp-rhs p {
+    font-size: 0.94rem;
+    color: var(--muted);
+    line-height: 1.78;
+    margin-bottom: 1.2rem;
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pill {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.65rem;
+    background: var(--tag-bg);
+    border: 1px solid var(--line);
+    color: var(--tag-text);
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+  }
+
+  /* ─────────────────────────────────────────
+     METRICS
+  ───────────────────────────────────────── */
+  .metrics {
+    background: var(--bg);
+    padding: 5rem 2.5rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.3s;
+  }
+
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .metric-num {
+    font-size: clamp(4rem, 7vw, 6rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+    transition: color 0.3s;
+  }
+
+  .metric-num sup {
+    font-size: 0.45em;
+    color: var(--accent);
+    vertical-align: super;
+  }
+
+  .metric-label {
     font-family: var(--font-mono);
     font-size: 0.7rem;
-    color: var(--text-muted);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  /* ─────────────────────────────────────────
+     VENTURES — always dark
+  ───────────────────────────────────────── */
+  .ventures {
+    background: #080808;
+    padding: 5.5rem 2.5rem;
+  }
+
+  .ventures .section-intro h2 { color: #F2F0EB; }
+  .ventures .section-intro p  { color: rgba(242,240,235,0.4); }
+
+  .v-table {
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .v-row {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 2rem;
+    padding: 2.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    align-items: start;
+    transition: background 0.2s;
+  }
+
+  .v-row:hover {
+    background: rgba(255,255,255,0.02);
+    padding-left: 1rem;
+    margin-left: -1rem;
+    padding-right: 1rem;
+    margin-right: -1rem;
+  }
+
+  .v-lhs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    padding-top: 0.3rem;
+  }
+
+  .v-n {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: rgba(242,240,235,0.2);
+    letter-spacing: 0.05em;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot.live     { background: var(--live);     box-shadow: 0 0 8px var(--live); }
+  .dot.held     { background: var(--held);     box-shadow: 0 0 8px var(--held); }
+  .dot.building { background: var(--building); box-shadow: 0 0 8px var(--building); }
+
+  .v-body h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #F2F0EB;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3rem;
+  }
+
+  .v-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+  }
+
+  .v-body p {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: rgba(242,240,235,0.45);
+    line-height: 1.78;
+    max-width: 680px;
+  }
+
+  .v-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    min-width: 110px;
+    padding-top: 0.3rem;
+  }
+
+  .v-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(242,240,235,0.28);
+    white-space: nowrap;
+  }
+
+  /* ─────────────────────────────────────────
+     CONTACT
+  ───────────────────────────────────────── */
+  .contact {
+    background: var(--surface);
+    padding: 6rem 2.5rem;
+    transition: background 0.3s;
+  }
+
+  .contact h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    max-width: 740px;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-sub {
+    font-size: 0.98rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 540px;
+    margin-bottom: 3rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .c-link {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.5rem;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .c-link:hover { border-color: var(--accent); color: var(--accent); }
+  .c-link.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .c-link.primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+
+  /* ─────────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────────── */
+  footer {
+    background: #080808;
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
     letter-spacing: 0.08em;
+    color: rgba(242,240,235,0.25);
   }
 
   .footer-motto {
-    font-family: var(--font-display);
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
     font-style: italic;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+    color: rgba(242,240,235,0.15);
   }
 
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; }
-    .venture-card { grid-template-columns: 1fr; gap: 1rem; }
-    .venture-icon { display: none; }
-    .venture-status { width: fit-content; }
-    .signal-inner { grid-template-columns: repeat(3, 1fr); }
-    .nav-links { gap: 1rem; }
-    .nav-links a { font-size: 0.72rem; }
+  /* ─────────────────────────────────────────
+     REVEAL (not fadeUp — clean translate)
+  ───────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition-duration: 0.01ms !important; }
   }
 
-  @media (max-width: 480px) {
-    .hero-cta { flex-direction: column; }
-    .signal-inner { grid-template-columns: 1fr; }
+  /* ─────────────────────────────────────────
+     RESPONSIVE
+  ───────────────────────────────────────── */
+  @media (max-width: 860px) {
+    .exp-row { grid-template-columns: 1fr; gap: 1.2rem; }
+    .exp-lhs { flex-direction: row; align-items: center; gap: 1rem; }
+    .v-row   { grid-template-columns: 48px 1fr; }
+    .v-tags  { display: none; }
+    .metrics-row { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  }
+
+  @media (max-width: 640px) {
+    .nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
-    .contact-links { flex-direction: column; align-items: center; }
+    .hero { padding: 8rem 1.5rem 4.5rem; }
+    .expertise, .contact { padding: 4rem 1.5rem; }
+    .ventures { padding: 4rem 1.5rem; }
+    .metrics { padding: 4rem 1.5rem; }
+    .divider { padding: 0 1.5rem; }
+    footer { padding: 1.5rem; }
+    .metrics-row { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-actions { flex-direction: column; }
   }
-</style>
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-brand">The Architect</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#ventures">Ventures</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="palette-toggle" title="Switch colour palette">
-    <button class="palette-btn active" data-palette="dark"  aria-label="Dark theme"></button>
-    <button class="palette-btn"        data-palette="light" aria-label="Light theme"></button>
-    <button class="palette-btn"        data-palette="warm"  aria-label="Warm theme"></button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-inner">
-    <div class="hero-label">Operations &middot; Fraud &middot; Energy &middot; Telco &middot; Systems</div>
-    <h1>I've spent more than a decade inside<br><em>broken systems.</em><br>Now I help build better ones.</h1>
-    <p class="hero-description">
-      10+ years inside telecoms, fraud, insurance, energy and regulated operations — seeing exactly where the gears grind to a halt. Now engineering the recovery: live deployed tools, forensic infrastructure, and corporate intelligence built from the inside out.
-    </p>
-    <div class="hero-tags">
-      <span class="tag">Operations</span>
-      <span class="tag">Fraud Deterrence</span>
-      <span class="tag">Clean Energy</span>
-      <span class="tag">Telco</span>
-      <span class="tag">Systems Thinking</span>
+<!-- ══════════════════════════════
+     NAV
+══════════════════════════════ -->
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#top" class="nav-logo">The Architect <em>// G. Crichton</em></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#ventures">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle light and dark mode">Mode</button>
+      <a href="mailto:axion-project@proton.me?subject=Enquiry — The Architect" class="nav-cta">Get In Touch</a>
     </div>
-    <div class="hero-cta">
-      <a href="#ventures" class="btn btn-primary">What I'm Working On ↓</a>
-      <a href="#contact" class="btn">Get in Touch</a>
-    </div>
-  </div>
-</section>
+  </nav>
+</header>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label">Background</div>
-  <h2 class="section-title">What I Actually Know</h2>
-  <p class="section-description">
-    Zero theory. Operational knowledge earned across high-stakes industry—leading teams, 
-    shattering targets and understanding complex systems from the inside out.
+<main>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section class="hero" id="top" aria-label="Introduction">
+  <p class="hero-eyebrow">Garry Crichton &nbsp;·&nbsp; Fraud Intelligence &nbsp;·&nbsp; Operational Systems &nbsp;·&nbsp; Technology Builder</p>
+  <h1>Operational<br>Intelligence.<br>Built From<br><em>The Inside Out.</em></h1>
+  <p class="hero-desc">
+    10+ years inside telecoms, fraud, insurance, energy and regulated operations — seeing exactly where the gears grind. Now engineering the recovery: live forensic tools, intelligence infrastructure and deployed technology built from operational experience alone.
   </p>
+  <div class="hero-tags" role="list" aria-label="Areas of expertise">
+    <span class="hero-tag" role="listitem">Operations</span>
+    <span class="hero-tag" role="listitem">Fraud Deterrence</span>
+    <span class="hero-tag" role="listitem">Corporate Intelligence</span>
+    <span class="hero-tag" role="listitem">Clean Energy</span>
+    <span class="hero-tag" role="listitem">Systems Thinking</span>
+    <span class="hero-tag" role="listitem">Agentic AI</span>
+  </div>
+  <nav class="hero-actions" aria-label="Primary actions">
+    <a href="#ventures" class="btn-solid">What I'm Building ↓</a>
+    <a href="#contact"  class="btn-ghost">Get In Touch</a>
+  </nav>
+  <span class="hero-bg-mark" aria-hidden="true">GC</span>
+</section>
 
-  <div class="about-grid">
-    <div class="about-card">
-      <h3>Operations & Sales</h3>
-      <p>The core. 10+ Years across B2B telecoms, outsourced contact centre operations, insurance delivery, and regulated service / sales. I understand how revenue is made, how service is delivered, and where both go awry.</p>
-      <ul class="detail-list">
-        <li>B2B Telco Sales</li>
-        <li>Contact Centre Operations</li>
-        <li>Fraud Analyst</li>
-        <li>Insurance Operations</li>
-        <li>Water Sector (Accredited)</li>
-      </ul>
+<!-- ══════════════════════════════
+     DIVIDER 01
+══════════════════════════════ -->
+<div class="divider" role="presentation" aria-hidden="true">
+  <span class="div-num">01</span>
+  <span class="div-rule"></span>
+  <span class="div-label">Expertise</span>
+</div>
+
+<!-- ══════════════════════════════
+     EXPERTISE
+══════════════════════════════ -->
+<section class="expertise" id="expertise" aria-labelledby="h-expertise">
+  <div class="section-intro reveal">
+    <h2 id="h-expertise">What I Actually Know</h2>
+    <p>Zero theory. Operational knowledge earned across high-stakes industry — leading teams, shattering targets and understanding complex systems from the inside out.</p>
+  </div>
+
+  <div class="exp-rows">
+
+    <div class="exp-row reveal">
+      <div class="exp-lhs">
+        <span class="exp-idx">A ·</span>
+        <strong class="exp-name">Operations &amp; Sales</strong>
+      </div>
+      <div class="exp-rhs">
+        <p>The core. 10+ years across B2B telecoms, outsourced contact centre operations, insurance delivery and regulated service and sales. I understand how revenue is made, how service is delivered, and where both go wrong.</p>
+        <div class="pills">
+          <span class="pill">B2B Telco Sales</span>
+          <span class="pill">Contact Centre Ops</span>
+          <span class="pill">Insurance Operations</span>
+          <span class="pill">Fraud Analysis</span>
+          <span class="pill">Water Sector Accredited</span>
+        </div>
+      </div>
     </div>
 
-    <div class="about-card">
-      <h3>Fraud & Accountability</h3>
-      <p>Direct experience with how fraud is reported, mishandled and deprioritised. Built working tools — not theory. Live forensic, detection and intelligence systems designed from operational insight.</p>
-      <ul class="detail-list">
-        <li>OSINT — Applied & Building</li>
-        <li>Forensic Evidence Chains</li>
-        <li>Corporate Intelligence</li>
-        <li>Director Fraud Analysis</li>
-        <li>Fraud Language Detection</li>
-      </ul>
+    <div class="exp-row reveal">
+      <div class="exp-lhs">
+        <span class="exp-idx">B ·</span>
+        <strong class="exp-name">Fraud &amp; Intelligence</strong>
+      </div>
+      <div class="exp-rhs">
+        <p>Direct experience with how fraud is reported, mishandled and deprioritised. Built working tools — not theory. Live forensic, detection and intelligence systems designed entirely from operational insight.</p>
+        <div class="pills">
+          <span class="pill">OSINT — Applied</span>
+          <span class="pill">Forensic Evidence Chains</span>
+          <span class="pill">Corporate Intelligence</span>
+          <span class="pill">Director Fraud Analysis</span>
+          <span class="pill">Fraud Language Detection</span>
+        </div>
+      </div>
     </div>
 
-    <div class="about-card">
-      <h3>Energy & Applied Research</h3>
-      <p>Developing a clean energy concept in underutilised canal waterway spaces. Early-stage proof of concept — grounded in real research, real engineering questions and active pursuit of industry partnerships.</p>
-      <ul class="detail-list">
-        <li>Renewable Energy Concepts</li>
-        <li>Applied Research</li>
-        <li>Industry Partnerships</li>
-        <li>Funding Strategy</li>
-      </ul>
+    <div class="exp-row reveal">
+      <div class="exp-lhs">
+        <span class="exp-idx">C ·</span>
+        <strong class="exp-name">Energy &amp; Research</strong>
+      </div>
+      <div class="exp-rhs">
+        <p>Developing a clean energy concept in underutilised canal waterway spaces. Early-stage proof of concept — grounded in real engineering questions, active industry partnership pursuit and mapped funding pathways.</p>
+        <div class="pills">
+          <span class="pill">Renewable Energy Concepts</span>
+          <span class="pill">Applied Research</span>
+          <span class="pill">Industry Partnerships</span>
+          <span class="pill">Grant Pathways</span>
+        </div>
+      </div>
     </div>
 
-    <div class="about-card">
-      <h3>Building & Shipping</h3>
-      <p>Taught myself to build the tools my ideas need. Multiple live deployed products across cloud infrastructure — frontend, backend, database, encryption, and live API integrations. Not a senior developer — an incessantly determined one.</p>
-      <ul class="detail-list">
-        <li>TypeScript, Node.js, Express</li>
-        <li>Python, Flask, Chart.js</li>
-        <li>PostgreSQL, REST API Design</li>
-        <li>Cloud Deployment (Railway, GitHub Pages)</li>
-        <li>Agentic AI (Claude Code)</li>
-      </ul>
+    <div class="exp-row reveal">
+      <div class="exp-lhs">
+        <span class="exp-idx">D ·</span>
+        <strong class="exp-name">Building &amp; Shipping</strong>
+      </div>
+      <div class="exp-rhs">
+        <p>Taught myself to build the tools my ideas need. Multiple live deployed products across cloud infrastructure — frontend, backend, database, encryption and live API integrations. Not a senior developer — an incessantly determined one.</p>
+        <div class="pills">
+          <span class="pill">TypeScript / Node.js</span>
+          <span class="pill">Python / Flask</span>
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">Railway / Cloud Deploy</span>
+          <span class="pill">Agentic AI — Claude Code</span>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- SIGNAL STRIP -->
-<div class="signal-strip">
-  <div class="signal-inner">
-    <div class="signal-item">
-      <div class="number">10+</div>
-      <div class="label">Years in Operations</div>
+<!-- ══════════════════════════════
+     METRICS
+══════════════════════════════ -->
+<div class="metrics" role="region" aria-label="Career statistics">
+  <div class="metrics-row">
+    <div class="reveal">
+      <div class="metric-num">10<sup>+</sup></div>
+      <div class="metric-label">Years in Operations</div>
     </div>
-    <div class="signal-item">
-      <div class="number">5+</div>
-      <div class="label">Industries Deep</div>
+    <div class="reveal">
+      <div class="metric-num">5<sup>+</sup></div>
+      <div class="metric-label">Industries Deep</div>
     </div>
-    <div class="signal-item">
-        <div class="number">6</div>
-        <div class="label">Products Built & Deployed</div>
+    <div class="reveal">
+      <div class="metric-num">6</div>
+      <div class="metric-label">Products Built &amp; Deployed</div>
     </div>
   </div>
 </div>
 
-<!-- VENTURES -->
-<section id="ventures">
-  <div class="section-label">In Progress</div>
-  <h2 class="section-title">What I'm Building</h2>
-  <p class="section-description">
-    Early-stage projects rooted in real problems I've encountered.
-    Nothing here is finalised — all of it is in motion.
-  </p>
+<!-- ══════════════════════════════
+     DIVIDER 02
+══════════════════════════════ -->
+<div class="divider" role="presentation" aria-hidden="true">
+  <span class="div-num">02</span>
+  <span class="div-rule"></span>
+  <span class="div-label">Projects</span>
+</div>
 
-  <div class="ventures-grid">
+<!-- ══════════════════════════════
+     VENTURES
+══════════════════════════════ -->
+<section class="ventures" id="ventures" aria-labelledby="h-ventures">
+  <div class="section-intro reveal">
+    <h2 id="h-ventures">What I'm Building</h2>
+    <p>Early-stage projects rooted in real problems I've encountered. Nothing here is finalised — all of it is in motion.</p>
+  </div>
 
-    <div class="venture-card">
-      <div class="venture-icon">🔍</div>
-      <div class="venture-content">
-        <div class="subtitle">Corporate Intelligence Acquisition Tool· Live</div>
+  <div class="v-table" role="list">
+
+    <article class="v-row reveal" role="listitem">
+      <div class="v-lhs" aria-hidden="true">
+        <span class="v-n">01</span>
+        <span class="dot live" title="Live"></span>
+      </div>
+      <div class="v-body">
+        <div class="v-sub">Corporate Intelligence &middot; Live</div>
         <h3>INVEST👁GATOR</h3>
-        <p>
-          Corporate intelligence tool querying multiple public sources in parallel. Search by company, person, domain, IP, phone or postcode — surfaces director history, regulatory status, domain and network intelligence in a single lookup.
-        </p>
-        <div class="venture-tags">
-          <span>TypeScript</span>
-          <span>Node.js / Express</span>
-          <span>Public Intelligence APIs</span>
-          <span>Railway</span>
-        </div>
+        <p>Corporate intelligence tool querying multiple public sources in parallel. Search by company, person, domain, IP, phone or postcode — surfaces director history, regulatory status, domain and network intelligence in a single lookup.</p>
       </div>
-      <div class="venture-status status-active">Live</div>
-    </div>
+      <div class="v-tags" aria-label="Technologies">
+        <span class="v-tag">TypeScript</span>
+        <span class="v-tag">Node.js</span>
+        <span class="v-tag">Railway</span>
+      </div>
+    </article>
 
-    <div class="venture-card">
-      <div class="venture-icon">🔒</div>
-      <div class="venture-content">
-        <div class="subtitle">Encrypted Vault · Live</div>
+    <article class="v-row reveal" role="listitem">
+      <div class="v-lhs" aria-hidden="true">
+        <span class="v-n">02</span>
+        <span class="dot live" title="Live"></span>
+      </div>
+      <div class="v-body">
+        <div class="v-sub">Encrypted Forensic Vault &middot; Live</div>
         <h3>ScanVault</h3>
-        <p>
-          Encrypted forensic evidence ledger for structured scam case management. Captures messages, entity trails, linguistic patterns, psychological profiling and chain of custody — with tamper-evident integrity and a local admin portal.
-        </p>
-        <div class="venture-tags">
-          <span>TypeScript / Prisma</span>
-          <span>PostgreSQL</span>
-          <span>Encrypted Storage</span>
-          <span>Local Deployment</span>
-        </div>
+        <p>Encrypted forensic evidence ledger for structured scam case management. Captures messages, entity trails, linguistic patterns, psychological profiling and chain of custody — tamper-evident integrity, locally deployed.</p>
       </div>
-      <div class="venture-status status-active">Live</div>
-    </div>
+      <div class="v-tags" aria-label="Technologies">
+        <span class="v-tag">TypeScript / Prisma</span>
+        <span class="v-tag">PostgreSQL</span>
+        <span class="v-tag">Local Deploy</span>
+      </div>
+    </article>
 
-    <div class="venture-card">
-      <div class="venture-icon">⚡</div>
-      <div class="venture-content">
-        <div class="subtitle">Fraud Detection Utility · Pending — ICO</div>
+    <article class="v-row reveal" role="listitem">
+      <div class="v-lhs" aria-hidden="true">
+        <span class="v-n">03</span>
+        <span class="dot held" title="Pending ICO"></span>
+      </div>
+      <div class="v-body">
+        <div class="v-sub">Fraud Detection Utility &middot; Pending ICO</div>
         <h3>ScamScan</h3>
-        <p>
-          Browser-based fraud language detector. Analyses message content for scam intent, scores threat level and generates an evidence pack — entirely client-side, no data stored. Held pending ICO registration.
-        </p>
-        <div class="venture-tags">
-          <span>JavaScript</span>
-          <span>Browser-Based</span>
-          <span>GitHub Pages</span>
-          <span>ICO Pending</span>
-        </div>
+        <p>Browser-based fraud language detector. Analyses message content for scam intent, scores threat level and generates an evidence pack — entirely client-side, no data stored. Held pending ICO registration.</p>
       </div>
-      <div class="venture-status status-research">Held — ICO</div>
-    </div>
+      <div class="v-tags" aria-label="Technologies">
+        <span class="v-tag">JavaScript</span>
+        <span class="v-tag">Client-Side Only</span>
+        <span class="v-tag">GitHub Pages</span>
+      </div>
+    </article>
 
-    <div class="venture-card">
-      <div class="venture-icon">🔐</div>
-      <div class="venture-content">
-        <div class="subtitle">Napkin Sketch Vault · Live</div>
+    <article class="v-row reveal" role="listitem">
+      <div class="v-lhs" aria-hidden="true">
+        <span class="v-n">04</span>
+        <span class="dot live" title="Live"></span>
+      </div>
+      <div class="v-body">
+        <div class="v-sub">IP Timestamping Vault &middot; Live</div>
         <h3>CodeSafe</h3>
-        <p>
-          Cryptographic timestamping for intellectual property. Generate a tamper-evident prior art record for code or documents — auditable proof of creation at a fraction of the cost of a solicitor.
-        </p>
-        <div class="venture-tags">
-          <span>Cryptographic Timestamping</span>
-          <span>GitHub Pages</span>
-          <span>UI/UX Design</span>
-        </div>
+        <p>Cryptographic timestamping for intellectual property. Generate a tamper-evident prior art record for code or documents — auditable proof of creation at a fraction of the cost of a solicitor.</p>
       </div>
-      <div class="venture-status status-active">Live</div>
-    </div>
+      <div class="v-tags" aria-label="Technologies">
+        <span class="v-tag">Cryptography</span>
+        <span class="v-tag">GitHub Pages</span>
+      </div>
+    </article>
 
-    <div class="venture-card">
-      <div class="venture-icon">📊</div>
-      <div class="venture-content">
-        <div class="subtitle">Stock Portfolio Intelligence · Private</div>
+    <article class="v-row reveal" role="listitem">
+      <div class="v-lhs" aria-hidden="true">
+        <span class="v-n">05</span>
+        <span class="dot building" title="Active"></span>
+      </div>
+      <div class="v-body">
+        <div class="v-sub">Portfolio Intelligence &middot; Private</div>
         <h3>TradeDesk</h3>
-        <p>
-          Live portfolio tracker for crypto and equity holdings. Real-time prices, EMA trend signals, RSI and MACD indicators — applying systematic buy/sell rules for disciplined, rule-based execution. Locally hosted.
-        </p>
-        <div class="venture-tags">
-          <span>Python / Flask</span>
-          <span>Chart.js</span>
-          <span>Kraken API</span>
-          <span>Alpaca Markets API</span>
-          <span>yfinance</span>
-        </div>
+        <p>Live portfolio tracker for crypto and equity holdings. Real-time prices, EMA trend signals, RSI and MACD indicators — applying systematic buy and sell rules for disciplined, rule-based execution.</p>
       </div>
-      <div class="venture-status status-building">Active</div>
-    </div>
+      <div class="v-tags" aria-label="Technologies">
+        <span class="v-tag">Python / Flask</span>
+        <span class="v-tag">Chart.js</span>
+        <span class="v-tag">Kraken / Alpaca APIs</span>
+      </div>
+    </article>
 
-    <div class="venture-card">
-      <div class="venture-icon">🌊</div>
-      <div class="venture-content">
-        <div class="subtitle">Clean Hydro Energy · Active Research</div>
+    <article class="v-row reveal" role="listitem">
+      <div class="v-lhs" aria-hidden="true">
+        <span class="v-n">06</span>
+        <span class="dot building" title="Research Phase"></span>
+      </div>
+      <div class="v-body">
+        <div class="v-sub">Clean Hydro Energy &middot; Active Research</div>
         <h3>Waterway Energy Concept</h3>
-        <p>
-          Renewable energy concept exploring distributed power generation from underutilised canal waterway infrastructure. Early-stage proof of concept — grounded in real research, industry partnerships pending and funding pathways mapped.
-        </p>
-        <div class="venture-tags">
-          <span>Proof of Concept</span>
-          <span>Prototyping</span>
-          <span>Seeking Partners</span>
-          <span>Grant Pathway</span>
-        </div>
+        <p>Renewable energy concept exploring distributed power generation from underutilised canal waterway infrastructure. Early-stage proof of concept — grounded in real research, industry partnerships pending, funding pathways mapped.</p>
       </div>
-      <div class="venture-status status-research">In Progress</div>
-    </div>
+      <div class="v-tags" aria-label="Status">
+        <span class="v-tag">Proof of Concept</span>
+        <span class="v-tag">Seeking Partners</span>
+      </div>
+    </article>
 
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">Contact</div>
-  <h2 class="section-title">Let's Connect</h2>
-  <p class="section-description">
-    Interested in conversations with people working in fraud
-    prevention, DevOps, community energy or anyone who values straight
-    talk & operational thinking.
-  </p>
+<!-- ══════════════════════════════
+     DIVIDER 03
+══════════════════════════════ -->
+<div class="divider" role="presentation" aria-hidden="true">
+  <span class="div-num">03</span>
+  <span class="div-rule"></span>
+  <span class="div-label">Connect</span>
+</div>
 
-  <div class="contact-block">
-    <p>Not looking for small talk. If you're working on something that matters and want someone who thinks in systems, reach out.</p>
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/g-c-8b4b6b298" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/The-Architect-Neo" class="btn" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:axion-project@proton.me" class="btn">Email</a>
-      <a href="https://investigator-production-3d5b.up.railway.app" class="btn" target="_blank" rel="noopener">INVEST👁GATOR</a>
-      <a href="mailto:axion-project@proton.me?subject=Consultation%20Enquiry" class="btn">Book a Consultation</a>
-      <a href="https://dev.to/thearchitectneo" class="btn" target="_blank" rel="noopener">Dev.to</a>
-    </div>
-  </div>
+<!-- ══════════════════════════════
+     CONTACT
+══════════════════════════════ -->
+<section class="contact" id="contact" aria-labelledby="h-contact">
+  <h2 id="h-contact" class="reveal">Straight Talk. Operational Thinking.<br>If That's Your Language — Let's Connect.</h2>
+  <p class="contact-sub reveal">Interested in conversations around fraud prevention, intelligence systems, clean energy or technology built from the inside out. Not looking for small talk.</p>
+  <nav class="contact-links reveal" aria-label="Contact and profile links">
+    <a href="https://www.linkedin.com/in/g-c-8b4b6b298"                          class="c-link primary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/The-Architect-Neo"                                class="c-link"         target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://quantumprotection-production.up.railway.app"                 class="c-link"         target="_blank" rel="noopener noreferrer">QuantumProtect</a>
+    <a href="https://investigator-production-3d5b.up.railway.app"                class="c-link"         target="_blank" rel="noopener noreferrer">INVEST👁GATOR</a>
+    <a href="mailto:axion-project@proton.me?subject=Enquiry — The Architect"     class="c-link">Email Direct</a>
+    <a href="https://dev.to/thearchitectneo"                                      class="c-link"         target="_blank" rel="noopener noreferrer">Dev.to</a>
+  </nav>
 </section>
 
-<!-- FOOTER -->
+</main>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
 <footer>
-  <p class="footer-motto">"A splinter in fraud's foot."</p>
-  <p class="footer-line">&copy; 2026 The Architect. All rights reserved.</p>
+  <span class="footer-copy">&copy; 2026 Garry Crichton &middot; The Architect &middot; All rights reserved</span>
+  <span class="footer-motto">"A splinter in fraud's foot."</span>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  document.querySelectorAll('.about-card, .venture-card, .contact-block, .signal-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
 
-  // ─── PALETTE SWITCHER ───
-  const paletteBtns = document.querySelectorAll('.palette-btn');
-
-  function applyPalette(palette) {
-    document.documentElement.setAttribute('data-theme', palette === 'dark' ? '' : palette);
-    paletteBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.palette === palette));
-    localStorage.setItem('architect-palette', palette);
+  // Theme toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.querySelector('.theme-btn').textContent = isDark ? 'Mode' : 'Mode';
+    localStorage.setItem('arch-theme', isDark ? 'light' : 'dark');
   }
 
-  paletteBtns.forEach(btn => {
-    btn.addEventListener('click', () => applyPalette(btn.dataset.palette));
-  });
-
-  // Restore saved preference on load
-  const savedPalette = localStorage.getItem('architect-palette') || 'dark';
-  applyPalette(savedPalette);
+  // Restore saved theme
+  const saved = localStorage.getItem('arch-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
 </script>
 
 </body>
