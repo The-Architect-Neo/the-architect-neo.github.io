@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Garry Crichton — Operational Systems Specialist | The Architect</title>
-  <meta name="description" content="Garry Crichton — 10+ years in fraud prevention, telecoms operations and regulated industries. Building live forensic tools, corporate intelligence systems and clean energy concepts from operational experience.">
-  <meta name="author" content="Garry Crichton">
+  <title>The Architect — Operational Systems Specialist</title>
+  <meta name="description" content="The Architect — 10+ years in fraud prevention, telecoms operations and regulated industries. Building live forensic tools, corporate intelligence systems and clean energy concepts from operational experience.">
+  <meta name="author" content="The Architect">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://the-architect-neo.github.io/portfolio/">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="profile">
-  <meta property="og:title"       content="Garry Crichton — Operational Systems Specialist | The Architect">
+  <meta property="og:title"       content="The Architect — Operational Systems Specialist">
   <meta property="og:description" content="10+ years in fraud, telecoms, insurance and energy. Building forensic tools, intelligence systems and deployed technology from operational insight.">
   <meta property="og:url"         content="https://the-architect-neo.github.io/portfolio/">
   <meta property="og:locale"      content="en_GB">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Garry Crichton — Operational Systems Specialist | The Architect">
+  <meta name="twitter:title"       content="The Architect — Operational Systems Specialist">
   <meta name="twitter:description" content="Fraud intelligence. Operational systems. Live deployed tools. The Architect.">
 
   <!-- Schema.org Person -->
@@ -26,8 +26,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Garry Crichton",
-    "alternateName": "The Architect",
+    "name": "The Architect",
     "jobTitle": "Operational Systems Specialist",
     "description": "Operational intelligence specialist with 10+ years across telecoms, fraud prevention, insurance and energy. Building live forensic tools, detection systems and clean energy concepts.",
     "url": "https://the-architect-neo.github.io/portfolio/",
@@ -73,9 +72,9 @@
     --surface:     #FFFFFF;
     --line:        #DDDBD5;
     --ink:         #0C0C0C;
-    --muted:       #7A7670;
+    --muted:       #545250;
     --tag-bg:      #ECEAE5;
-    --tag-text:    #6A6866;
+    --tag-text:    #545250;
   }
 
   [data-theme="dark"] {
@@ -83,9 +82,9 @@
     --surface:     #111111;
     --line:        #242420;
     --ink:         #F2F0EB;
-    --muted:       #6A6866;
+    --muted:       #A8A6A4;
     --tag-bg:      #1A1A18;
-    --tag-text:    #5A5856;
+    --tag-text:    #9A9896;
   }
 
   /* ─────────────────────────────────────────
@@ -699,14 +698,14 @@
 ══════════════════════════════ -->
 <header>
   <nav class="nav" aria-label="Main navigation">
-    <a href="#top" class="nav-logo">The Architect <em>// G. Crichton</em></a>
+    <a href="#top" class="nav-logo">The Architect</a>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#ventures">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle light and dark mode">Mode</button>
+      <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle light and dark mode">Dark Mode</button>
       <a href="mailto:axion-project@proton.me?subject=Enquiry — The Architect" class="nav-cta">Get In Touch</a>
     </div>
   </nav>
@@ -718,7 +717,7 @@
      HERO
 ══════════════════════════════ -->
 <section class="hero" id="top" aria-label="Introduction">
-  <p class="hero-eyebrow">Garry Crichton &nbsp;·&nbsp; Fraud Intelligence &nbsp;·&nbsp; Operational Systems &nbsp;·&nbsp; Technology Builder</p>
+  <p class="hero-eyebrow">The Architect &nbsp;·&nbsp; Fraud Intelligence &nbsp;·&nbsp; Operational Systems &nbsp;·&nbsp; Technology Builder</p>
   <h1>Operational<br>Intelligence.<br>Built From<br><em>The Inside Out.</em></h1>
   <p class="hero-desc">
     10+ years inside telecoms, fraud, insurance, energy and regulated operations — seeing exactly where the gears grind. Now engineering the recovery: live forensic tools, intelligence infrastructure and deployed technology built from operational experience alone.
@@ -1002,7 +1001,7 @@
      FOOTER
 ══════════════════════════════ -->
 <footer>
-  <span class="footer-copy">&copy; 2026 Garry Crichton &middot; The Architect &middot; All rights reserved</span>
+  <span class="footer-copy">&copy; 2026 The Architect &middot; All rights reserved</span>
   <span class="footer-motto">"A splinter in fraud's foot."</span>
 </footer>
 
@@ -1027,14 +1026,20 @@
   function toggleTheme() {
     const html = document.documentElement;
     const isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    document.querySelector('.theme-btn').textContent = isDark ? 'Mode' : 'Mode';
-    localStorage.setItem('arch-theme', isDark ? 'light' : 'dark');
+    const next = isDark ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    document.querySelector('.theme-btn').textContent = isDark ? 'Dark Mode' : 'Light Mode';
+    localStorage.setItem('arch-theme', next);
   }
 
-  // Restore saved theme
-  const saved = localStorage.getItem('arch-theme');
-  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  // Restore saved theme on load
+  (function () {
+    const saved = localStorage.getItem('arch-theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.querySelector('.theme-btn').textContent = saved === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
+  })();
 </script>
 
 </body>
