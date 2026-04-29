@@ -4,7 +4,7 @@
 
 Live portfolio and digital CV for an operational systems specialist with 10+ years across fraud prevention, telecoms, insurance and energy.
 
-**Live site:** https://the-architect-neo.github.io/portfolio/
+**Live site:** https://the-architect-neo.github.io/
 
 ## Contact
 
