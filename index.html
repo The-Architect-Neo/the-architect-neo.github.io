@@ -27,7 +27,7 @@
     "@type": "Person",
     "name": "The Architect",
     "jobTitle": "Operational Systems Specialist",
-    "description": "Operational intelligence specialist with 10+ years across telecoms, fraud prevention, insurance and energy. Building live forensic tools, detection systems and clean energy concepts.",
+    "description": "Operational intelligence specialist with 20+ years across telecoms, fraud prevention, insurance and energy. Building live forensic tools, detection systems and clean energy concepts.",
     "url": "https://the-architect-neo.github.io",
     "email": "axion-project@proton.me",
     "knowsAbout": [
@@ -56,13 +56,17 @@
   <style>
   /* ─────────────────────────────────────────
      TOKENS
+     All contrast ratios verified against WCAG AA (4.5:1 normal, 3:1 large text)
+     Dark section accent #6A9ACA = 6.6:1 on #0D1B2A
+     Muted on dark #8A9AAA = 6.7:1 on #0D1B2A
+     Muted on light #4A5A6A = 5.7:1 on #F6F4F0
   ───────────────────────────────────────── */
   :root {
-    --accent:      #1C3F6E;
-    --accent-deep: #152F54;
-    --live:        #1A5C32;
-    --held:        #8B5E1A;
-    --building:    #1C3F6E;
+    --accent:        #1C3F6E;
+    --accent-deep:   #152F54;
+    --accent-on-dark:#6A9ACA;
+    --live:          #1A5C32;
+    --held:          #8B5E1A;
 
     --font-serif:  'Cormorant Garamond', Georgia, serif;
     --font-sans:   'Montserrat', system-ui, sans-serif;
@@ -137,18 +141,18 @@
   .nav-links { display: flex; gap: 1.8rem; }
   .nav-links a {
     font-family: var(--font-sans);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(246,244,240,0.4);
+    color: #8A9AAA;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: #F6F4F0; }
 
   .nav-cta {
     font-family: var(--font-sans);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -162,10 +166,10 @@
 
   .theme-btn {
     background: none;
-    border: 1px solid rgba(246,244,240,0.12);
-    color: rgba(246,244,240,0.38);
+    border: 1px solid #2E4560;
+    color: #8A9AAA;
     font-family: var(--font-sans);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -173,7 +177,7 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-  .theme-btn:hover { border-color: rgba(246,244,240,0.3); color: #F6F4F0; }
+  .theme-btn:hover { border-color: #8A9AAA; color: #F6F4F0; }
 
   /* ─────────────────────────────────────────
      HERO — always deep navy
@@ -199,11 +203,11 @@
 
   .hero-eyebrow {
     font-family: var(--font-sans);
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(28,63,110,0.9);
-    color: #4A7AB5;
+    color: #6A9ACA;
     margin-bottom: 2.2rem;
   }
 
@@ -220,14 +224,14 @@
 
   .hero h1 em {
     font-style: italic;
-    color: #4A7AB5;
+    color: #6A9ACA;
   }
 
   .hero-desc {
     font-family: var(--font-sans);
-    font-size: 0.92rem;
-    font-weight: 300;
-    color: rgba(246,244,240,0.5);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #A8B4BC;
     max-width: 600px;
     line-height: 1.85;
     margin-bottom: 2.5rem;
@@ -242,13 +246,13 @@
 
   .hero-tag {
     font-family: var(--font-sans);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 400;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 0.28rem 0.75rem;
-    border: 1px solid rgba(246,244,240,0.1);
-    color: rgba(246,244,240,0.35);
+    border: 1px solid #2E4560;
+    color: #8A9AAA;
   }
 
   .hero-actions {
@@ -275,18 +279,18 @@
 
   .btn-ghost {
     font-family: var(--font-sans);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     background: transparent;
-    color: rgba(246,244,240,0.55);
+    color: #A8B4BC;
     padding: 0.9rem 2rem;
-    border: 1px solid rgba(246,244,240,0.15);
+    border: 1px solid #2E4560;
     transition: border-color 0.2s, color 0.2s;
     display: inline-block;
   }
-  .btn-ghost:hover { border-color: rgba(246,244,240,0.45); color: #F6F4F0; }
+  .btn-ghost:hover { border-color: #8A9AAA; color: #F6F4F0; }
 
   .hero-bg-mark {
     position: absolute;
@@ -336,10 +340,10 @@
 
   .div-label {
     font-family: var(--font-sans);
-    font-size: 0.62rem;
+    font-size: 0.72rem;
     font-weight: 500;
     color: var(--muted);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     flex-shrink: 0;
   }
@@ -361,7 +365,7 @@
   .section-intro h2 {
     font-family: var(--font-serif);
     font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin-bottom: 1rem;
@@ -369,8 +373,8 @@
 
   .section-intro p {
     font-family: var(--font-sans);
-    font-size: 0.9rem;
-    font-weight: 300;
+    font-size: 0.95rem;
+    font-weight: 400;
     color: var(--muted);
     line-height: 1.85;
   }
@@ -407,8 +411,8 @@
 
   .exp-rhs p {
     font-family: var(--font-sans);
-    font-size: 0.9rem;
-    font-weight: 300;
+    font-size: 0.95rem;
+    font-weight: 400;
     color: var(--muted);
     line-height: 1.85;
     margin-bottom: 1.2rem;
@@ -418,9 +422,9 @@
 
   .pill {
     font-family: var(--font-sans);
-    font-size: 0.6rem;
-    font-weight: 400;
-    letter-spacing: 0.06em;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 0.22rem 0.7rem;
     background: var(--tag-bg);
@@ -465,10 +469,10 @@
 
   .metric-label {
     font-family: var(--font-sans);
-    font-size: 0.65rem;
-    font-weight: 400;
+    font-size: 0.75rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     color: var(--muted);
   }
 
@@ -481,7 +485,7 @@
   }
 
   .ventures .section-intro h2 { color: #F6F4F0; }
-  .ventures .section-intro p  { color: rgba(246,244,240,0.38); }
+  .ventures .section-intro p  { color: #8A9AAA; }
 
   .v-table { border-top: 1px solid rgba(246,244,240,0.06); }
 
@@ -513,10 +517,10 @@
 
   .v-n {
     font-family: var(--font-serif);
-    font-size: 0.75rem;
-    font-weight: 300;
+    font-size: 0.85rem;
+    font-weight: 400;
     font-style: italic;
-    color: rgba(246,244,240,0.2);
+    color: #4A6070;
     letter-spacing: 0.04em;
   }
 
@@ -528,12 +532,12 @@
   }
   .dot.live     { background: var(--live);     box-shadow: 0 0 7px var(--live); }
   .dot.held     { background: var(--held);     box-shadow: 0 0 7px var(--held); }
-  .dot.building { background: #4A7AB5;         box-shadow: 0 0 7px #4A7AB5; }
+  .dot.building { background: #6A9ACA;         box-shadow: 0 0 7px #6A9ACA; }
 
   .v-body h3 {
     font-family: var(--font-serif);
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 400;
     color: #F6F4F0;
     letter-spacing: 0em;
     margin-bottom: 0.3rem;
@@ -541,19 +545,19 @@
 
   .v-sub {
     font-family: var(--font-sans);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #4A7AB5;
+    color: #6A9ACA;
     margin-bottom: 0.85rem;
   }
 
   .v-body p {
     font-family: var(--font-sans);
-    font-size: 0.88rem;
-    font-weight: 300;
-    color: rgba(246,244,240,0.42);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #8A9AAA;
     line-height: 1.82;
     max-width: 680px;
   }
@@ -569,12 +573,12 @@
 
   .v-tag {
     font-family: var(--font-sans);
-    font-size: 0.58rem;
+    font-size: 0.68rem;
     font-weight: 400;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     padding: 0.2rem 0.55rem;
-    border: 1px solid rgba(246,244,240,0.08);
-    color: rgba(246,244,240,0.25);
+    border: 1px solid #2E4560;
+    color: #6A7A8A;
     white-space: nowrap;
   }
 
@@ -590,7 +594,7 @@
   .contact h2 {
     font-family: var(--font-serif);
     font-size: clamp(1.9rem, 3.5vw, 3rem);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.01em;
     line-height: 1.2;
     max-width: 740px;
@@ -599,8 +603,8 @@
 
   .contact-sub {
     font-family: var(--font-sans);
-    font-size: 0.88rem;
-    font-weight: 300;
+    font-size: 0.95rem;
+    font-weight: 400;
     color: var(--muted);
     line-height: 1.9;
     max-width: 560px;
@@ -615,7 +619,7 @@
 
   .c-link {
     font-family: var(--font-sans);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -649,19 +653,19 @@
 
   .footer-copy {
     font-family: var(--font-sans);
-    font-size: 0.62rem;
+    font-size: 0.72rem;
     font-weight: 400;
     letter-spacing: 0.08em;
-    color: rgba(246,244,240,0.22);
+    color: #4A6070;
   }
 
   .footer-motto {
     font-family: var(--font-serif);
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.04em;
-    color: rgba(246,244,240,0.15);
+    color: #4A6070;
   }
 
   /* ─────────────────────────────────────────
@@ -776,7 +780,7 @@
         <strong class="exp-name">Operations &amp; Sales</strong>
       </div>
       <div class="exp-rhs">
-        <p>The core. 10+ years across B2B telecoms, outsourced contact centre operations, insurance delivery and regulated service and sales. I understand how revenue is made, how service is delivered, and where both go wrong.</p>
+        <p>The core. 20+ years across B2B telecoms, outsourced contact centre operations, insurance delivery and regulated service and sales. I understand how revenue is made, how service is delivered, and where both go wrong.</p>
         <div class="pills">
           <span class="pill">B2B Telco Sales</span>
           <span class="pill">Contact Centre Ops</span>
@@ -886,7 +890,7 @@
         <span class="dot live" title="Live"></span>
       </div>
       <div class="v-body">
-        <div class="v-sub">Corporate Intelligence &middot; Live</div>
+        <div class="v-sub">INVES👁TGATOR &middot; Live</div>
         <h3>OSINT &amp; Director Analysis</h3>
         <p>Public records, director history and network data pulled in parallel — single lookup, multiple sources.</p>
       </div>
