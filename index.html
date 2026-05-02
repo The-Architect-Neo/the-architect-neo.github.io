@@ -127,6 +127,12 @@
     padding: 0 2.5rem;
   }
 
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
   .nav-logo {
     font-family: var(--font-serif);
     font-size: 1rem;
@@ -134,7 +140,22 @@
     font-style: italic;
     letter-spacing: 0.06em;
     color: #F6F4F0;
+    white-space: nowrap;
   }
+
+  .nav-sponsor {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6A9ACA;
+    border: 1px solid #2E4560;
+    padding: 0.25rem 0.7rem;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .nav-sponsor:hover { color: #F6F4F0; border-color: #6A9ACA; }
 
   .nav-right { display: flex; align-items: center; gap: 2.2rem; }
 
@@ -715,7 +736,10 @@
 ══════════════════════════════ -->
 <header>
   <nav class="nav" aria-label="Main navigation">
-    <a href="#top" class="nav-logo">The Architect</a>
+    <div class="nav-left">
+      <a href="#top" class="nav-logo">The Architect</a>
+      <a href="https://github.com/sponsors/The-Architect-Neo" class="nav-sponsor" target="_blank" rel="noopener noreferrer">&#9829; Sponsor</a>
+    </div>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#expertise">Expertise</a></li>
