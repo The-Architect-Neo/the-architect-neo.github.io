@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Architect — Operational Systems Specialist</title>
-  <meta name="description" content="The Architect — 10+ years in fraud prevention, telecoms operations and regulated industries. Building live forensic tools, corporate intelligence systems and clean energy concepts from operational experience.">
+  <meta name="description" content="UK-based fraud and operational systems specialist. Fraud investigation tools, OSINT, corporate intelligence and post-quantum cybersecurity — built from service, not theory. Tools for people who need a way through.">
   <meta name="author" content="The Architect">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://the-architect-neo.github.io/portfolio/">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="profile">
   <meta property="og:title"       content="The Architect — Operational Systems Specialist">
-  <meta property="og:description" content="10+ years in fraud, telecoms, insurance and energy. Building forensic tools, intelligence systems and deployed technology from operational insight.">
-  <meta property="og:url"         content="https://the-architect-neo.github.io/portfolio/">
+  <meta property="og:description" content="20+ years in fraud, telecoms, operations and regulated industries. Building forensic tools, intelligence systems and deployed technology from operational insight.">
+  <meta property="og:url"         content="https://the-architect-neo.github.io">
   <meta property="og:locale"      content="en_GB">
 
   <!-- Twitter Card -->
@@ -29,7 +28,7 @@
     "name": "The Architect",
     "jobTitle": "Operational Systems Specialist",
     "description": "Operational intelligence specialist with 10+ years across telecoms, fraud prevention, insurance and energy. Building live forensic tools, detection systems and clean energy concepts.",
-    "url": "https://the-architect-neo.github.io/portfolio/",
+    "url": "https://the-architect-neo.github.io",
     "email": "axion-project@proton.me",
     "knowsAbout": [
       "Fraud Detection and Prevention",
@@ -52,39 +51,41 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
   /* ─────────────────────────────────────────
-     TOKENS — light default / dark override
+     TOKENS
   ───────────────────────────────────────── */
   :root {
-    --accent:      #0047AB;
-    --accent-deep: #0039A6;
-    --live:        #059669;
-    --held:        #D97706;
-    --building:    #3B82F6;
-    --font-main:   'Space Grotesk', system-ui, sans-serif;
-    --font-mono:   'Space Mono', monospace;
+    --accent:      #1C3F6E;
+    --accent-deep: #152F54;
+    --live:        #1A5C32;
+    --held:        #8B5E1A;
+    --building:    #1C3F6E;
 
-    /* light */
-    --bg:          #F2F0EB;
+    --font-serif:  'Cormorant Garamond', Georgia, serif;
+    --font-sans:   'Montserrat', system-ui, sans-serif;
+
+    --bg:          #F6F4F0;
     --surface:     #FFFFFF;
-    --line:        #DDDBD5;
-    --ink:         #0C0C0C;
-    --muted:       #545250;
-    --tag-bg:      #ECEAE5;
-    --tag-text:    #545250;
+    --surface-alt: #F0EDE8;
+    --line:        #D8D4CC;
+    --ink:         #0D1B2A;
+    --muted:       #4A5A6A;
+    --tag-bg:      #E8E4DC;
+    --tag-text:    #3A4A5A;
   }
 
   [data-theme="dark"] {
-    --bg:          #0C0C0C;
-    --surface:     #111111;
-    --line:        #242420;
-    --ink:         #F2F0EB;
-    --muted:       #A8A6A4;
-    --tag-bg:      #1A1A18;
-    --tag-text:    #9A9896;
+    --bg:          #0D1B2A;
+    --surface:     #111E2E;
+    --surface-alt: #0A1520;
+    --line:        #1E2E40;
+    --ink:         #F6F4F0;
+    --muted:       #8A9AAA;
+    --tag-bg:      #162030;
+    --tag-text:    #8A9AAA;
   }
 
   /* ─────────────────────────────────────────
@@ -93,7 +94,7 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; font-size: 16px; }
   body {
-    font-family: var(--font-main);
+    font-family: var(--font-sans);
     background: var(--bg);
     color: var(--ink);
     line-height: 1.65;
@@ -107,15 +108,15 @@
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
   /* ─────────────────────────────────────────
-     NAV
+     NAV — always dark navy
   ───────────────────────────────────────── */
   .nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    height: 54px;
-    background: #080808;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    height: 56px;
+    background: #0D1B2A;
+    border-bottom: 1px solid rgba(246,244,240,0.06);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -123,43 +124,37 @@
   }
 
   .nav-logo {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #F2F0EB;
-  }
-  .nav-logo em {
-    font-style: normal;
-    color: var(--accent);
-    font-size: 0.65rem;
-    margin-left: 0.6rem;
-    letter-spacing: 0.08em;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    color: #F6F4F0;
   }
 
   .nav-right { display: flex; align-items: center; gap: 2.2rem; }
 
   .nav-links { display: flex; gap: 1.8rem; }
   .nav-links a {
-    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
     font-weight: 500;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(242,240,235,0.45);
+    color: rgba(246,244,240,0.4);
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: #F2F0EB; }
+  .nav-links a:hover { color: #F6F4F0; }
 
   .nav-cta {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     background: var(--accent);
     color: #fff;
-    padding: 0.45rem 1.1rem;
+    padding: 0.45rem 1.2rem;
     transition: background 0.2s;
     display: inline-block;
   }
@@ -167,24 +162,25 @@
 
   .theme-btn {
     background: none;
-    border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(242,240,235,0.4);
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
+    border: 1px solid rgba(246,244,240,0.12);
+    color: rgba(246,244,240,0.38);
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 0.35rem 0.7rem;
+    padding: 0.35rem 0.75rem;
     cursor: pointer;
     transition: all 0.2s;
   }
-  .theme-btn:hover { border-color: rgba(255,255,255,0.3); color: #F2F0EB; }
+  .theme-btn:hover { border-color: rgba(246,244,240,0.3); color: #F6F4F0; }
 
   /* ─────────────────────────────────────────
-     HERO — always dark
+     HERO — always deep navy
   ───────────────────────────────────────── */
   .hero {
     min-height: 100vh;
-    background: #080808;
+    background: #0D1B2A;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -202,35 +198,38 @@
   }
 
   .hero-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: rgba(28,63,110,0.9);
+    color: #4A7AB5;
     margin-bottom: 2.2rem;
   }
 
   .hero h1 {
-    font-size: clamp(3rem, 7vw, 6rem);
-    font-weight: 700;
+    font-family: var(--font-serif);
+    font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+    font-weight: 300;
     line-height: 1.02;
-    letter-spacing: -0.03em;
-    color: #F2F0EB;
-    max-width: 860px;
+    letter-spacing: -0.01em;
+    color: #F6F4F0;
+    max-width: 900px;
     margin-bottom: 2rem;
   }
 
   .hero h1 em {
-    font-style: normal;
-    color: var(--accent);
+    font-style: italic;
+    color: #4A7AB5;
   }
 
   .hero-desc {
-    font-size: 1.05rem;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
     font-weight: 300;
-    color: rgba(242,240,235,0.5);
+    color: rgba(246,244,240,0.5);
     max-width: 600px;
-    line-height: 1.8;
+    line-height: 1.85;
     margin-bottom: 2.5rem;
   }
 
@@ -242,13 +241,14 @@
   }
 
   .hero-tag {
-    font-family: var(--font-mono);
-    font-size: 0.64rem;
-    letter-spacing: 0.07em;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 0.28rem 0.7rem;
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(242,240,235,0.38);
+    padding: 0.28rem 0.75rem;
+    border: 1px solid rgba(246,244,240,0.1);
+    color: rgba(246,244,240,0.35);
   }
 
   .hero-actions {
@@ -259,10 +259,10 @@
   }
 
   .btn-solid {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     background: var(--accent);
     color: #fff;
@@ -274,37 +274,37 @@
   .btn-solid:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
 
   .btn-ghost {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     background: transparent;
-    color: rgba(242,240,235,0.6);
+    color: rgba(246,244,240,0.55);
     padding: 0.9rem 2rem;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(246,244,240,0.15);
     transition: border-color 0.2s, color 0.2s;
     display: inline-block;
   }
-  .btn-ghost:hover { border-color: rgba(255,255,255,0.45); color: #F2F0EB; }
+  .btn-ghost:hover { border-color: rgba(246,244,240,0.45); color: #F6F4F0; }
 
-  /* decorative large background initials */
   .hero-bg-mark {
     position: absolute;
     bottom: -1rem;
     right: 1.5rem;
+    font-family: var(--font-serif);
     font-size: clamp(12rem, 22vw, 20rem);
-    font-weight: 700;
+    font-weight: 300;
+    font-style: italic;
     line-height: 1;
-    letter-spacing: -0.06em;
-    color: rgba(255,255,255,0.025);
+    letter-spacing: -0.04em;
+    color: rgba(246,244,240,0.02);
     user-select: none;
     pointer-events: none;
-    font-family: var(--font-mono);
   }
 
   /* ─────────────────────────────────────────
-     SECTION DIVIDERS
+     DIVIDERS
   ───────────────────────────────────────── */
   .divider {
     background: var(--surface);
@@ -319,11 +319,12 @@
   }
 
   .div-num {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-style: italic;
     color: var(--accent);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     flex-shrink: 0;
   }
 
@@ -334,17 +335,17 @@
   }
 
   .div-label {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 500;
     color: var(--muted);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     flex-shrink: 0;
   }
 
   /* ─────────────────────────────────────────
-     EXPERTISE — horizontal rows, not cards
+     EXPERTISE
   ───────────────────────────────────────── */
   .expertise {
     background: var(--surface);
@@ -358,22 +359,23 @@
   }
 
   .section-intro h2 {
-    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-    font-weight: 700;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
     line-height: 1.15;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.01em;
     margin-bottom: 1rem;
   }
 
   .section-intro p {
-    font-size: 0.98rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 300;
     color: var(--muted);
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
-  .exp-rows {
-    border-top: 1px solid var(--line);
-  }
+  .exp-rows { border-top: 1px solid var(--line); }
 
   .exp-row {
     display: grid;
@@ -387,38 +389,40 @@
   .exp-lhs { display: flex; flex-direction: column; gap: 0.4rem; }
 
   .exp-idx {
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    font-weight: 700;
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    font-weight: 400;
+    font-style: italic;
     color: var(--accent);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
   }
 
   .exp-name {
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    color: var(--ink);
   }
 
   .exp-rhs p {
-    font-size: 0.94rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 300;
     color: var(--muted);
-    line-height: 1.78;
+    line-height: 1.85;
     margin-bottom: 1.2rem;
   }
 
-  .pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
+  .pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
   .pill {
-    font-family: var(--font-mono);
-    font-size: 0.64rem;
-    letter-spacing: 0.04em;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 0.22rem 0.65rem;
+    padding: 0.22rem 0.7rem;
     background: var(--tag-bg);
     border: 1px solid var(--line);
     color: var(--tag-text);
@@ -443,57 +447,56 @@
   }
 
   .metric-num {
+    font-family: var(--font-serif);
     font-size: clamp(4rem, 7vw, 6rem);
-    font-weight: 700;
+    font-weight: 300;
     line-height: 1;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin-bottom: 0.6rem;
     transition: color 0.3s;
   }
 
   .metric-num sup {
-    font-size: 0.45em;
+    font-size: 0.4em;
     color: var(--accent);
     vertical-align: super;
   }
 
   .metric-label {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     color: var(--muted);
   }
 
   /* ─────────────────────────────────────────
-     VENTURES — always dark
+     VENTURES — always deep navy
   ───────────────────────────────────────── */
   .ventures {
-    background: #080808;
+    background: #0D1B2A;
     padding: 5.5rem 2.5rem;
   }
 
-  .ventures .section-intro h2 { color: #F2F0EB; }
-  .ventures .section-intro p  { color: rgba(242,240,235,0.4); }
+  .ventures .section-intro h2 { color: #F6F4F0; }
+  .ventures .section-intro p  { color: rgba(246,244,240,0.38); }
 
-  .v-table {
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
+  .v-table { border-top: 1px solid rgba(246,244,240,0.06); }
 
   .v-row {
     display: grid;
     grid-template-columns: 64px 1fr auto;
     gap: 2rem;
     padding: 2.8rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(246,244,240,0.05);
     align-items: start;
-    transition: background 0.2s;
+    transition: padding 0.2s;
   }
 
   .v-row:hover {
-    background: rgba(255,255,255,0.02);
+    background: rgba(246,244,240,0.02);
     padding-left: 1rem;
     margin-left: -1rem;
     padding-right: 1rem;
@@ -509,45 +512,49 @@
   }
 
   .v-n {
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    font-weight: 700;
-    color: rgba(242,240,235,0.2);
-    letter-spacing: 0.05em;
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(246,244,240,0.2);
+    letter-spacing: 0.04em;
   }
 
   .dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     flex-shrink: 0;
   }
-  .dot.live     { background: var(--live);     box-shadow: 0 0 8px var(--live); }
-  .dot.held     { background: var(--held);     box-shadow: 0 0 8px var(--held); }
-  .dot.building { background: var(--building); box-shadow: 0 0 8px var(--building); }
+  .dot.live     { background: var(--live);     box-shadow: 0 0 7px var(--live); }
+  .dot.held     { background: var(--held);     box-shadow: 0 0 7px var(--held); }
+  .dot.building { background: #4A7AB5;         box-shadow: 0 0 7px #4A7AB5; }
 
   .v-body h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #F2F0EB;
-    letter-spacing: -0.01em;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #F6F4F0;
+    letter-spacing: 0em;
     margin-bottom: 0.3rem;
   }
 
   .v-sub {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: #4A7AB5;
     margin-bottom: 0.85rem;
   }
 
   .v-body p {
-    font-size: 0.92rem;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
     font-weight: 300;
-    color: rgba(242,240,235,0.45);
-    line-height: 1.78;
+    color: rgba(246,244,240,0.42);
+    line-height: 1.82;
     max-width: 680px;
   }
 
@@ -561,12 +568,13 @@
   }
 
   .v-tag {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.05em;
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
     padding: 0.2rem 0.55rem;
-    border: 1px solid rgba(255,255,255,0.08);
-    color: rgba(242,240,235,0.28);
+    border: 1px solid rgba(246,244,240,0.08);
+    color: rgba(246,244,240,0.25);
     white-space: nowrap;
   }
 
@@ -574,25 +582,28 @@
      CONTACT
   ───────────────────────────────────────── */
   .contact {
-    background: var(--surface);
+    background: var(--surface-alt);
     padding: 6rem 2.5rem;
     transition: background 0.3s;
   }
 
   .contact h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    letter-spacing: -0.025em;
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
     line-height: 1.2;
     max-width: 740px;
     margin-bottom: 1.2rem;
   }
 
   .contact-sub {
-    font-size: 0.98rem;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 300;
     color: var(--muted);
-    line-height: 1.8;
-    max-width: 540px;
+    line-height: 1.9;
+    max-width: 560px;
     margin-bottom: 3rem;
   }
 
@@ -603,10 +614,10 @@
   }
 
   .c-link {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0.85rem 1.5rem;
     border: 1px solid var(--line);
@@ -626,37 +637,39 @@
      FOOTER
   ───────────────────────────────────────── */
   footer {
-    background: #080808;
+    background: #0D1B2A;
     padding: 2rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(246,244,240,0.04);
   }
 
   .footer-copy {
-    font-family: var(--font-mono);
-    font-size: 0.64rem;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 400;
     letter-spacing: 0.08em;
-    color: rgba(242,240,235,0.25);
+    color: rgba(246,244,240,0.22);
   }
 
   .footer-motto {
-    font-family: var(--font-mono);
-    font-size: 0.64rem;
+    font-family: var(--font-serif);
+    font-size: 0.78rem;
     font-style: italic;
-    letter-spacing: 0.05em;
-    color: rgba(242,240,235,0.15);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: rgba(246,244,240,0.15);
   }
 
   /* ─────────────────────────────────────────
-     REVEAL (not fadeUp — clean translate)
+     REVEAL
   ───────────────────────────────────────── */
   .reveal {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(12px);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
   .reveal.in { opacity: 1; transform: none; }
@@ -720,7 +733,7 @@
   <p class="hero-eyebrow">The Architect &nbsp;·&nbsp; Fraud Intelligence &nbsp;·&nbsp; Operational Systems &nbsp;·&nbsp; Technology Builder</p>
   <h1>Operational<br>Intelligence.<br>Built From<br><em>The Inside Out.</em></h1>
   <p class="hero-desc">
-    10+ years inside telecoms, fraud, insurance, energy and regulated operations — seeing exactly where systems fail and people get left behind. Now building the tools those people never had access to. Operational experience turned into deployed technology. AI-assisted development turning ideas that would have stayed stuck into working products — and giving me the means to build them.
+    I work in service. Sales, telecoms, fraud, operations. Dad, chef, husband. Over years of it I learned to spot the gaps — in systems, in processes, in the protections that never arrived. So I started building the tools that should have existed. For people who need a way through without shame, without fear, without having to explain themselves to anyone.
   </p>
   <div class="hero-tags" role="list" aria-label="Areas of expertise">
     <span class="hero-tag" role="listitem">Operations</span>
@@ -741,7 +754,7 @@
      DIVIDER 01
 ══════════════════════════════ -->
 <div class="divider" role="presentation" aria-hidden="true">
-  <span class="div-num">01</span>
+  <span class="div-num">i.</span>
   <span class="div-rule"></span>
   <span class="div-label">Expertise</span>
 </div>
@@ -752,7 +765,7 @@
 <section class="expertise" id="expertise" aria-labelledby="h-expertise">
   <div class="section-intro reveal">
     <h2 id="h-expertise">What I Actually Know</h2>
-    <p>Zero theory. Operational knowledge earned across high-stakes industry — leading teams, shattering targets and understanding complex systems from the inside out.</p>
+    <p>Not theory. Service. Two decades of it — in rooms where things went wrong, where people got let down, where the system moved on without them. I know where the gaps are because I was standing in them.</p>
   </div>
 
   <div class="exp-rows">
@@ -797,7 +810,7 @@
         <strong class="exp-name">Energy &amp; Research</strong>
       </div>
       <div class="exp-rhs">
-        <p>Developing a clean energy concept in underutilised canal waterway spaces. Early-stage proof of concept — grounded in real engineering questions, active industry partnership pursuit and mapped funding pathways.</p>
+        <p>Canal waterway infrastructure holds untapped energy potential most people drive past every day. Early-stage, real engineering — no pitch deck yet. The right questions being put to the right people, funding routes identified, partnerships being sought.</p>
         <div class="pills">
           <span class="pill">Renewable Energy Concepts</span>
           <span class="pill">Applied Research</span>
@@ -833,7 +846,7 @@
 <div class="metrics" role="region" aria-label="Career statistics">
   <div class="metrics-row">
     <div class="reveal">
-      <div class="metric-num">10<sup>+</sup></div>
+      <div class="metric-num">20<sup>+</sup></div>
       <div class="metric-label">Years in Operations</div>
     </div>
     <div class="reveal">
@@ -851,7 +864,7 @@
      DIVIDER 02
 ══════════════════════════════ -->
 <div class="divider" role="presentation" aria-hidden="true">
-  <span class="div-num">02</span>
+  <span class="div-num">ii.</span>
   <span class="div-rule"></span>
   <span class="div-label">Projects</span>
 </div>
@@ -862,7 +875,7 @@
 <section class="ventures" id="ventures" aria-labelledby="h-ventures">
   <div class="section-intro reveal">
     <h2 id="h-ventures">What I'm Building</h2>
-    <p>Nine projects across eight domains. No product names — just real problems, real skills and tools built because someone needed them. Most of what I've built exists to help people who had no other way to get it.</p>
+    <p>Nine tools built because someone needed a way through and had nowhere else to turn. Some live, some held, all built to offer a solution that might not have been obvious — or even known to exist.</p>
   </div>
 
   <div class="v-table" role="list">
@@ -1021,7 +1034,7 @@
      DIVIDER 03
 ══════════════════════════════ -->
 <div class="divider" role="presentation" aria-hidden="true">
-  <span class="div-num">03</span>
+  <span class="div-num">iii.</span>
   <span class="div-rule"></span>
   <span class="div-label">Connect</span>
 </div>
@@ -1030,15 +1043,16 @@
      CONTACT
 ══════════════════════════════ -->
 <section class="contact" id="contact" aria-labelledby="h-contact">
-  <h2 id="h-contact" class="reveal">Straight Talk. Operational Thinking.<br>If That's Your Language — Let's Connect.</h2>
-  <p class="contact-sub reveal">Built nine tools. Most of them exist because someone — usually someone without resources, without access, without a voice — needed them. That's the brief. If you're working on something that helps people who can't help themselves, or you want to talk fraud, intelligence, energy or operational systems — that's the conversation worth having.</p>
+  <h2 id="h-contact" class="reveal">I spot gaps.<br>Then I build the fix.</h2>
+  <p class="contact-sub reveal">Sales. Telecoms. Fraud. Operations. The tools on this page came from twenty years of watching systems fail the people who needed them most — and deciding to do something about it. If you're working on the same problem, or you're stuck in one yourself, this is a direct line. No shame in reaching out.</p>
   <nav class="contact-links reveal" aria-label="Contact and profile links">
-    <a href="https://www.linkedin.com/in/thearchitectneo"                         class="c-link primary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://github.com/sponsors/The-Architect-Neo"                       class="c-link"         target="_blank" rel="noopener noreferrer">Support Via Github</a>
-    <a href="https://patreon.com/TheArchitectNeo"                          class="c-link"         target="_blank" rel="noopener noreferrer">Support Via Patreon</a>
-    <a href="https://investigator-production-3d5b.up.railway.app"                 class="c-link"         target="_blank" rel="noopener noreferrer">INVEST👁GATOR</a>
+    <a href="https://www.linkedin.com/in/thearchitectneo"                          class="c-link primary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/The-Architect-Neo"                                 class="c-link"         target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://github.com/sponsors/The-Architect-Neo"                        class="c-link"         target="_blank" rel="noopener noreferrer">Sponsor</a>
+    <a href="https://quantumprotection-production.up.railway.app"                  class="c-link"         target="_blank" rel="noopener noreferrer">QuantumProtect</a>
+    <a href="https://investigator-production-3d5b.up.railway.app"                 class="c-link"         target="_blank" rel="noopener noreferrer">INVEST&#x1F441;GATOR</a>
     <a href="mailto:axion-project@proton.me?subject=Enquiry — The Architect"      class="c-link">Email Direct</a>
-    <a href="https://dev.to/thearchitectneo"                                      class="c-link"         target="_blank" rel="noopener noreferrer">Dev.to</a>
+    <a href="https://dev.to/thearchitectneo"                                       class="c-link"         target="_blank" rel="noopener noreferrer">Dev.to</a>
   </nav>
 </section>
 
