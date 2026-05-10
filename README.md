@@ -12,31 +12,23 @@
 
   ---
 
-  ## What I Build
-
-  | Tool | What it does | Status |
-  |---|---|---|
-  | [QuantumProtect](https://quantumprotection-production.up.railway.app) | Mosca's Theorem quantum risk calculator | Live |
-  | [INVEST👁GATOR ](https://investigator-production-3d5b.up.railway.app) | Companies House director intelligence | Live |
-  | ScamScan | Browser fraud detection — 79 patterns | Compliance hold |
-  | Change2Crypto | Loose change → stablecoin yield for excluded families | Building |
-  | Know The Chain | Financial literacy curriculum — KTC, the new KYC for kids | Building |
-  | The Axion Project | Distributed energy from the UK canal network | Research |
+  | Tool | Status |
+  |---|---|
+  | [QuantumProtect](https://quantumprotection-production.up.railway.app) | Live |
+  | [INVEST👁GATOR ](https://investigator-production-3d5b.up.railway.app) | Live |
+  | ScamScan | Compliance hold |
+  | Change2Crypto | Building |
+  | Know The Chain | Building |
+  | The Axion Project | Research |
 
   ---
-
-  ## The Work
 
   Operational expertise directing AI-assisted development.
-  The domain knowledge is 20 years. The tools are new. The combination is the point.
-
-  ---
-
-  ## Contact
+  The domain knowledge is 20 years. The tools are new.
 
   axion-project@proton.me
 
-  [LinkedIn](https://www.linkedin.com/in/thearchitectneo) · [GitHub](https://github.com/The-Architect-Neo) ·
+  [LinkedIn](https://www.linkedin.com/in/g-c-8b4b6b298) · [GitHub](https://github.com/The-Architect-Neo) ·
   [Dev.to](https://dev.to/thearchitectneo) · [Sponsor](https://github.com/sponsors/The-Architect-Neo) ·
   [Patreon](https://patreon.com/TheArchitectNeo)
 
