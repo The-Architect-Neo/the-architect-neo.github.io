@@ -1,5 +1,5 @@
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4-navy?logo=github&logoColor=white&color=1C3F6E)](https://github.
-  com/sponsors/The-Architect-Neo)
+com/sponsors/The-Architect-Neo)
 
   # The Architect — Portfolio
 
