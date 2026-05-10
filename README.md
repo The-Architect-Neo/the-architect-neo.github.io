@@ -1,45 +1,49 @@
-[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4-navy?logo=github&logoColor=white&color=1C3F6E)](https://github.com/sponsors/The-Architect-Neo)
-[![Patreon](https://img.shields.io/badge/Patreon-Support-orange?logo=patreon&logoColor=white)](https://patreon.com/TheArchitectNeo)
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4-navy?logo=github&logoColor=white&color=1C3F6E)](https://github.
+  com/sponsors/The-Architect-Neo)
 
-# The Architect — Portfolio
+  # The Architect — Portfolio
 
-Live digital CV for an operational systems specialist. 20+ years across fraud prevention, telecoms, insurance and energy. Building the tools that should have existed.
+  Live digital CV for an operational systems specialist. 20+ years across fraud prevention, telecoms, financial inclusion and
+  insurance. Building the tools that should have existed.
 
-**Live:** https://the-architect-neo.github.io
+  **Live:** https://the-architect-neo.github.io
 
----
+  ---
 
-## What it is
+  ## What it is
+  Live digital CV for an operational systems specialist. 20+ years across fraud prevention, telecoms, financial inclusion and
+  insurance. Building the tools that should have existed.
 
-Single-page portfolio. No frameworks. No build step. Deploys direct to GitHub Pages.
+  **Live:** https://the-architect-neo.github.io
 
-- Admiralty design — Cormorant Garamond + Montserrat, deep navy palette
-- WCAG AA compliant — verified contrast ratios throughout, no opacity text shortcuts
-- Light / dark theme toggle via `data-theme`
-- Schema.org structured data for SEO
-- Nine active projects — live, building and compliance-held status indicators
+  ---
 
-## Stack
+  ## What it is
 
-- HTML5 + CSS custom properties only
-- Cormorant Garamond + Montserrat (Google Fonts)
-- Vanilla JS — theme toggle and scroll reveal
-- GitHub Pages hosting
+  Single-page portfolio. No frameworks. No build step. Deploys direct to GitHub Pages.
 
-## Deploy
+  - Admiralty design — Cormorant Garamond + Montserrat, deep navy palette
+  - WCAG AA compliant — verified contrast ratios throughout
+  - Light / dark theme toggle via `data-theme`
+  - Schema.org structured data for SEO
+  - Active projects — live, building and compliance-held status indicators
 
-```
-push to main → GitHub Pages serves from root → done
-```
+  ## Stack
 
-No build step. No dependencies to install.
+  - HTML5 + CSS custom properties only
+  - Cormorant Garamond + Montserrat (Google Fonts)
+  - Vanilla JS — theme toggle and scroll reveal
+  - GitHub Pages hosting
 
-## Contact
+  ## Deploy
 
-axion-project@proton.me
+  push to main → GitHub Pages serves from root → done
 
-[LinkedIn](https://www.linkedin.com/in/g-c-8b4b6b298) · [GitHub](https://github.com/The-Architect-Neo) · [Dev.to](https://dev.to/thearchitectneo) · [Sponsor](https://github.com/sponsors/The-Architect-Neo) · [Patreon](https://patreon.com/TheArchitectNeo)
+  No build step. No dependencies.
 
----
+  ## Contact
 
-*"A splinter in fraud's foot."*
+  axion-project@proton.me
+
+  [LinkedIn](https://www.linkedin.com/in/g-c-8b4b6b298) · [GitHub](https://github.com/The-Architect-Neo) ·
+  [Dev.to](https://dev.to/thearchitectneo) · [Sponsor](https://github.com/sponsors/The-Architect-Neo)
