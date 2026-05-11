@@ -604,6 +604,131 @@
   }
 
   /* ─────────────────────────────────────────
+     ROLODEX
+  ───────────────────────────────────────── */
+  .rdx-wrap { position: relative; max-width: 760px; }
+
+  .rdx-card {
+    display: none;
+    background: var(--surface-alt);
+    border: 1px solid var(--line);
+    padding: 2.2rem 2.4rem;
+    transition: background 0.3s;
+  }
+  .rdx-card.active {
+    display: block;
+    animation: rdx-in 0.28s ease;
+  }
+  @keyframes rdx-in {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .rdx-head {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+  .rdx-num {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+  .rdx-sub {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #2563A8;
+  }
+  .rdx-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .rdx-desc {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 600px;
+    margin-bottom: 1.6rem;
+  }
+  .rdx-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .rdx-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .rdx-launch {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.3rem;
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s;
+    display: inline-block;
+  }
+  .rdx-launch:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+
+  .rdx-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    max-width: 760px;
+  }
+  .rdx-btn {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .rdx-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .rdx-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+  .rdx-dots { display: flex; gap: 7px; align-items: center; }
+  .rdx-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+    padding: 0;
+  }
+  .rdx-dot.active { background: var(--accent); transform: scale(1.35); }
+
+  .rdx-counter {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    min-width: 52px;
+    text-align: right;
+  }
+
+  /* ─────────────────────────────────────────
      CONTACT
   ───────────────────────────────────────── */
   .contact {
@@ -905,7 +1030,7 @@
       <div class="metric-label">Industries Deep</div>
     </div>
     <div class="reveal">
-      <div class="metric-num">9</div>
+      <div class="metric-num">10</div>
       <div class="metric-label">Active Projects</div>
     </div>
   </div>
@@ -926,161 +1051,186 @@
 <section class="ventures" id="ventures" aria-labelledby="h-ventures">
   <div class="section-intro reveal">
     <h2 id="h-ventures">What I'm Building</h2>
-    <p>Twenty-two created projects. Some live, some building, some still at the drawing board. All of them started in the same place: a gap that shouldn't exist.</p>
+    <p>Ten active projects. Some live, some building, some still at the drawing board. All of them started in the same place: a gap that shouldn't exist.</p>
   </div>
 
-  <div class="v-table" role="list">
+  <div class="rdx-wrap reveal" role="region" aria-label="Project rolodex">
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">01</span>
+    <div class="rdx-card active" id="rdx-0">
+      <div class="rdx-head">
+        <span class="rdx-num">01</span>
         <span class="dot live" title="Live"></span>
+        <span class="rdx-sub">INVEST👁GATOR &middot; Live</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">INVEST👁GATOR &middot; Live</div>
-        <h3>OSINT &amp; Director Analysis</h3>
-        <p>Public records, director history and network data pulled in parallel — single lookup, multiple sources.</p>
+      <h3 class="rdx-title">OSINT &amp; Director Analysis</h3>
+      <p class="rdx-desc">Public records, director history and network data pulled in parallel — single lookup, multiple sources.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">TypeScript</span>
+          <span class="v-tag">Node.js</span>
+          <span class="v-tag">Cloud Deploy</span>
+        </div>
+        <a href="https://investigator-production-3d5b.up.railway.app" class="rdx-launch" target="_blank" rel="noopener noreferrer">Launch Tool &rarr;</a>
       </div>
-      <div class="v-tags" aria-label="Technologies">
-        <span class="v-tag">TypeScript</span>
-        <span class="v-tag">Node.js</span>
-        <span class="v-tag">Cloud Deploy</span>
-      </div>
-    </article>
+    </div>
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">02</span>
+    <div class="rdx-card" id="rdx-1">
+      <div class="rdx-head">
+        <span class="rdx-num">02</span>
         <span class="dot live" title="Live"></span>
+        <span class="rdx-sub">QuantumProtect &middot; Live</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">QuantumProtect &middot; Live</div>
-        <h3>Mosca's Theorem Risk Calculator</h3>
-        <p>Four questions. Your numbers in Mosca's Theorem. Tells you whether your business data is already inside the quantum harvest window — and what to do about it.</p>
+      <h3 class="rdx-title">Mosca's Theorem Risk Calculator</h3>
+      <p class="rdx-desc">Four questions. Your numbers in Mosca's Theorem. Tells you whether your business data is already inside the quantum harvest window — and what to do about it.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">Node.js</span>
+          <span class="v-tag">Cloud Deploy</span>
+        </div>
+        <a href="https://quantumprotection-production.up.railway.app" class="rdx-launch" target="_blank" rel="noopener noreferrer">Launch Tool &rarr;</a>
       </div>
-      <div class="v-tags" aria-label="Technologies">
-        <span class="v-tag">Node.js</span>
-        <span class="v-tag">Cloud Deploy</span>
-      </div>
-    </article>
+    </div>
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">03</span>
+    <div class="rdx-card" id="rdx-2">
+      <div class="rdx-head">
+        <span class="rdx-num">03</span>
+        <span class="dot live" title="Live"></span>
+        <span class="rdx-sub">MeDea &middot; Live</span>
+      </div>
+      <h3 class="rdx-title">News Signal Ratio</h3>
+      <p class="rdx-desc">The news is not balanced. MeDea crawls headlines every hour, scores each one positive or negative, and returns a single ratio — how much noise you had to filter to reach the signal.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">Python</span>
+          <span class="v-tag">Flask</span>
+          <span class="v-tag">VADER</span>
+          <span class="v-tag">Cloud Deploy</span>
+        </div>
+        <a href="https://medea-production-dd4b.up.railway.app" class="rdx-launch" target="_blank" rel="noopener noreferrer">Launch Tool &rarr;</a>
+      </div>
+    </div>
+
+    <div class="rdx-card" id="rdx-3">
+      <div class="rdx-head">
+        <span class="rdx-num">04</span>
         <span class="dot held" title="Compliance Hold"></span>
+        <span class="rdx-sub">ScamScan &middot; Compliance Hold</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">ScamScan &middot; Compliance Hold</div>
-        <h3>Scam Language Detection</h3>
-        <p>Client-side only. Analyses message content, scores threat level and produces an evidence pack. No data stored. Held pending regulatory registration.</p>
+      <h3 class="rdx-title">Scam Language Detection</h3>
+      <p class="rdx-desc">Client-side only. Analyses message content, scores threat level and produces an evidence pack. No data stored. Held pending regulatory registration.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">JavaScript</span>
+          <span class="v-tag">Client-Side Only</span>
+        </div>
       </div>
-      <div class="v-tags" aria-label="Technologies">
-        <span class="v-tag">JavaScript</span>
-        <span class="v-tag">Client-Side Only</span>
-      </div>
-    </article>
+    </div>
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">04</span>
+    <div class="rdx-card" id="rdx-4">
+      <div class="rdx-head">
+        <span class="rdx-num">05</span>
         <span class="dot building" title="Building"></span>
+        <span class="rdx-sub">ScanVault &middot; Building</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">ScanVault &middot; Building</div>
-        <h3>Encrypted Case Management</h3>
-        <p>Tamper-evident, encrypted ledger for fraud victims with no other means to organise and preserve their evidence. Pairs with ScamScan.</p>
+      <h3 class="rdx-title">Encrypted Case Management</h3>
+      <p class="rdx-desc">Tamper-evident, encrypted ledger for fraud victims with no other means to organise and preserve their evidence. Pairs with ScamScan.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">TypeScript</span>
+          <span class="v-tag">PostgreSQL</span>
+        </div>
       </div>
-      <div class="v-tags" aria-label="Technologies">
-        <span class="v-tag">TypeScript</span>
-        <span class="v-tag">PostgreSQL</span>
-        <span class="v-tag">Building</span>
-      </div>
-    </article>
+    </div>
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">05</span>
+    <div class="rdx-card" id="rdx-5">
+      <div class="rdx-head">
+        <span class="rdx-num">06</span>
         <span class="dot building" title="Ready to Operate"></span>
+        <span class="rdx-sub">NetSecure &middot; Ready to Operate</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">NetSecure &middot; Ready to Operate</div>
-        <h3>Personal Cybersecurity Hardening</h3>
-        <p>Device lockdown, network protection and post-quantum security guidance for individuals. No regulatory registration required. Ready now.</p>
+      <h3 class="rdx-title">Personal Cybersecurity Hardening</h3>
+      <p class="rdx-desc">Device lockdown, network protection and post-quantum security guidance for individuals. No regulatory registration required. Ready now.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">HTML / CSS</span>
+          <span class="v-tag">Static Deploy</span>
+        </div>
       </div>
-      <div class="v-tags" aria-label="Technologies">
-        <span class="v-tag">HTML / CSS</span>
-        <span class="v-tag">Static Deploy</span>
-      </div>
-    </article>
+    </div>
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">06</span>
+    <div class="rdx-card" id="rdx-6">
+      <div class="rdx-head">
+        <span class="rdx-num">07</span>
         <span class="dot building" title="Building"></span>
+        <span class="rdx-sub">CodeSafe &middot; Building</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">CodeSafe &middot; Building</div>
-        <h3>Cryptographic IP Timestamping</h3>
-        <p>Prior art records for ideas, code and documents. Free, auditable proof of creation without a solicitor. Vault-backed, canary-embedded.</p>
+      <h3 class="rdx-title">Cryptographic IP Timestamping</h3>
+      <p class="rdx-desc">Prior art records for ideas, code and documents. Free, auditable proof of creation without a solicitor. Vault-backed, canary-embedded.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">Cryptography</span>
+          <span class="v-tag">Node.js</span>
+        </div>
       </div>
-      <div class="v-tags" aria-label="Technologies">
-        <span class="v-tag">Cryptography</span>
-        <span class="v-tag">Node.js</span>
-        <span class="v-tag">Building</span>
-      </div>
-    </article>
+    </div>
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">07</span>
+    <div class="rdx-card" id="rdx-7">
+      <div class="rdx-head">
+        <span class="rdx-num">08</span>
         <span class="dot building" title="Building"></span>
+        <span class="rdx-sub">Know The Chain &middot; Building</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">Know The Chain &middot; Building</div>
-        <h3>Financial Literacy for Children</h3>
-        <p>Six-lesson curriculum teaching children aged 6–11 how money moves, why it matters and how to protect it. The new KYC for kids.</p>
+      <h3 class="rdx-title">Financial Literacy for Children</h3>
+      <p class="rdx-desc">Six-lesson curriculum teaching children aged 6–11 how money moves, why it matters and how to protect it. The new KYC for kids.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">Education</span>
+          <span class="v-tag">Community</span>
+        </div>
       </div>
-      <div class="v-tags" aria-label="Status">
-        <span class="v-tag">Education</span>
-        <span class="v-tag">Community</span>
-        <span class="v-tag">Concept</span>
-      </div>
-    </article>
+    </div>
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">08</span>
+    <div class="rdx-card" id="rdx-8">
+      <div class="rdx-head">
+        <span class="rdx-num">09</span>
         <span class="dot building" title="Concept"></span>
+        <span class="rdx-sub">Change2Crypto &middot; Concept</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">Change2Crypto &middot; Concept</div>
-        <h3>Loose Change to Stablecoin Yield</h3>
-        <p>Financial inclusion for families excluded from traditional banking. Loose change deposited at community nodes — converted to stablecoin yield. One node per London borough is the target.</p>
+      <h3 class="rdx-title">Loose Change to Stablecoin Yield</h3>
+      <p class="rdx-desc">Financial inclusion for families excluded from traditional banking. Loose change deposited at community nodes — converted to stablecoin yield. One node per London borough is the target.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">CIC</span>
+          <span class="v-tag">Stablecoin</span>
+        </div>
       </div>
-      <div class="v-tags" aria-label="Status">
-        <span class="v-tag">CIC</span>
-        <span class="v-tag">Stablecoin</span>
-        <span class="v-tag">Concept</span>
-      </div>
-    </article>
+    </div>
 
-    <article class="v-row reveal" role="listitem">
-      <div class="v-lhs" aria-hidden="true">
-        <span class="v-n">09</span>
+    <div class="rdx-card" id="rdx-9">
+      <div class="rdx-head">
+        <span class="rdx-num">10</span>
         <span class="dot building" title="Research Phase"></span>
+        <span class="rdx-sub">The Axion Project &middot; Active Research</span>
       </div>
-      <div class="v-body">
-        <div class="v-sub">The Axion Project &middot; Active Research</div>
-        <h3>Distributed Hydro Generation</h3>
-        <p>Renewable power from underutilised canal waterway infrastructure. Proof of concept stage — real engineering questions, funding pathways mapped, industry partnerships pending.</p>
+      <h3 class="rdx-title">Distributed Hydro Generation</h3>
+      <p class="rdx-desc">Renewable power from underutilised canal waterway infrastructure. Proof of concept stage — real engineering questions, funding pathways mapped, industry partnerships pending.</p>
+      <div class="rdx-foot">
+        <div class="rdx-tags">
+          <span class="v-tag">Proof of Concept</span>
+          <span class="v-tag">Seeking Partners</span>
+        </div>
       </div>
-      <div class="v-tags" aria-label="Status">
-        <span class="v-tag">Proof of Concept</span>
-        <span class="v-tag">Seeking Partners</span>
-      </div>
-    </article>
+    </div>
 
   </div>
+
+  <nav class="rdx-nav reveal" aria-label="Project navigation">
+    <button class="rdx-btn" id="rdx-prev" aria-label="Previous project">&larr; Prev</button>
+    <div class="rdx-dots" id="rdx-dots" role="tablist" aria-label="Project selector"></div>
+    <span class="rdx-counter" id="rdx-counter">1 / 10</span>
+    <button class="rdx-btn" id="rdx-next" aria-label="Next project">Next &rarr;</button>
+  </nav>
+
 </section>
 
 <!-- ══════════════════════════════
@@ -1123,6 +1273,7 @@
       <div class="c-group-links">
         <a href="https://quantumprotection-production.up.railway.app"             class="c-link"         target="_blank" rel="noopener noreferrer">QuantumProtect</a>
         <a href="https://investigator-production-3d5b.up.railway.app"            class="c-link"         target="_blank" rel="noopener noreferrer">INVEST👁GATOR</a>
+        <a href="https://medea-production-dd4b.up.railway.app"                   class="c-link"         target="_blank" rel="noopener noreferrer">MeDea</a>
       </div>
     </div>
 
@@ -1162,6 +1313,47 @@
       if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+
+  // Rolodex
+  (function() {
+    const cards   = Array.from(document.querySelectorAll('.rdx-card'));
+    const dotsEl  = document.getElementById('rdx-dots');
+    const counter = document.getElementById('rdx-counter');
+    const prevBtn = document.getElementById('rdx-prev');
+    const nextBtn = document.getElementById('rdx-next');
+    if (!cards.length || !dotsEl) return;
+
+    const total = cards.length;
+    let cur = 0;
+
+    cards.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'rdx-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Project ' + (i + 1));
+      d.setAttribute('role', 'tab');
+      d.addEventListener('click', () => show(i));
+      dotsEl.appendChild(d);
+    });
+
+    function show(n) {
+      cards[cur].classList.remove('active');
+      dotsEl.children[cur].classList.remove('active');
+      cur = (n + total) % total;
+      cards[cur].classList.add('active');
+      dotsEl.children[cur].classList.add('active');
+      if (counter) counter.textContent = (cur + 1) + ' / ' + total;
+    }
+
+    prevBtn.addEventListener('click', () => show(cur - 1));
+    nextBtn.addEventListener('click', () => show(cur + 1));
+
+    document.addEventListener('keydown', e => {
+      const active = document.activeElement;
+      if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA')) return;
+      if (e.key === 'ArrowLeft')  show(cur - 1);
+      if (e.key === 'ArrowRight') show(cur + 1);
+    });
+  })();
 
   // Theme toggle
   function toggleTheme() {
