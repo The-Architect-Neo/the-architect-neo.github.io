@@ -1652,7 +1652,7 @@
     if(!picking||panel.contains(e.target)||e.target===hl) return;
     var r=e.target.getBoundingClientRect();
     hl.style.display='block';
-    hl.style.top=(r.top+scrollY)+'px'; hl.style.left=r.left+'px';
+    hl.style.top=r.top+'px'; hl.style.left=r.left+'px';
     hl.style.width=r.width+'px'; hl.style.height=r.height+'px';
   },true);
 
