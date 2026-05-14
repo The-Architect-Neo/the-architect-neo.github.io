@@ -1520,7 +1520,6 @@
     #ae-hl{position:fixed;pointer-events:none;z-index:99998;border:2px solid #6A9ACA;
       background:rgba(106,154,202,.07);display:none;}
     body.ae-on *{cursor:crosshair !important;}
-    body.ae-on a,body.ae-on button{pointer-events:none;}
     #ae-badge{position:fixed;bottom:16px;right:16px;background:#0D1B2A;border:1px solid #1a2e48;
       color:#6A9ACA;font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;
       padding:5px 10px;z-index:99997;cursor:pointer;font-family:'Montserrat',sans-serif;}
@@ -1547,7 +1546,7 @@
   document.body.appendChild(panel);
 
   var badge=document.createElement('div');
-  badge.id='ae-badge'; badge.textContent='&#9651; Editor'; badge.style.display='none';
+  badge.id='ae-badge'; badge.textContent='Editor'; badge.style.display='none';
   badge.onclick=function(){ panel.style.display='flex'; badge.style.display='none'; };
   document.body.appendChild(badge);
 
