@@ -794,31 +794,49 @@
   .c-link.launch:hover { border-color: #6A9ACA; background: rgba(106,154,202,0.08); color: #8AB8E0; }
 
   .contact-groups {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 2.5rem;
-    justify-content: start;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .c-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   .c-group-label {
     font-family: var(--font-sans);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #2563A8;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.6rem;
   }
+
+  .c-group:first-child .c-group-label { margin-top: 0; }
 
   .c-group-links {
     display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
+    flex-direction: row;
+    gap: 2px;
   }
 
-  @media (max-width: 640px) {
-    .contact-groups { grid-template-columns: 1fr; gap: 1.8rem; }
+  .contact-groups .c-link {
+    width: 158px;
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .c-group-links { flex-wrap: wrap; }
+    .contact-groups .c-link { width: 140px; }
+  }
+
+  @media (max-width: 480px) {
+    .contact-groups .c-link { width: 100%; }
+    .c-group-links { flex-direction: column; }
   }
 
   /* ─────────────────────────────────────────
@@ -1339,19 +1357,19 @@
     </div>
 
     <div class="c-group">
-      <div class="c-group-label">Support</div>
-      <div class="c-group-links">
-        <a href="https://github.com/sponsors/The-Architect-Neo"                   class="c-link sponsor"  target="_blank" rel="noopener noreferrer">GitHub Sponsors</a>
-        <a href="https://patreon.com/TheArchitectNeo"                             class="c-link sponsor"  target="_blank" rel="noopener noreferrer">Patreon</a>
-      </div>
-    </div>
-
-    <div class="c-group">
       <div class="c-group-label">Live Tools</div>
       <div class="c-group-links">
         <a href="https://quantumprotection-production.up.railway.app"             class="c-link launch"  target="_blank" rel="noopener noreferrer">QuantumProtect</a>
         <a href="https://investigator-production-3d5b.up.railway.app"            class="c-link launch"  target="_blank" rel="noopener noreferrer">INVEST👁GATOR</a>
         <a href="https://medea-production-dd4b.up.railway.app"                   class="c-link launch"  target="_blank" rel="noopener noreferrer">MeDea</a>
+      </div>
+    </div>
+
+    <div class="c-group">
+      <div class="c-group-label">Support</div>
+      <div class="c-group-links">
+        <a href="https://github.com/sponsors/The-Architect-Neo"                   class="c-link sponsor"  target="_blank" rel="noopener noreferrer">GitHub Sponsors</a>
+        <a href="https://patreon.com/TheArchitectNeo"                             class="c-link sponsor"  target="_blank" rel="noopener noreferrer">Patreon</a>
       </div>
     </div>
 
