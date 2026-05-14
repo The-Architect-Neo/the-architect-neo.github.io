@@ -1472,5 +1472,246 @@
   })();
 </script>
 
+<!-- ── Architect Editor — URL param ?architect activates ── -->
+<script>
+(function(){
+  if (!new URLSearchParams(location.search).has('architect')) return;
+
+  var s=document.createElement('style');
+  s.textContent=`
+    #ae{position:fixed;top:20px;right:20px;width:288px;max-height:calc(100vh - 40px);
+      background:#06101c;border:1px solid #1a2e48;font-family:'Montserrat',system-ui,sans-serif;
+      font-size:11px;color:#8A9AAA;z-index:99999;display:flex;flex-direction:column;
+      box-shadow:0 12px 48px rgba(0,0,0,.75);}
+    #ae-head{background:#0D1B2A;padding:10px 14px;display:flex;justify-content:space-between;
+      align-items:center;cursor:move;user-select:none;border-bottom:1px solid #1a2e48;flex-shrink:0;}
+    #ae-head .t{font-size:8.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#6A9ACA;}
+    #ae-x{background:none;border:none;color:#4A5A6A;cursor:pointer;font-size:16px;line-height:1;padding:0;}
+    #ae-x:hover{color:#F6F4F0;}
+    #ae-pick{padding:8px 14px;background:#080f1a;border-bottom:1px solid #1a2e48;
+      font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#4A5A6A;cursor:pointer;flex-shrink:0;}
+    #ae-pick.on{color:#22A860;background:#071510;}
+    #ae-pick:hover{color:#8A9AAA;}
+    #ae-sel{padding:7px 14px;background:#060e18;border-bottom:1px solid #1a2e48;
+      font-size:8.5px;letter-spacing:.06em;color:#2563A8;white-space:nowrap;overflow:hidden;
+      text-overflow:ellipsis;flex-shrink:0;font-family:monospace;}
+    #ae-body{overflow-y:auto;flex:1;padding:10px 14px 6px;}
+    .ae-grp{font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:#1e3048;
+      margin:12px 0 5px;border-top:1px solid #1a2e48;padding-top:7px;}
+    .ae-grp:first-child{margin-top:2px;border-top:none;}
+    .ae-row{display:grid;grid-template-columns:88px 1fr;align-items:center;gap:5px;margin-bottom:5px;}
+    .ae-row label{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#3a5070;text-align:right;}
+    .ae-row input{background:#0a1728;border:1px solid #1a2e48;color:#D8D4CC;font-size:11px;
+      font-family:monospace;padding:4px 7px;width:100%;outline:none;transition:border-color .15s;}
+    .ae-row input:focus{border-color:#2563A8;}
+    #ae-foot{padding:10px 14px;border-top:1px solid #1a2e48;display:flex;flex-direction:column;
+      gap:5px;flex-shrink:0;}
+    #ae-out{background:#0a1728;border:1px solid #1a2e48;color:#6A9ACA;font-size:8.5px;
+      font-family:monospace;padding:6px 8px;width:100%;height:72px;resize:none;outline:none;}
+    .ae-btns{display:flex;gap:3px;}
+    .ae-btn{flex:1;background:#0a1728;border:1px solid #1a2e48;color:#6A9AAA;
+      font-family:'Montserrat',sans-serif;font-size:7.5px;letter-spacing:.14em;
+      text-transform:uppercase;padding:6px 4px;cursor:pointer;transition:border-color .15s,color .15s;}
+    .ae-btn:hover{border-color:#6A9ACA;color:#D8D4CC;}
+    .ae-btn.g{border-color:#1a3a28;color:#22A860;}
+    .ae-btn.g:hover{background:#22A860;color:#fff;border-color:#22A860;}
+    .ae-btn.r{border-color:#3a1a1a;color:#D7836C;}
+    .ae-btn.r:hover{border-color:#D7836C;}
+    #ae-hl{position:fixed;pointer-events:none;z-index:99998;border:2px solid #6A9ACA;
+      background:rgba(106,154,202,.07);display:none;}
+    body.ae-on *{cursor:crosshair !important;}
+    body.ae-on a,body.ae-on button{pointer-events:none;}
+    #ae-badge{position:fixed;bottom:16px;right:16px;background:#0D1B2A;border:1px solid #1a2e48;
+      color:#6A9ACA;font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;
+      padding:5px 10px;z-index:99997;cursor:pointer;font-family:'Montserrat',sans-serif;}
+    #ae-badge:hover{border-color:#6A9ACA;}
+  `;
+  document.head.appendChild(s);
+
+  var panel=document.createElement('div');
+  panel.id='ae';
+  panel.innerHTML=`
+    <div id="ae-head"><span class="t">&#9651; Architect Editor</span><button id="ae-x">&#215;</button></div>
+    <div id="ae-pick">&#9711;&nbsp; Pick mode &mdash; click to enable</div>
+    <div id="ae-sel">No element selected</div>
+    <div id="ae-body"><p style="color:#1e3048;font-size:10px;margin-top:6px;line-height:1.7;">
+      Enable pick mode then click any element on the page.<br>Esc exits pick mode.<br>Ctrl+P toggles.</p></div>
+    <div id="ae-foot">
+      <textarea id="ae-out" readonly placeholder="CSS changes accumulate here — copy and paste to Claude"></textarea>
+      <div class="ae-btns">
+        <button class="ae-btn g" id="ae-copy">Copy CSS</button>
+        <button class="ae-btn" id="ae-reset">Reset El.</button>
+        <button class="ae-btn r" id="ae-clear">Clear All</button>
+      </div>
+    </div>`;
+  document.body.appendChild(panel);
+
+  var badge=document.createElement('div');
+  badge.id='ae-badge'; badge.textContent='&#9651; Editor'; badge.style.display='none';
+  badge.onclick=function(){ panel.style.display='flex'; badge.style.display='none'; };
+  document.body.appendChild(badge);
+
+  var hl=document.createElement('div'); hl.id='ae-hl'; document.body.appendChild(hl);
+
+  var picking=false, curEl=null, log={};
+
+  var FIELDS=[
+    {g:'Typography'},
+    {k:'fontSize',      l:'Font Size',   p:'font-size'},
+    {k:'color',         l:'Color',       p:'color'},
+    {k:'fontFamily',    l:'Font Family', p:'font-family'},
+    {k:'fontWeight',    l:'Weight',      p:'font-weight'},
+    {k:'letterSpacing', l:'Letter Sp.',  p:'letter-spacing'},
+    {k:'lineHeight',    l:'Line Height', p:'line-height'},
+    {k:'textAlign',     l:'Text Align',  p:'text-align'},
+    {k:'textTransform', l:'Transform',   p:'text-transform'},
+    {g:'Spacing'},
+    {k:'padding',       l:'Padding',     p:'padding'},
+    {k:'paddingTop',    l:'Pad Top',     p:'padding-top'},
+    {k:'paddingRight',  l:'Pad Right',   p:'padding-right'},
+    {k:'paddingBottom', l:'Pad Bottom',  p:'padding-bottom'},
+    {k:'paddingLeft',   l:'Pad Left',    p:'padding-left'},
+    {k:'margin',        l:'Margin',      p:'margin'},
+    {k:'marginTop',     l:'Mar Top',     p:'margin-top'},
+    {k:'gap',           l:'Gap',         p:'gap'},
+    {g:'Box'},
+    {k:'width',         l:'Width',       p:'width'},
+    {k:'height',        l:'Height',      p:'height'},
+    {k:'minWidth',      l:'Min Width',   p:'min-width'},
+    {k:'maxWidth',      l:'Max Width',   p:'max-width'},
+    {g:'Border & Colour'},
+    {k:'border',        l:'Border',      p:'border'},
+    {k:'borderRadius',  l:'Radius',      p:'border-radius'},
+    {k:'backgroundColor',l:'Background', p:'background-color'},
+    {k:'opacity',       l:'Opacity',     p:'opacity'},
+  ];
+
+  function getSel(el){
+    if(el.id) return '#'+el.id;
+    var s=el.tagName.toLowerCase();
+    var cls=Array.from(el.classList).filter(function(c){ return c!=='in'&&c!=='active'; }).join('.');
+    if(cls) s+='.'+cls;
+    if(el.parentElement){
+      var idx=Array.from(el.parentElement.children).indexOf(el)+1;
+      s+=':nth-child('+idx+')';
+    }
+    return s;
+  }
+
+  function buildFields(el){
+    var body=document.getElementById('ae-body');
+    var cs=window.getComputedStyle(el);
+    var h='';
+    FIELDS.forEach(function(f){
+      if(f.g){ h+='<div class="ae-grp">'+f.g+'</div>'; return; }
+      var v=el.style[f.k]||cs[f.k]||'';
+      h+='<div class="ae-row"><label>'+f.l+'</label>'
+        +'<input type="text" data-k="'+f.k+'" data-p="'+f.p+'" value="'+v.replace(/"/g,"'")+'">'
+        +'</div>';
+    });
+    body.innerHTML=h;
+    body.querySelectorAll('input').forEach(function(inp){
+      inp.addEventListener('input',function(){
+        el.style[inp.dataset.k]=inp.value;
+        var s=getSel(el);
+        if(!log[s]) log[s]={el:el,props:{}};
+        if(inp.value) log[s].props[inp.dataset.p]=inp.value;
+        else delete log[s].props[inp.dataset.p];
+        renderOut();
+      });
+    });
+  }
+
+  function renderOut(){
+    var out='';
+    Object.keys(log).forEach(function(s){
+      var props=log[s].props;
+      if(!Object.keys(props).length) return;
+      out+='/* '+s+' */\n';
+      Object.keys(props).forEach(function(p){ out+='  '+p+': '+props[p]+';\n'; });
+      out+='\n';
+    });
+    document.getElementById('ae-out').value=out;
+  }
+
+  var pickBtn=document.getElementById('ae-pick');
+  var selLbl=document.getElementById('ae-sel');
+
+  function togglePick(){
+    picking=!picking;
+    document.body.classList.toggle('ae-on',picking);
+    pickBtn.classList.toggle('on',picking);
+    pickBtn.innerHTML=picking
+      ? '&#9711;&nbsp; Pick mode ON &mdash; click an element'
+      : '&#9711;&nbsp; Pick mode &mdash; click to enable';
+    if(!picking) hl.style.display='none';
+  }
+
+  pickBtn.addEventListener('click',togglePick);
+
+  document.addEventListener('mousemove',function(e){
+    if(!picking||panel.contains(e.target)||e.target===hl) return;
+    var r=e.target.getBoundingClientRect();
+    hl.style.display='block';
+    hl.style.top=(r.top+scrollY)+'px'; hl.style.left=r.left+'px';
+    hl.style.width=r.width+'px'; hl.style.height=r.height+'px';
+  },true);
+
+  document.addEventListener('click',function(e){
+    if(!picking) return;
+    var t=e.target;
+    if(panel.contains(t)||t===hl) return;
+    e.preventDefault(); e.stopPropagation();
+    curEl=t; selLbl.textContent=getSel(t); buildFields(t); togglePick();
+  },true);
+
+  document.getElementById('ae-x').addEventListener('click',function(){
+    panel.style.display='none'; badge.style.display='block'; });
+
+  document.getElementById('ae-copy').addEventListener('click',function(){
+    var v=document.getElementById('ae-out').value; if(!v) return;
+    navigator.clipboard.writeText(v).then(function(){
+      var b=document.getElementById('ae-copy');
+      b.textContent='Copied!'; setTimeout(function(){ b.textContent='Copy CSS'; },1800);
+    });
+  });
+
+  document.getElementById('ae-reset').addEventListener('click',function(){
+    if(!curEl) return;
+    var s=getSel(curEl);
+    if(log[s]){ Object.keys(log[s].props).forEach(function(p){
+      var k=p.replace(/-([a-z])/g,function(_,c){ return c.toUpperCase(); });
+      curEl.style[k]='';
+    }); delete log[s]; renderOut(); }
+    buildFields(curEl);
+  });
+
+  document.getElementById('ae-clear').addEventListener('click',function(){
+    Object.keys(log).forEach(function(k){ delete log[k]; }); renderOut();
+    if(curEl) buildFields(curEl);
+  });
+
+  /* Drag */
+  var drag=null;
+  document.getElementById('ae-head').addEventListener('mousedown',function(e){
+    drag={ox:e.clientX-panel.offsetLeft,oy:e.clientY-panel.offsetTop}; });
+  document.addEventListener('mousemove',function(e){
+    if(!drag) return;
+    panel.style.left=(e.clientX-drag.ox)+'px';
+    panel.style.top=(e.clientY-drag.oy)+'px';
+    panel.style.right='auto';
+  });
+  document.addEventListener('mouseup',function(){ drag=null; });
+
+  /* Keys */
+  document.addEventListener('keydown',function(e){
+    if(document.activeElement.tagName==='INPUT'||document.activeElement.tagName==='TEXTAREA') return;
+    if(e.key==='Escape'&&picking) togglePick();
+    if(e.key==='p'&&e.ctrlKey){ e.preventDefault(); togglePick(); }
+  });
+
+})();
+</script>
+
 </body>
 </html>
