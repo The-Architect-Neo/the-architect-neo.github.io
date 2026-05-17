@@ -14,10 +14,14 @@
   | Tool | Status |
   |---|---|
   | [QuantumProtect](https://quantumprotection-production.up.railway.app) | Live |
-  | [INVEST👁GATOR ](https://investigator-production-3d5b.up.railway.app) | Live |
-  | ScamScan | Compliance hold |
-  | Change2Crypto | Building |
-  | Know The Chain | Building |
+  | [INVEST👁GATOR](https://investigator-production-3d5b.up.railway.app) | Live |
+  | [MeDea](https://medea-production-dd4b.up.railway.app) | Live |
+  | LitmusLaw Elite | Building — 43 claim types, Sentinel AI |
+  | ScamScan | Deployable — regulatory hold |
+  | Change2Crypto | FCA Regulatory Sandbox applicant |
+  | Know The Chain | Concept — curriculum built |
+  | WhatIF / StaffSonar | Building |
+  | CryptoReclaim | Building |
   | The Axion Project | Research |
 
   ---
