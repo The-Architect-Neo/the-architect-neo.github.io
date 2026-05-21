@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEEASSET — The Architect</title>
+<meta name="description" content="Twenty years of domain expertise. Forty-three built products. One operational intelligence loop. The Architect.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050509;--bg2:#08080f;--bg3:#0e0e1a;--bg4:#141428;
+  --gold:#c9a84c;--gold2:#e8c96a;--gold3:#8a6820;
+  --text:#ede8dc;--sub:#a09070;--muted:#5a5040;--rule:#1e1c14;
+  --red:#ef4444;--green:#10b981;--blue:#60a5fa;
+  --nav-bg:rgba(5,5,9,.97);
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+[data-theme="mid"]{
+  --bg:#141008;--bg2:#1a1510;--bg3:#221c12;--bg4:#2a231a;
+  --text:#ede8dc;--sub:#c4a87a;--muted:#a09070;--rule:#3a3020;
+  --nav-bg:rgba(20,16,8,.97);
+}
+[data-theme="light"]{
+  --bg:#faf7f0;--bg2:#f2ede0;--bg3:#e8e0cc;--bg4:#ddd4bb;
+  --gold:#7a5410;--gold2:#9a6c18;
+  --text:#1a1510;--sub:#4a3e2a;--muted:#8a7860;--rule:#d0c4a8;
+  --nav-bg:rgba(250,247,240,.97);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);padding:0 32px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:52px;gap:24px;}
+.nav-brand{font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--gold);letter-spacing:.12em;text-decoration:none;flex-shrink:0;}
+.sp{flex:1;}
+.nav-lk{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .15s;}
+.nav-lk:hover{color:var(--gold);}
+.theme-tog{font-size:.95rem;background:none;border:none;color:var(--muted);cursor:pointer;padding:2px 8px;font-family:inherit;transition:color .12s;}
+.theme-tog:hover{color:var(--gold);}
+.sp-btn{display:inline-flex;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;text-decoration:none;transition:all .15s;white-space:nowrap;}
+.sp-gh{color:var(--gold);border:1px solid rgba(201,168,76,.3);}
+.sp-gh:hover{border-color:var(--gold);}
+.sp-pt{color:#ff6400;border:1px solid rgba(255,100,0,.3);}
+.sp-pt:hover{border-color:#ff6400;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 32px 80px;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%, rgba(201,168,76,.05) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(201,168,76,.03) 0%, transparent 50%);}
+.hero-content{max-width:1200px;margin:0 auto;position:relative;z-index:1;width:100%;}
+.hero-eyebrow{font-family:var(--serif);font-size:.75rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:24px;}
+.hero-h1{font-family:var(--serif);font-size:clamp(4rem,10vw,8.5rem);font-weight:700;line-height:.95;letter-spacing:-.02em;margin-bottom:32px;}
+.hero-h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:clamp(1rem,2vw,1.25rem);color:var(--sub);max-width:560px;line-height:1.75;margin-bottom:48px;font-weight:300;}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--gold);text-decoration:none;letter-spacing:.04em;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:2px;transition:border-color .2s;}
+.hero-cta:hover{border-color:var(--gold);}
+.hero-rule{position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:60%;background:linear-gradient(to bottom, transparent, var(--gold), transparent);opacity:.2;}
+
+/* ── SECTIONS ── */
+section{padding:100px 32px;border-top:1px solid var(--rule);position:relative;}
+.container{max-width:1200px;margin:0 auto;}
+.eyebrow{font-size:.6rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:16px;}
+.sec-h{font-family:var(--serif);font-size:clamp(2rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:20px;letter-spacing:-.01em;}
+.sec-h em{font-style:italic;color:var(--gold);}
+.sec-sub{font-size:1rem;color:var(--sub);max-width:560px;line-height:1.8;font-weight:300;}
+
+/* ── RARE COMBINATION ── */
+.combo-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);margin:52px 0 40px;}
+.combo-cell{background:var(--bg2);padding:36px 40px;}
+.combo-centre{background:var(--bg3);padding:36px 40px;text-align:center;display:flex;align-items:center;justify-content:center;min-width:240px;}
+.combo-lbl{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.combo-stmt{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--sub);line-height:1.4;font-style:italic;}
+.combo-asset{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--gold);line-height:1.1;text-align:center;}
+.combo-asset-sub{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px;text-align:center;}
+.bio-text{font-size:.95rem;color:var(--sub);line-height:1.9;max-width:740px;font-weight:300;}
+.bio-text strong{color:var(--text);font-weight:600;}
+
+/* ── NUMBERS ── */
+#numbers{background:var(--bg2);}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);border:1px solid var(--rule);margin-top:52px;}
+.num-cell{background:var(--bg);padding:36px 32px;}
+.num-n{font-family:var(--serif);font-size:clamp(3rem,6vw,5rem);font-weight:700;color:var(--gold);line-height:1;margin-bottom:8px;}
+.num-l{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+
+/* ── DOMAINS ── */
+.domains-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);border:1px solid var(--rule);margin-top:52px;}
+.domain-cell{background:var(--bg2);padding:28px 24px;}
+.domain-icon{font-size:1.4rem;margin-bottom:12px;display:block;}
+.domain-name{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:8px;}
+.domain-products{font-size:.72rem;color:var(--muted);line-height:1.7;}
+.domain-products span{color:var(--sub);}
+
+/* ── SELECTED IP ── */
+#ip{background:var(--bg3);}
+.ip-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);margin-top:52px;}
+.ip-card{background:var(--bg);padding:26px 28px;position:relative;}
+.ip-name{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:6px;}
+.ip-domain{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:8px;}
+.ip-desc{font-size:.82rem;color:var(--sub);line-height:1.7;font-weight:300;}
+.ip-status{position:absolute;top:20px;right:20px;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;}
+.ip-live{color:var(--green);border:1px solid rgba(16,185,129,.3);}
+.ip-built{color:var(--gold);border:1px solid rgba(201,168,76,.3);}
+.ip-concept{color:var(--muted);border:1px solid var(--rule);}
+
+/* ── APPROACH ── */
+.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);margin-top:52px;}
+.approach-cell{background:var(--bg2);padding:32px 36px;}
+.approach-n{font-family:var(--serif);font-size:2.8rem;font-weight:700;font-style:italic;color:var(--gold);opacity:.2;line-height:1;margin-bottom:12px;}
+.approach-title{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--text);margin-bottom:10px;}
+.approach-body{font-size:.85rem;color:var(--sub);line-height:1.8;font-weight:300;}
+
+/* ── OPPORTUNITY ── */
+#opportunity{background:var(--bg2);}
+.opp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);border:1px solid var(--rule);margin-top:52px;}
+.opp-cell{background:var(--bg);padding:30px 26px;}
+.opp-type{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+.opp-desc{font-size:.8rem;color:var(--sub);line-height:1.7;font-weight:300;}
+
+/* ── CONTACT ── */
+#contact{text-align:center;}
+.contact-name{font-family:var(--serif);font-size:clamp(2.5rem,7vw,6rem);font-weight:700;font-style:italic;color:var(--gold);margin-bottom:16px;line-height:1;}
+.contact-title{font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:36px;}
+.contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;}
+.cl{display:inline-flex;align-items:center;gap:8px;font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--sub);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:2px;transition:all .15s;}
+.cl:hover{color:var(--gold);border-color:var(--gold);}
+.tagline{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--muted);font-weight:300;}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--rule);padding:28px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-note{font-size:.62rem;color:var(--muted);}
+.ft-links{display:flex;gap:8px;}
+.ft-sp{display:inline-flex;align-items:center;font-size:.58rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 11px;text-decoration:none;transition:all .15s;}
+.ft-sp-gh{color:var(--gold);border:1px solid rgba(201,168,76,.25);}
+.ft-sp-gh:hover{border-color:var(--gold);}
+.ft-sp-pt{color:#ff6400;border:1px solid rgba(255,100,0,.25);}
+.ft-sp-pt:hover{border-color:#ff6400;}
+
+@media(max-width:960px){
+  .combo-grid{grid-template-columns:1fr;}
+  .domains-grid,.numbers-grid{grid-template-columns:1fr 1fr;}
+  .ip-grid,.approach-grid,.opp-grid{grid-template-columns:1fr;}
+  .nav-lk,.sp-btn{display:none;}
+}
+@media(max-width:560px){
+  .numbers-grid,.domains-grid{grid-template-columns:1fr;}
+  .hero-h1{font-size:clamp(3rem,12vw,5rem);}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">SEEASSET</a>
+    <a href="#rare" class="nav-lk">The Asset</a>
+    <a href="#numbers" class="nav-lk">Numbers</a>
+    <a href="#domains" class="nav-lk">Domains</a>
+    <a href="#ip" class="nav-lk">IP Portfolio</a>
+    <a href="#opportunity" class="nav-lk">Opportunity</a>
+    <div class="sp"></div>
+    <button class="theme-tog" id="theme-tog" onclick="cycleTheme()" title="Toggle theme">◐</button>
+    <a href="https://github.com/sponsors/The-Architect-Neo" target="_blank" rel="noopener noreferrer" class="sp-btn sp-gh">&#9829; Sponsor</a>
+    <a href="https://patreon.com/TheArchitectNeo" target="_blank" rel="noopener noreferrer" class="sp-btn sp-pt">Patreon</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-rule"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">SEEASSET · The Architect</div>
+    <h1 class="hero-h1">Twenty years<br>of operational<br><em>intelligence.</em></h1>
+    <p class="hero-sub">Not a developer who learned a domain.<br>A domain expert who learned to build.<br>Forty-three products. Real problems. Production code.</p>
+    <a href="#rare" class="hero-cta">See the Asset ↓</a>
+  </div>
+</section>
+
+<!-- THE RARE COMBINATION -->
+<section id="rare">
+  <div class="container">
+    <div class="eyebrow">The Asset</div>
+    <h2 class="sec-h">The rare<br><em>combination.</em></h2>
+    <div class="combo-grid">
+      <div class="combo-cell">
+        <div class="combo-lbl">Most builders</div>
+        <div class="combo-stmt">"I know how to build it — but I don't know what to build or whether anyone needs it."</div>
+      </div>
+      <div class="combo-centre">
+        <div>
+          <div class="combo-asset">The<br>Architect</div>
+          <div class="combo-asset-sub">Both. Simultaneously.</div>
+        </div>
+      </div>
+      <div class="combo-cell">
+        <div class="combo-lbl">Most domain experts</div>
+        <div class="combo-stmt">"I know exactly what the market needs — but I cannot build it without a team and a budget."</div>
+      </div>
+    </div>
+    <p class="bio-text">
+      <strong>Twenty-plus years</strong> across fraud detection, telecoms operations, insurance claims analysis, financial intelligence, and investigative intelligence. The career of someone who spent two decades asking one question: <em>why does this system fail the people who need it most?</em>
+      <br><br>
+      Every product in this portfolio was built because the problem was real enough to demand a solution. Not a concept. Not a wireframe. <strong>Working code, deployed, running.</strong> Built alone, from concept to production, often in days.
+      <br><br>
+      The domain expertise is the moat. The build capability is the differentiator. Together they produce IP that cannot be replicated by a developer who does not understand the field, and cannot be built by a domain expert who cannot code.
+    </p>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="numbers">
+  <div class="container">
+    <div class="eyebrow">By the numbers</div>
+    <h2 class="sec-h">The proof<br><em>of output.</em></h2>
+    <div class="numbers-grid">
+      <div class="num-cell">
+        <div class="num-n">20<span style="font-size:2rem;">+</span></div>
+        <div class="num-l">Years of domain expertise<br>across fraud, telecoms,<br>insurance, and intelligence</div>
+      </div>
+      <div class="num-cell">
+        <div class="num-n">43</div>
+        <div class="num-l">IP products built —<br>from napkin to<br>production-grade code</div>
+      </div>
+      <div class="num-cell">
+        <div class="num-n">8</div>
+        <div class="num-l">Distinct verticals covered —<br>legal, data, cyber, property,<br>education, news, finance, telecoms</div>
+      </div>
+      <div class="num-cell">
+        <div class="num-n">1</div>
+        <div class="num-l">FCA Regulatory Sandbox<br>application submitted —<br>financial inclusion, 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section id="domains">
+  <div class="container">
+    <div class="eyebrow">Coverage</div>
+    <h2 class="sec-h">Eight verticals.<br><em>One intelligence loop.</em></h2>
+    <p class="sec-sub">Each domain is connected. Data literacy feeds into fraud detection. Fraud detection feeds into legal intelligence. Legal intelligence feeds into financial inclusion. The portfolio is not scattered — it is a system.</p>
+    <div class="domains-grid">
+      <div class="domain-cell">
+        <span class="domain-icon">⚖️</span>
+        <div class="domain-name">Legal Intelligence</div>
+        <div class="domain-products"><span>LitmusLaw Elite · The Bench · The Turret · ClaimGenerator · ACMS</span><br>UK civil claims, GDPR rights, case law research, automated claim management</div>
+      </div>
+      <div class="domain-cell">
+        <span class="domain-icon">🔒</span>
+        <div class="domain-name">Cybersecurity</div>
+        <div class="domain-products"><span>WhatIF / StaffSonar · QuantumProtect · NetSecure · CONTRAWLER · CLONE-Cleaned · VicKtory</span><br>Insider threat, post-quantum crypto, personal tech protection, AI firewall doctrine</div>
+      </div>
+      <div class="domain-cell">
+        <span class="domain-icon">🛡️</span>
+        <div class="domain-name">Data Protection</div>
+        <div class="domain-products"><span>ScamScan · ScanVault · DIG · DBZERO</span><br>Fraud pattern intelligence, data breach checking, children's data literacy</div>
+      </div>
+      <div class="domain-cell">
+        <span class="domain-icon">💰</span>
+        <div class="domain-name">Financial Inclusion</div>
+        <div class="domain-products"><span>Know The Chain · Change2Crypto · CryptoReclaim · TrustMe</span><br>Financial literacy for children, stablecoin yield, crypto loss recovery, family wealth protection</div>
+      </div>
+      <div class="domain-cell">
+        <span class="domain-icon">🏠</span>
+        <div class="domain-name">Property Intelligence</div>
+        <div class="domain-products"><span>REALGAZ · TheRealAgent</span><br>Adversarial seller strategy, agent listing studio, valuation engine, pipeline management</div>
+      </div>
+      <div class="domain-cell">
+        <span class="domain-icon">📰</span>
+        <div class="domain-name">News Intelligence</div>
+        <div class="domain-products"><span>MeDea</span><br>Headline signal ratio, ProCon Score, source bias weighting, real-time news intelligence</div>
+      </div>
+      <div class="domain-cell">
+        <span class="domain-icon">📚</span>
+        <div class="domain-name">Education & Literacy</div>
+        <div class="domain-products"><span>WaterCycle · DIG · ExamJam · Know The Chain</span><br>Learning styles, data literacy, financial literacy, exam preparation</div>
+      </div>
+      <div class="domain-cell">
+        <span class="domain-icon">📡</span>
+        <div class="domain-name">Telecoms & Operations</div>
+        <div class="domain-products"><span>YCGAudit · Investigator · TradeDesk</span><br>Prospect intelligence, fraud investigation, trading desk operations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED IP -->
+<section id="ip">
+  <div class="container">
+    <div class="eyebrow">Selected IP</div>
+    <h2 class="sec-h">Built. Running.<br><em>Deployable.</em></h2>
+    <p class="sec-sub">Every product below exists as working code. Not a prototype. Not a mockup. Production-grade, deployed or deployable on demand.</p>
+    <div class="ip-grid">
+      <div class="ip-card">
+        <span class="ip-status ip-live">Live</span>
+        <div class="ip-domain">Legal Intelligence</div>
+        <div class="ip-name">The Bench</div>
+        <div class="ip-desc">UK legal intelligence platform. Four acts — Protect, Detect, Claim, Research. Powered by LitmusLaw Elite, TrustMe, and The Turret. 14 claim types. GDPR, employment, consumer, housing, clinical negligence. Sentinel AI. Four-tier subscription.</div>
+      </div>
+      <div class="ip-card">
+        <span class="ip-status ip-built">Built</span>
+        <div class="ip-domain">Legal Intelligence · Automation</div>
+        <div class="ip-name">ACMS</div>
+        <div class="ip-desc">Automated Claim Management System. Full claim lifecycle from LBA to resolution. Kanban dashboard, auto-drafted emails on every status transition, deadline tracking, offer logging, escalation path by claim type. API intake from all connected tools.</div>
+      </div>
+      <div class="ip-card">
+        <span class="ip-status ip-live">Live</span>
+        <div class="ip-domain">News Intelligence</div>
+        <div class="ip-name">MeDea</div>
+        <div class="ip-desc">Real-time news signal intelligence. ProCon Score — ratio of positive to negative headlines across 30+ global sources. Source bias weighting, sarcasm detection, deduplication, geographic filtering. The signal behind the noise.</div>
+      </div>
+      <div class="ip-card">
+        <span class="ip-status ip-live">Live</span>
+        <div class="ip-domain">Cybersecurity</div>
+        <div class="ip-name">QuantumProtect</div>
+        <div class="ip-desc">Post-quantum cryptography calculator. HNDL attack timeline — Harvest Now Decrypt Later. Explains the real threat window of quantum computing to non-technical users. Open source. GitHub Sponsors enabled. Live on Railway.</div>
+      </div>
+      <div class="ip-card">
+        <span class="ip-status ip-built">Built</span>
+        <div class="ip-domain">Cybersecurity · SME</div>
+        <div class="ip-name">WhatIF / StaffSonar</div>
+        <div class="ip-desc">Insider threat detection for SMEs. Free risk profile builder, five threat archetypes, legal template pack. StaffSonar PRO — pattern-based monitoring of company systems with full GDPR compliance framework. Built from a real incident. YCG MDM bundle opportunity.</div>
+      </div>
+      <div class="ip-card">
+        <span class="ip-status ip-built">Built</span>
+        <div class="ip-domain">Property Intelligence</div>
+        <div class="ip-name">TheRealAgent</div>
+        <div class="ip-desc">Listing intelligence for estate agents. Seven platform outputs — Rightmove, Zoopla, OTM, Instagram, WhatsApp, window card, vendor approval email — all from one property facts entry. Pipeline tracker, fee calculator, visitor analytics.</div>
+      </div>
+      <div class="ip-card">
+        <span class="ip-status ip-built">Built</span>
+        <div class="ip-domain">Education</div>
+        <div class="ip-name">DIG — Data Is Gold</div>
+        <div class="ip-desc">Children's data literacy curriculum. Ages 8–16. Three phases: Trail (data mapping), Broker (profile simulation), Vault (identity documents). SAR generator. Six-statement Stand in Your Power framework. Connected to KTC, C2C, LitmusLaw, ScamScan.</div>
+      </div>
+      <div class="ip-card">
+        <span class="ip-status ip-concept">Concept</span>
+        <div class="ip-domain">Financial Inclusion · Regulatory</div>
+        <div class="ip-name">Know The Chain + Change2Crypto</div>
+        <div class="ip-desc">Financial literacy for children (KTC) paired with stablecoin yield for financially excluded families (C2C). FCA Regulatory Sandbox application submitted May 2026. Community node model — one per London borough. The Change Project.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD APPROACH -->
+<section id="approach">
+  <div class="container">
+    <div class="eyebrow">The Method</div>
+    <h2 class="sec-h">Concept to production<br><em>in days, not months.</em></h2>
+    <div class="approach-grid">
+      <div class="approach-cell">
+        <div class="approach-n">01</div>
+        <div class="approach-title">Domain-first, not technology-first</div>
+        <div class="approach-body">Every product starts with a real operational problem. The technology is chosen to solve it — not to demonstrate capability. This is why the tools work in the field, not just in demos. The user is always a practitioner, not a prototype tester.</div>
+      </div>
+      <div class="approach-cell">
+        <div class="approach-n">02</div>
+        <div class="approach-title">Standalone by default</div>
+        <div class="approach-body">Every product is a self-contained deployable unit. No dependencies on external platforms, no vendor lock-in, no prerequisite infrastructure. Deploy to Railway, serve from GitHub Pages, or run locally. The IP travels.</div>
+      </div>
+      <div class="approach-cell">
+        <div class="approach-n">03</div>
+        <div class="approach-title">The jigsaw doctrine</div>
+        <div class="approach-body">Every product is standalone — and every product connects. DIG feeds into LitmusLaw. LitmusLaw feeds into The Bench. The Bench feeds into ACMS. KTC feeds into Change2Crypto. The portfolio is not a collection of tools. It is an intelligence loop.</div>
+      </div>
+      <div class="approach-cell">
+        <div class="approach-n">04</div>
+        <div class="approach-title">Security and privacy by design</div>
+        <div class="approach-body">Post-quantum aware from day one. Zero-knowledge architecture where possible — DIG stores no PII, WaterCycle stores nothing external, TheRealAgent keeps all data in the browser. Canary system, IP timestamping, and fraud detection woven through the stack.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section id="opportunity">
+  <div class="container">
+    <div class="eyebrow">Collaboration</div>
+    <h2 class="sec-h">What kind of partnership<br><em>works here.</em></h2>
+    <p class="sec-sub">The asset is not just the code. It is the domain expertise, the build velocity, and the ability to see problems that the market has not yet framed as products.</p>
+    <div class="opp-grid">
+      <div class="opp-cell">
+        <div class="opp-type">Licensing</div>
+        <div class="opp-desc">Tools that solve problems in your sector. TheRealAgent for your estate agency network. ACMS for your legal services business. WhatIF for your SME security offering. Working products, proven in the field. Licence and deploy.</div>
+      </div>
+      <div class="opp-cell">
+        <div class="opp-type">Advisory</div>
+        <div class="opp-desc">Twenty years of operational intelligence applied to your product decisions. Fraud detection that has seen real fraud. Insurance systems from the inside. Telecoms operations from the ground up. The advisor who has done the job, not studied it.</div>
+      </div>
+      <div class="opp-cell">
+        <div class="opp-type">Partnership</div>
+        <div class="opp-desc">Co-build with a builder who already knows the field. No ramp-up time on domain knowledge. No gap between specification and implementation. The product is designed and built by the same person who understands the problem.</div>
+      </div>
+      <div class="opp-cell">
+        <div class="opp-type">Investment</div>
+        <div class="opp-desc">A portfolio of working IP across eight high-value verticals. Legal intelligence, data protection, financial inclusion, property, cybersecurity, education, news, telecoms. The tools exist. The market is real. The build is already done.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:120px 32px;border-top:1px solid var(--rule);">
+  <div class="container">
+    <div class="contact-name">The Architect</div>
+    <div class="contact-title">Operational Intelligence · Built From The Inside Out</div>
+    <div class="contact-links">
+      <a href="https://the-architect-neo.github.io/" target="_blank" rel="noopener noreferrer" class="cl">Portfolio →</a>
+      <a href="https://github.com/The-Code-Cauldron" target="_blank" rel="noopener noreferrer" class="cl">The Code Cauldron →</a>
+      <a href="https://github.com/sponsors/The-Architect-Neo" target="_blank" rel="noopener noreferrer" class="cl">GitHub Sponsors →</a>
+      <a href="https://patreon.com/TheArchitectNeo" target="_blank" rel="noopener noreferrer" class="cl">Patreon →</a>
+      <a href="mailto:axion-project@proton.me" class="cl">axion-project@proton.me →</a>
+    </div>
+    <div class="tagline">"Know Thyself"</div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-note">© 2026 The Architect. All rights reserved. SEEASSET is proprietary. No copying or commercial use without written agreement.</div>
+  <div class="ft-links">
+    <a href="https://github.com/sponsors/The-Architect-Neo" target="_blank" rel="noopener noreferrer" class="ft-sp ft-sp-gh">&#9829; Sponsor</a>
+    <a href="https://patreon.com/TheArchitectNeo" target="_blank" rel="noopener noreferrer" class="ft-sp ft-sp-pt">Patreon</a>
+  </div>
+</footer>
+
+<script>
+const _TH=['dark','mid','light'],_TI={dark:'◐',mid:'◑',light:'○'};
+function cycleTheme(){const c=document.body.dataset.theme||'dark',n=_TH[(_TH.indexOf(c)+1)%_TH.length];document.body.dataset.theme=n;localStorage.setItem('sa_theme',n);const b=document.getElementById('theme-tog');if(b)b.textContent=_TI[n];}
+(function(){const s=localStorage.getItem('sa_theme')||'dark';document.body.dataset.theme=s;const b=document.getElementById('theme-tog');if(b)b.textContent=_TI[s]||'◐';})();
+
+// Smooth reveal on scroll
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.1});
+document.querySelectorAll('section').forEach(s=>{s.style.opacity='0';s.style.transform='translateY(20px)';s.style.transition='opacity .6s ease, transform .6s ease';obs.observe(s);});
+document.querySelector('.hero').style.opacity='1';document.querySelector('.hero').style.transform='none';
+</script>
+</body>
+</html>
