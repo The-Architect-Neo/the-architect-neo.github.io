@@ -434,6 +434,39 @@ function cycleTheme(){const c=document.body.dataset.theme||'dark',n=_TH[(_TH.ind
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.1});
 document.querySelectorAll('section').forEach(s=>{s.style.opacity='0';s.style.transform='translateY(20px)';s.style.transition='opacity .6s ease, transform .6s ease';obs.observe(s);});
 document.querySelector('.hero').style.opacity='1';document.querySelector('.hero').style.transform='none';
+
+// ── AUDIO PLAYER ──
+const _aud=new Audio();
+// ↓ Replace this URL with your chosen royalty-free track (MP3 or OGG hosted URL)
+_aud.src='';
+_aud.loop=true;
+_aud.volume=0.35;
+let _playing=false;
+
+function toggleAudio(){
+  if(!_aud.src||_aud.src===window.location.href){
+    document.getElementById('_aud_btn').title='Add a track URL to SEEASSET.html line: _aud.src=\'\'';
+    return;
+  }
+  if(_playing){
+    _aud.pause();_playing=false;
+    document.getElementById('_aud_icon').textContent='♪';
+    document.getElementById('_aud_lbl').textContent='Play';
+  } else {
+    _aud.play().then(()=>{
+      _playing=true;
+      document.getElementById('_aud_icon').textContent='■';
+      document.getElementById('_aud_lbl').textContent='Stop';
+    }).catch(()=>{});
+  }
+}
 </script>
+
+<!-- AUDIO PLAYER — fixed bottom left -->
+<div id="_aud_btn" onclick="toggleAudio()" title="Background music" style="position:fixed;bottom:20px;left:20px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(5,5,9,.92);border:1px solid rgba(201,168,76,.25);padding:8px 16px;cursor:pointer;backdrop-filter:blur(12px);transition:border-color .15s;" onmouseover="this.style.borderColor='rgba(201,168,76,.6)'" onmouseout="this.style.borderColor='rgba(201,168,76,.25)'">
+  <span id="_aud_icon" style="font-size:1rem;color:var(--gold);">♪</span>
+  <span id="_aud_lbl" style="font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);">Play</span>
+</div>
+
 </body>
 </html>
