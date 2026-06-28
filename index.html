@@ -1,179 +1,202 @@
 <!doctype html>
-<!-- ARCH-DCV3-9b1f6027 -->
+<!-- ARCH-DCV4-editorial -->
 <html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>The Architect — combined arts and digital practice</title>
-<meta name="description" content="The Architect. Combined-arts and digital practice. Hidden systems — personal data, statutory procedure, scripture — re-presented so an ordinary person can see them and act. Roots in performing arts and video production from 2017." />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https://img.youtube.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<title>The Architect — combined arts and digital work</title>
+<meta name="description" content="The Architect. Mixed media production. The systems we live inside and are rarely aware of — our data, the law, scripture, the numbers — imagined back into a shape a person can hold. From article writing in 2015 to video production from 2017 and now this current body of digital work." />
 <meta name="author" content="The Architect" />
 <link rel="canonical" href="https://the-architect-neo.github.io/" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,800;1,9..144,500;1,9..144,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0; --panel:#ffffff; --panel-alt:#f0ede8; --line:#d8d4cc;
-  --text:#0d1b2a; --sub:#2c3a4a; --muted:#3a4a5a;
-  --accent:#1c3f6e; --link:#15355e; --red:#a01a14;
-  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --sans:'Montserrat',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:17px;
+  --bg:#faf6ec; --panel:#fffdf7; --panel-alt:#f1ebdb; --line:#ddd2bb;
+  --text:#15110a; --sub:#564d3b; --muted:#6c6350;
+  --accent:#8a1d12; --accent2:#9a7b2e; --link:#7c1810;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --body:'Spectral',Georgia,'Times New Roman',serif;
+  font-size:18px;
 }
 html[data-theme="dark"]{
-  --bg:#0d1b2a; --panel:#111e2e; --panel-alt:#0a1520; --line:#22364a;
-  --text:#f6f4f0; --sub:#cdd6df; --muted:#9fb0c0;
-  --accent:#6a9aca; --link:#8fb4dc; --red:#ff8580;
+  --bg:#100e0a; --panel:#17140d; --panel-alt:#0c0a07; --line:#2f2920;
+  --text:#f7f0df; --sub:#c9bea5; --muted:#a89d86;
+  --accent:#e89077; --accent2:#d9b65c; --link:#f1b78d;
 }
 html[data-theme="mid"]{
-  --bg:#243140; --panel:#2d3c4d; --panel-alt:#1e2a37; --line:#3d4c5d;
-  --text:#ffffff; --sub:#dbe3ec; --muted:#bcc7d3;
-  --accent:#7fb0e0; --link:#9cc2ea; --red:#ff8f8a;
+  --bg:#262219; --panel:#302b20; --panel-alt:#1d1a13; --line:#463e2f;
+  --text:#ffffff; --sub:#ded4be; --muted:#bcb29b;
+  --accent:#f3a482; --accent2:#e8c878; --link:#f5b894;
 }
 *{box-sizing:border-box}
-html,body{
-  margin:0; padding:0;
-  background:var(--bg); color:var(--text);
-  font-family:var(--sans); font-weight:500; line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-html[data-theme="dark"] body,html[data-theme="mid"] body{font-weight:450}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+  font-family:var(--body);font-weight:500;line-height:1.72;-webkit-font-smoothing:antialiased;}
+html[data-theme="dark"] body,html[data-theme="mid"] body{font-weight:400}
 a{color:var(--link);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
 a:hover,a:focus{border-bottom-color:var(--link)}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+::selection{background:var(--accent);color:var(--bg)}
 
-header{
-  padding:1.4rem 1.8rem; border-bottom:1px solid var(--line);
-  display:flex; flex-wrap:wrap; gap:1rem;
-  align-items:center; justify-content:space-between;
-  background:var(--bg); position:sticky; top:0; z-index:100;
-}
-header .mark{font-family:var(--serif);font-weight:700;letter-spacing:.01em;font-size:1.4rem;color:var(--text)}
+header{padding:1.2rem 1.9rem;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;
+  background:var(--bg);position:sticky;top:0;z-index:100}
+header .mark{font-family:var(--display);font-weight:600;letter-spacing:.01em;font-size:1.35rem;color:var(--text)}
 header .mark span.dot{color:var(--accent)}
-nav.primary{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
-nav.primary a{font-size:.9rem;color:var(--sub);font-weight:600;letter-spacing:.02em}
-nav.themes{display:flex;gap:.35rem}
-nav.themes button{
-  background:transparent;color:var(--sub);border:1.5px solid var(--line);
-  padding:.62rem .85rem; font-size:.86rem; border-radius:6px; cursor:pointer; font-weight:600;
-  font-family:inherit;
-}
-nav.themes button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+nav.primary{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap}
+nav.primary a{font-size:.82rem;color:var(--sub);font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none}
+nav.primary a:hover{color:var(--accent)}
+nav.themes{display:flex;gap:.3rem}
+nav.themes button{background:transparent;color:var(--sub);border:1.5px solid var(--line);
+  padding:.55rem .8rem;font-size:.8rem;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--body)}
+nav.themes button[aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
 
-main{max-width:1040px;margin:0 auto;padding:0 1.8rem 4rem}
+main{max-width:1060px;margin:0 auto;padding:0 1.9rem 4rem}
 
-.hero{padding:4.5rem 0 3rem}
-.hero p.kicker{
-  font-size:.86rem; text-transform:uppercase; letter-spacing:.16em;
-  color:var(--accent); margin:0 0 1.3rem; font-weight:700;
-}
-.hero h1{
-  font-family:var(--serif); font-size:clamp(2.6rem,6vw,4.4rem); line-height:1.04;
-  margin:0 0 1.4rem; letter-spacing:-.01em; font-weight:600; color:var(--text);
-}
-.hero p.lede{
-  font-size:clamp(1.1rem,2.2vw,1.35rem); color:var(--text); margin:0 0 1rem;
-  max-width:40em; line-height:1.5; font-weight:500;
-}
-html[data-theme="dark"] .hero p.lede,html[data-theme="mid"] .hero p.lede{font-weight:450}
-.hero p.lede.dim{color:var(--sub);font-size:clamp(1rem,1.9vw,1.12rem)}
+.hero{padding:5rem 0 3rem}
+.hero .kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.22em;color:var(--accent);
+  font-weight:700;margin:0 0 1.6rem;font-family:var(--body)}
+.hero h1{font-family:var(--display);font-size:clamp(3rem,8.5vw,6rem);line-height:.96;margin:0 0 1.8rem;
+  letter-spacing:-.015em;font-weight:600;color:var(--text)}
+.hero .lede{font-family:var(--display);font-size:clamp(1.35rem,3vw,1.95rem);color:var(--text);
+  margin:0 0 1.5rem;max-width:24em;line-height:1.32;font-weight:500;font-style:italic}
+.hero .origin{font-size:clamp(1.02rem,1.9vw,1.15rem);color:var(--sub);margin:0;max-width:40em;line-height:1.7}
 
-section{padding:2.8rem 0;border-top:1px solid var(--line)}
-section h2{
-  font-family:var(--serif); font-size:clamp(1.7rem,3.4vw,2.3rem); margin:0 0 1.3rem;
-  letter-spacing:0; color:var(--text); font-weight:600; line-height:1.1;
-}
-section h2 .num{color:var(--accent);font-weight:600;margin-right:.55rem;font-size:.7em}
-section p.section-lede{font-size:1.05rem;color:var(--sub);margin:0 0 1.7rem;max-width:44em;line-height:1.55}
+.quote{padding:3.4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:1rem 0}
+.quote blockquote{margin:0;font-family:var(--display);font-weight:500;font-style:italic;
+  font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.28;color:var(--text);max-width:18em}
+.quote blockquote .mk{color:var(--accent)}
 
-.about p{font-size:1.06rem; color:var(--text); margin:0 0 1.15rem; max-width:44em; line-height:1.6}
-.about p.dim{color:var(--sub)}
+section{padding:3rem 0;border-top:1px solid var(--line)}
+section h2{font-family:var(--display);font-size:clamp(1.7rem,3.6vw,2.4rem);margin:0 0 1.5rem;
+  color:var(--text);font-weight:600;line-height:1.08;display:flex;align-items:baseline;gap:.7rem}
+section h2 .num{color:var(--accent2);font-weight:600;font-size:.62em;font-variant-numeric:tabular-nums}
+section .section-lede{font-size:1.08rem;color:var(--sub);margin:0 0 2rem;max-width:42em;line-height:1.65}
+
+.about p{font-size:1.12rem;color:var(--text);margin:0 0 1.25rem;max-width:40em;line-height:1.72}
+.about p.dim{color:var(--sub);font-size:1.05rem}
 .about p .em{font-style:italic;color:var(--accent);font-weight:600}
+.about p.lead::first-letter{font-family:var(--display);float:left;font-size:4.4rem;line-height:.78;
+  font-weight:600;color:var(--accent);margin:.35rem .7rem 0 0}
 
-.currently{
-  padding:1.2rem 1.4rem; border:1.5px solid var(--accent); border-radius:8px;
-  margin-top:1.4rem; background:var(--panel);
-}
-.currently strong{color:var(--accent);font-weight:700}
-.currently p{margin:0;font-size:1rem;color:var(--text)}
+.currently{padding:1.4rem 1.6rem;border:1.5px solid var(--accent);border-radius:8px;
+  margin-top:1.8rem;background:var(--panel)}
+.currently strong{color:var(--accent);font-weight:600;font-family:var(--display)}
+.currently p{margin:0;font-size:1.05rem;color:var(--text);line-height:1.65}
 
-.works{display:grid;grid-template-columns:1fr;gap:1.1rem}
+.works{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:.5rem}
 @media(min-width:720px){.works{grid-template-columns:1fr 1fr}}
-.work{
-  padding:1.5rem; border:1.5px solid var(--line); border-radius:8px;
-  background:var(--panel); display:flex; flex-direction:column; gap:.75rem;
-}
+.work{padding:1.7rem;border:1.5px solid var(--line);border-radius:8px;background:var(--panel);
+  display:flex;flex-direction:column;gap:.8rem}
 .work .meta{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
-.work .num{font-size:.82rem;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}
-.work .strand{font-size:.82rem;padding:.15rem .55rem;border-radius:4px;border:1px solid var(--line);color:var(--sub);font-weight:500}
-.work h3{font-family:var(--serif);font-size:1.55rem;margin:0;color:var(--text);font-weight:600;line-height:1.1}
-.work p{margin:0;color:var(--sub);font-size:1rem;line-height:1.55}
-.work .link{margin-top:.3rem;font-size:.92rem;font-weight:600;color:var(--link);display:inline-block;align-self:flex-start}
-.work .link::after{content:" \2192";margin-left:.15rem}
-.work .status{margin-top:.3rem;font-size:.9rem;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:.45rem}
-.work .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+.work .num{font-size:.76rem;font-weight:700;letter-spacing:.12em;color:var(--accent2);text-transform:uppercase}
+.work .strand{font-size:.78rem;padding:.18rem .6rem;border-radius:4px;border:1px solid var(--line);color:var(--sub);font-weight:500}
+.work h3{font-family:var(--display);font-size:1.7rem;margin:0;color:var(--text);font-weight:600;line-height:1.05}.gold{
+    font-weight:800;
+    background:linear-gradient(110deg,#c79a2b
+  0%,#e8c156 24%,#fff4cf 44%,#e8c156 60%,#9a7314
+  100%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:#9a7314;
+    filter:drop-shadow(0 0 5px rgba(232,193,86,.35));
+    animation:goldshine 3.4s linear infinite;
+  }.ocean{
+    font-weight:800;
+    background:linear-gradient(180deg,#7fdcea
+  0%,#2f9fd0 45%,#1c6fa6 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:#1c6fa6;
+    animation:oceanpulse 3.6s ease-in-out infinite;
+  }
+  @keyframes oceanpulse{
+    0%,100%{filter:drop-shadow(0 0 3px
+  rgba(80,200,230,.35))}
+    50%{filter:drop-shadow(0 0 12px
+  rgba(80,200,230,.85))}
+  }
+  @keyframes goldshine{
+    0%{background-position:120% 0}
+    100%{background-position:-20% 0}
+  }
+.work p{margin:0;color:var(--sub);font-size:1.04rem;line-height:1.62}
+.work .link{margin-top:.4rem;font-size:.95rem;font-weight:600;color:var(--link);align-self:flex-start;border:none}
+.work .link::after{content:" \2192";margin-left:.2rem}
+.work .status{margin-top:.4rem;font-size:.92rem;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:.5rem}
+.work .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent2);display:inline-block}
 
-.about-back{margin-top:2rem;padding:1.2rem 1.4rem;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 6px 6px 0}
-.about-back p{font-size:.98rem;color:var(--sub);margin:0;max-width:44em;line-height:1.55}
+.about-back{margin-top:2.2rem;padding:1.4rem 1.6rem;border-left:3px solid var(--accent2);
+  background:var(--panel);border-radius:0 6px 6px 0}
+.about-back p{font-size:1.02rem;color:var(--sub);margin:0;max-width:44em;line-height:1.68;font-style:italic}
 
-.video-note{
-  margin:0 0 1.8rem; padding:1rem 1.3rem; background:var(--panel-alt);
-  border:1px solid var(--line); border-radius:8px;
-  font-size:.95rem; color:var(--sub); line-height:1.55; max-width:48em;
-}
-.video-note strong{color:var(--text);font-weight:700}
-.videos{display:grid;grid-template-columns:1fr;gap:1.6rem}
+.video-note{margin:0 0 2rem;padding:1.1rem 1.4rem;background:var(--panel-alt);border:1px solid var(--line);
+  border-radius:8px;font-size:.98rem;color:var(--sub);line-height:1.6;max-width:48em}
+.video-note strong{color:var(--text);font-weight:600;font-family:var(--display)}
+.videos{display:grid;grid-template-columns:1fr;gap:1.7rem}
 @media(min-width:720px){.videos{grid-template-columns:1fr 1fr}}
 .video figure{margin:0}
-.video .frame{
-  position:relative; display:block; width:100%; padding-top:56.25%;
-  border:1.5px solid var(--line); border-radius:8px; overflow:hidden; background:#000;
-}
+.video .frame{position:relative;display:block;width:100%;padding-top:56.25%;
+  border:1.5px solid var(--line);border-radius:8px;overflow:hidden;background:#000}
 .video .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .video .frame .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.video .frame .play::before{content:"";position:absolute;width:64px;height:64px;border-radius:50%;background:rgba(13,27,42,.74);border:2px solid rgba(255,255,255,.92)}
-.video .frame .play::after{content:"";position:relative;width:0;height:0;margin-left:5px;border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent #fff}
+.video .frame .play::before{content:"";position:absolute;width:64px;height:64px;border-radius:50%;
+  background:rgba(20,17,10,.72);border:2px solid rgba(255,255,255,.92)}
+.video .frame .play::after{content:"";position:relative;width:0;height:0;margin-left:5px;
+  border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent #fff}
 .video .frame:hover .play::before,.video .frame:focus-visible .play::before{border-color:var(--accent)}
 .video .frame:hover .play::after,.video .frame:focus-visible .play::after{border-left-color:var(--accent)}
 .video .frame:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.video .frame .badge{position:absolute;left:.6rem;bottom:.6rem;z-index:1;background:rgba(0,0,0,.82);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .55rem;border-radius:4px}
-.video figcaption{margin-top:.7rem}
-.video figcaption .tag{display:block;font-family:var(--serif);font-size:1.2rem;color:var(--text);font-weight:600;margin-bottom:.15rem}
-.video figcaption .desc{font-size:.96rem;color:var(--sub);line-height:1.5}
+.video .frame .badge{position:absolute;left:.6rem;bottom:.6rem;z-index:1;background:rgba(0,0,0,.82);
+  color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .55rem;border-radius:4px}
+.video figcaption{margin-top:.75rem}
+.video figcaption .tag{display:block;font-family:var(--display);font-size:1.3rem;color:var(--text);font-weight:600;margin-bottom:.15rem}
+.video figcaption .desc{font-size:1rem;color:var(--sub);line-height:1.55}
 
 .contact{display:grid;grid-template-columns:1fr;gap:1rem}
 @media(min-width:720px){.contact{grid-template-columns:repeat(3,1fr)}}
-.contact-card{padding:1.2rem;border:1.5px solid var(--line);border-radius:8px;background:var(--panel)}
-.contact-card .label{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin:0 0 .45rem}
-.contact-card a{font-size:1rem;font-weight:600;color:var(--link)}
+.contact-card{padding:1.3rem;border:1.5px solid var(--line);border-radius:8px;background:var(--panel)}
+.contact-card .label{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;margin:0 0 .5rem}
+.contact-card a{font-size:1.05rem;font-weight:600;color:var(--link);border:none}
 
-footer{padding:2.2rem 1.8rem;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:1rem;align-items:center;color:var(--muted);font-size:.88rem}
+footer{padding:2.6rem 1.9rem;border-top:1px solid var(--line);display:flex;flex-direction:column;
+  gap:1.1rem;align-items:center;color:var(--muted);font-size:.9rem}
 footer .support{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
-footer .support a{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .95rem;border:1.5px solid var(--line);border-radius:6px;color:var(--sub);font-weight:600;font-size:.86rem}
+footer .support a{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1rem;border:1.5px solid var(--line);
+  border-radius:6px;color:var(--sub);font-weight:600;font-size:.86rem}
 footer .support a:hover,footer .support a:focus{border-color:var(--accent);color:var(--accent)}
-footer .meta{text-align:center;line-height:1.7;color:var(--muted)}
-footer .meta em{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--sub)}
-footer .meta a{color:var(--sub)}
+footer .meta{text-align:center;line-height:1.8;color:var(--muted)}
+footer .meta em{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--sub)}
 
-#err-badge{position:fixed;right:1rem;bottom:1rem;display:none;background:var(--red);color:#fff;padding:.55rem .95rem;border-radius:999px;font-weight:700;cursor:pointer;z-index:9999;font-size:.92rem;border:none;font-family:inherit}
-#err-panel{position:fixed;right:1rem;bottom:3.6rem;width:min(420px,92vw);max-height:50vh;overflow:auto;background:var(--panel);border:1.5px solid var(--red);border-radius:8px;padding:1rem;display:none;z-index:9998;font-size:.85rem}
-#err-panel h3{margin:0 0 .5rem;color:var(--red);font-size:.95rem}
-#err-panel pre{white-space:pre-wrap;word-break:break-word;color:var(--sub);margin:0;font-size:.82rem}
+#err-badge{position:fixed;right:1rem;bottom:1rem;display:none;background:var(--accent);color:var(--bg);
+  padding:.55rem .95rem;border-radius:999px;font-weight:700;cursor:pointer;z-index:9999;font-size:.9rem;border:none;font-family:var(--body)}
+#err-panel{position:fixed;right:1rem;bottom:3.6rem;width:min(420px,92vw);max-height:50vh;overflow:auto;
+  background:var(--panel);border:1.5px solid var(--accent);border-radius:8px;padding:1rem;display:none;z-index:9998;font-size:.85rem}
+#err-panel h3{margin:0 0 .5rem;color:var(--accent);font-size:.95rem}
+#err-panel pre{white-space:pre-wrap;word-break:break-word;color:var(--sub);margin:0;font-size:.82rem;font-family:ui-monospace,Consolas,monospace}
 
 @media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+@media(max-width:560px){
+  header{padding:1rem 1.2rem}
+  main{padding:0 1.2rem 3rem}
+  nav.primary a:not(:nth-last-child(-n+2)){display:none}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="mark">The Architect <span class="dot">·</span></div>
+  <div class="mark">The Architect <span class="dot">&middot;</span></div>
   <nav class="primary" aria-label="Primary">
-    <a href="#practice">Practice</a>
-    <a href="#works">Works</a>
-    <a href="#video">Video</a>
+    <a href="#practice">THE WORK</a>
+    <a href="#works">SEE</a>
+    <a href="#video">The Beginning</a>
     <a href="#contact">Contact</a>
-    <a href="https://github.com/sponsors/The-Architect-Neo" target="_blank" rel="noopener">Sponsor</a>
+    <a href="https://github.com/sponsors/The-Architect-Neo" target="_blank" rel="noopener">Github</a>
     <a href="https://patreon.com/TheArchitectNeo" target="_blank" rel="noopener">Patreon</a>
   </nav>
   <nav class="themes" aria-label="Theme">
@@ -188,144 +211,112 @@ footer .meta a{color:var(--sub)}
   <section class="hero" aria-labelledby="hero-h">
     <p class="kicker">Combined arts &middot; digital</p>
     <h1 id="hero-h">The Architect</h1>
-    <p class="lede">I take systems people live inside and never see &mdash; their data, the law, scripture &mdash; and make them into something a person can hold.</p>
-    <p class="lede dim">Roots in video and performing arts from 2017. Twenty years before that reading fraud patterns for a living, seeing the structure under ordinary transactions. In 2026 the two met in public. I came back from nothing once, on one small act I didn&rsquo;t understand at the time. The work since is about handing other people the thing they couldn&rsquo;t see.</p>
+    <p class="lede">I take the systems we all live inside and never quite see &mdash; our data, the law, scripture, the numbers that quietly run a life &mdash; and I work them back into a shape a person can pick up and use.</p>
+    <p class="origin">In 2009 I landed at Heathrow with a single penny to my name, no job, no home and no real prospect of either and what turned the whole thing was almost nothing at all &mdash; one box I had ticked a long way from home, which incepted a chain of events I couldn't see, quietly pulling me back onto my feet. I have spent the years since looking for the very same boxes ordinary people never knew were theirs and the work hands  back what was unseen.</p>
+  </section>
+
+  <section class="quote" aria-hidden="true">
+    <blockquote>Every digital construct emerges from an obscured architecture, resolving into tangible form <span class="mk">you can examine directly</span>.</blockquote>
   </section>
 
   <section class="about" id="practice" aria-labelledby="about-h">
-    <h2 id="about-h"><span class="num">01</span>About the practice</h2>
-    <p><span class="em">Know Thyself</span> is the thread. Every piece takes a hidden system and gives an ordinary person a way to see it and act.</p>
-    <p>The practice is not new. In 2015 I wrote <em>Down to Earth</em>, a memoir. From 2017 I worked in video and performing arts, and helped develop a young performer who records today. The analyst years ran alongside &mdash; telecoms, insurance, operations &mdash; two decades reading the patterns most people never look at twice. It sits in a field that treats data and administrative identity as material for art.</p>
-    <p class="dim">An established voice with a decade behind it. No commission, no funded show, no established partner. Made in the open, on my own time. The rate of output is the discipline.</p>
+    <h2 id="about-h"><span class="num">01</span>About me... and the work</h2>
+    <p class="lead"><span class="em">Know Thyself</span> is the thread that runs the length of it; and every facet of the work sets out the same way &mdash; a system you were never meant to be able to see, taken apart with some care and handed back as something you can finally look at without flinching.</p>
+    <p>The sysnopsis that led to here: In 2009 I landed in the UK, homeless and determined to changemy world; in 2012 my friends' daughter cut a rap album, at age 12; in 2015 I started a memoir, <em>Down to Earth</em> to document my colourful journey; in 2016 I had my 1st child and in 2017 I filmed within London&rsquo;s grassroots music scene; under the banner of Worldwide Entertainment TV for their UK content. In a certain event the team produced, gathered more than 40 artists into the YouTube studios, Kings Cross, London. Putting a lot of young voices, and known faces, in front of a lens (and received a channel strike for breach of terms). Underneath all of it runs more than 20 years of reading the structure beneath an ordinary transaction &mdash; service desks, sales, the shop floor, operations and the escalated fraud cases that teach you, in the end, how a person is assembled out of paper. In 2026 the two finally met in public, in the digital space.</p>
+    <p class="dim">Carrying over two decades of experience behind me, no commission, no funded show and no partner with a brand or logo &mdash; made in the open, made on my own time and mostly in the small hours. I am optimistic these outputs will inspire now and in the future.</p>
 
     <div class="currently" role="note" aria-label="Currently developing">
-      <p><strong>Currently developing</strong> the data-sovereignty arm of the practice through DIG, alongside research into interactive narrative for young audiences.</p>
+      <p><strong>Presently</strong> the work is pointing towards data awareness through <h3>D.I.G. &middot; Data Is <span
+  class="gold">Gold</span></h3> &mdash; where a young person can see, perhaps for the first time, what their own information is worth and learn to stand in front of it &mdash; alongside research into interactive storytelling for the younger audience.</p>
     </div>
   </section>
 
   <section id="works" aria-labelledby="works-h">
-    <h2 id="works-h"><span class="num">02</span>Body of work</h2>
-    <p class="section-lede">Five works carry the practice now. Each takes a hidden system and turns it into something a person can use.</p>
+    <h2 id="works-h"><span class="num">02</span>'The 5'</h2>
+    <p class="section-lede">Five assets give a view of my work and each one takes a system you cannot see and turns it into something you can.</p>
     <div class="works">
 
       <article class="work">
-        <div class="meta">
-          <span class="num">Work 01</span>
-          <span class="strand">Combined arts &middot; digital &middot; educational</span>
-        </div>
-        <h3>DIG &middot; Data Is Gold</h3>
-        <p>An interactive that shows a young person what their data is, what it is worth, and how to stand in front of it. An invisible system made into something they can act on.</p>
+        <div class="meta"><span class="num">Work 01</span><span class="strand">Combined arts &middot; digital &middot; edu-tech</span></div>
+        <h3>D.I.G. &middot; Data Is <span
+  class="gold">Gold</span></h3>
+        <p>An interactive that walks a young person through their own data trail &mdash; who holds it by home time, what a broker assembles from the scraps, what each identity document quietly unlocks &mdash; then hands them a working letter to claim it back. The invisible thing made into something a child can pick up and use.</p>
         <span class="status">Private build &middot; screened preview on request</span>
       </article>
 
       <article class="work">
-        <div class="meta">
-          <span class="num">Work 02</span>
-          <span class="strand">Combined arts &middot; digital &middot; interactive</span>
-        </div>
-        <h3>WaterCycle</h3>
-        <p>A live interactive that reads your learning style back to you, built on the VARK model. Self-knowledge you can see and put to work.</p>
+        <div class="meta"><span class="num">Work 02</span><span class="strand">Combined arts &middot; digital &middot; interactive</span></div>
+        <h3>Water<span class="ocean">CYCLE</span></h3>
+        <p>A live interactive that finds your natural form and teaches around it &mdash; the Thinkier reads your cognitive style, a blood-type and biomarker layer adds the biology, the Cocoon settles the breath before you begin. Self-knowledge you can see and put to work the same afternoon.</p>
         <a class="link" href="https://watercycle-production.up.railway.app" target="_blank" rel="noopener">Open the work</a>
       </article>
 
       <article class="work">
-        <div class="meta">
-          <span class="num">Work 03</span>
-          <span class="strand">Visual arts &middot; literature &middot; typographic</span>
-        </div>
-        <h3>BibleTEEZ Edition 01</h3>
-        <p>Nine pieces of scripture made into typographic objects you wear. The type serves the text rather than decorating it.</p>
-        <a class="link" href="https://github.com/The-Code-Cauldron" target="_blank" rel="noopener">View the edition</a>
+        <div class="meta"><span class="num">Work 03</span><span class="strand">Visual arts &middot; literature &middot; typographic</span></div>
+        <h3>Bible<span class="gold">TEEZ</span></h3>
+        <p>Edition 01 &middot; The Nine &mdash; nine chosen verses made wearable, printed on demand on tees, hoodies and hats, where the type serves the scripture rather than decorating it.</p>
+        <a class="link" href="https://the-architect-neo.github.io/BibleTEEZ/" target="_blank" rel="noopener">View the edition</a>
       </article>
 
       <article class="work">
-        <div class="meta">
-          <span class="num">Work 04</span>
-          <span class="strand">Literature &middot; doctrine</span>
-        </div>
-        <h3>LitmusLaw doctrinal corpus</h3>
-        <p>A body of doctrinal writing on legal procedure for people facing it alone &mdash; the Insurer Letter, Sentinel, Context Spine and Retort doctrines. Procedure written as a literary discipline.</p>
-        <a class="link" href="https://github.com/The-Code-Cauldron" target="_blank" rel="noopener">Read the corpus</a>
+        <div class="meta"><span class="num">Work 04</span><span class="strand">Literature &middot; doctrine</span></div>
+        <h3>Litmus<span class="gold">LAW</span></h3>
+        <p>A platform and a body of writing for facing the legal system when you have to face it alone &mdash; Honour, Integrity, Truth and a way to build the claim yourself. Sets procedure down as a formula so the common person walks with a
+        their own map.</p>
+        <span class="status">Screened build &middot; preview on request</span>
       </article>
 
       <article class="work">
-        <div class="meta">
-          <span class="num">Work 05</span>
-          <span class="strand">Digital &middot; access &middot; civic</span>
-        </div>
-        <h3>GRANTAPP</h3>
-        <p>An engine that helps people write and check funding bids, this scheme included. The practice turned outward &mdash; the tools I needed, built for whoever comes behind me.</p>
+        <div class="meta"><span class="num">Work 05</span><span class="strand">Digital &middot; access &middot; civic</span></div>
+        <h3>Grant<span class="gold">APP</span></h3>
+        <p>An adversarial funding engine &mdash; it finds the open funders and points you in the right direction. These are the tools I needed built at a time when I most needed them; made available for whoever comes behind me.</p>
         <span class="status">Private build &middot; screened preview on request</span>
       </article>
 
     </div>
 
     <div class="about-back">
-      <p>Behind these sit more than sixty digital builds since early 2026 &mdash; AI-assisted, made in the early hours, each one a climb through law, data and code. The work began earlier, in public, in video.</p>
+      <p>Behind these five examples sit more than seventy working digital builds since the start of 2026 &mdash; some are built using AI-assistance, some AI centred, most were constructed in the early hours by climbing through pages of law, personal data and various styles of code. The creative work itself had begun way earlier through my creative writing and then out in public, with a camera, a team and no formal film qualifications.</p>
     </div>
   </section>
 
   <section id="video" aria-labelledby="video-h">
-    <h2 id="video-h"><span class="num">03</span>Earlier practice &middot; Video, 2017</h2>
-    <p class="section-lede">Before the code, the camera. In 2017 I produced and documented London&rsquo;s grassroots music scene &mdash; convening artists, platforming young voices, recording it as it was. The same instinct runs through the work now: give the unseen a way to be seen.</p>
-    <p class="video-note"><strong>A note on the footage.</strong> These are documentary records of a live street-music scene, unedited and of their moment. They carry strong language and a raw setting. They are shown as the ground the current practice grew from, not as current work.</p>
+    <h2 id="video-h"><span class="num">03</span>The early years... 2017 footage</h2>
+    <p class="section-lede">Before the code, the camera. The same instinct runs through everything since &mdash; give the unseen a way to be seen.</p>
+    <p class="video-note"><strong>A note on the footage.</strong> These are documentary records of live grime music, unedited and of their moment, carrying strong language and a raw setting. They stand here as the ground the current work grew from, not as current examples.</p>
     <div class="videos">
 
-      <div class="video">
-        <figure>
-          <a class="frame" href="https://www.youtube.com/watch?v=8mN51ZUPhd0" target="_blank" rel="noopener" aria-label="Play on YouTube: Cypher, 2017 — forty-plus artists convened from across London">
-            <img src="https://img.youtube.com/vi/8mN51ZUPhd0/hqdefault.jpg" alt="Cypher, 2017 — forty-plus artists convened from across London" loading="lazy" />
-            <span class="play" aria-hidden="true"></span>
-            <span class="badge" aria-hidden="true">Watch on YouTube</span>
-          </a>
-          <figcaption>
-            <span class="tag">Cypher</span>
-            <span class="desc">I invited forty-plus artists from across London into one room and filmed it.</span>
-          </figcaption>
-        </figure>
-      </div>
+      <div class="video"><figure>
+        <a class="frame" href="https://www.youtube.com/watch?v=8mN51ZUPhd0" target="_blank" rel="noopener" aria-label="Play on YouTube: Cypher, 2017 — forty-plus artists convened from across London">
+          <img src="https://img.youtube.com/vi/8mN51ZUPhd0/hqdefault.jpg" alt="Cypher, 2017 — forty-plus artists convened from across London" loading="lazy" />
+          <span class="play" aria-hidden="true"></span><span class="badge" aria-hidden="true">Watch on YouTube</span>
+        </a>
+        <figcaption><span class="tag">Grime Cypher</span><span class="desc">WWETVUK invited forty-plus artists from across London into YouTube Studios Kings Cross and filmed the whole day.</span></figcaption>
+      </figure></div>
 
-      <div class="video">
-        <figure>
-          <a class="frame" href="https://www.youtube.com/watch?v=MPUG6VUv6CY" target="_blank" rel="noopener" aria-label="Play on YouTube: Street Beat, 2017 — rising artists platformed and documented">
-            <img src="https://img.youtube.com/vi/MPUG6VUv6CY/hqdefault.jpg" alt="Street Beat, 2017 — rising artists platformed and documented" loading="lazy" />
-            <span class="play" aria-hidden="true"></span>
-            <span class="badge" aria-hidden="true">Watch on YouTube</span>
-          </a>
-          <figcaption>
-            <span class="tag">Street Beat</span>
-            <span class="desc">Rising artists, platformed and documented.</span>
-          </figcaption>
-        </figure>
-      </div>
+      <div class="video"><figure>
+        <a class="frame" href="https://www.youtube.com/watch?v=MPUG6VUv6CY" target="_blank" rel="noopener" aria-label="Play on YouTube: Street Beat, 2017 — rising artists platformed and documented">
+          <img src="https://img.youtube.com/vi/MPUG6VUv6CY/hqdefault.jpg" alt="Street Beat, 2017 — rising artists platformed and documented" loading="lazy" />
+          <span class="play" aria-hidden="true"></span><span class="badge" aria-hidden="true">Watch on YouTube</span>
+        </a>
+        <figcaption><span class="tag">Street Beat</span><span class="desc">Rising artist Alicai Harley, platformed and documented.</span></figcaption>
+      </figure></div>
 
-      <div class="video">
-        <figure>
-          <a class="frame" href="https://www.youtube.com/watch?v=vtHF1DldkYA" target="_blank" rel="noopener" aria-label="Play on YouTube: Interview, 2017 — A-list tour, part one">
-            <img src="https://img.youtube.com/vi/vtHF1DldkYA/hqdefault.jpg" alt="Interview, 2017 — A-list tour" loading="lazy" />
-            <span class="play" aria-hidden="true"></span>
-            <span class="badge" aria-hidden="true">Watch on YouTube</span>
-          </a>
-          <figcaption>
-            <span class="tag">Interview &middot; I</span>
-            <span class="desc">On the road with an A-list tour, filmed and cut.</span>
-          </figcaption>
-        </figure>
-      </div>
+      <div class="video"><figure>
+        <a class="frame" href="https://www.youtube.com/watch?v=vtHF1DldkYA" target="_blank" rel="noopener" aria-label="Play on YouTube: Interview, 2017 — A-list tour, part one">
+          <img src="https://img.youtube.com/vi/vtHF1DldkYA/hqdefault.jpg" alt="Interview, 2017 — A-list tour" loading="lazy" />
+          <span class="play" aria-hidden="true"></span><span class="badge" aria-hidden="true">Watch on YouTube</span>
+        </a>
+        <figcaption><span class="tag">Interview &middot; I</span><span class="desc">On the road with Wu Tang</span></figcaption>
+      </figure></div>
 
-      <div class="video">
-        <figure>
-          <a class="frame" href="https://www.youtube.com/watch?v=hW6xZYrlj9E" target="_blank" rel="noopener" aria-label="Play on YouTube: Interview, 2017 — A-list tour, part two">
-            <img src="https://img.youtube.com/vi/hW6xZYrlj9E/hqdefault.jpg" alt="Interview, 2017 — A-list tour" loading="lazy" />
-            <span class="play" aria-hidden="true"></span>
-            <span class="badge" aria-hidden="true">Watch on YouTube</span>
-          </a>
-          <figcaption>
-            <span class="tag">Interview &middot; II</span>
-            <span class="desc">The same tour, second part.</span>
-          </figcaption>
-        </figure>
-      </div>
+      <div class="video"><figure>
+        <a class="frame" href="https://www.youtube.com/watch?v=hW6xZYrlj9E" target="_blank" rel="noopener" aria-label="Play on YouTube: Interview, 2017 — A-list tour, part two">
+          <img src="https://img.youtube.com/vi/hW6xZYrlj9E/hqdefault.jpg" alt="Interview, 2017 — A-list tour" loading="lazy" />
+          <span class="play" aria-hidden="true"></span><span class="badge" aria-hidden="true">Watch on YouTube</span>
+        </a>
+        <figcaption><span class="tag">Interview &middot; II</span><span class="desc">Akons Konvict UK tour</span></figcaption>
+      </figure></div>
 
     </div>
   </section>
@@ -333,18 +324,9 @@ footer .meta a{color:var(--sub)}
   <section id="contact" aria-labelledby="contact-h">
     <h2 id="contact-h"><span class="num">04</span>Contact</h2>
     <div class="contact">
-      <div class="contact-card">
-        <p class="label">Email</p>
-        <a href="mailto:axion-project@proton.me">axion-project@proton.me</a>
-      </div>
-      <div class="contact-card">
-        <p class="label">Practice on GitHub</p>
-        <a href="https://github.com/The-Architect-Neo" target="_blank" rel="noopener">The-Architect-Neo</a>
-      </div>
-      <div class="contact-card">
-        <p class="label">Organisational frame</p>
-        <a href="https://github.com/The-Code-Cauldron" target="_blank" rel="noopener">The Code Cauldron</a>
-      </div>
+      <div class="contact-card"><p class="label">Email</p><a href="mailto:axion-project@proton.me">axion-project@proton.me</a></div>
+      <div class="contact-card"><p class="label">GitHub</p><a href="https://github.com/The-Architect-Neo" target="_blank" rel="noopener">The-Architect-Neo</a></div>
+      <div class="contact-card"><p class="label">Github Organisation</p><a href="https://github.com/The-Code-Cauldron" target="_blank" rel="noopener">The Code Cauldron</a></div>
     </div>
   </section>
 
@@ -362,60 +344,42 @@ footer .meta a{color:var(--sub)}
 </footer>
 
 <button id="err-badge" type="button" aria-label="Show errors">Errors &middot; <span id="err-count">0</span></button>
-<aside id="err-panel" aria-label="Error log">
-  <h3>Errors logged</h3>
-  <pre id="err-log"></pre>
-</aside>
+<aside id="err-panel" aria-label="Error log"><h3>Errors logged</h3><pre id="err-log"></pre></aside>
 
 <script>
 (function(){
-  var KEY = 'architect-theme';
-  var stored = null;
-  try { stored = localStorage.getItem(KEY); } catch(e){}
-  if(stored){ document.documentElement.setAttribute('data-theme', stored); }
-  var themeBtns = document.querySelectorAll('nav.themes button');
+  var KEY='architect-theme',stored=null;
+  try{stored=localStorage.getItem(KEY);}catch(e){}
+  if(stored){document.documentElement.setAttribute('data-theme',stored);}
+  var themeBtns=document.querySelectorAll('nav.themes button');
   function syncBtns(){
-    var t = document.documentElement.getAttribute('data-theme');
-    themeBtns.forEach(function(b){
-      b.setAttribute('aria-pressed', b.dataset.theme === t ? 'true' : 'false');
-    });
+    var t=document.documentElement.getAttribute('data-theme');
+    themeBtns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.theme===t?'true':'false');});
   }
   themeBtns.forEach(function(b){
-    b.addEventListener('click', function(){
-      document.documentElement.setAttribute('data-theme', b.dataset.theme);
-      try { localStorage.setItem(KEY, b.dataset.theme); } catch(e){}
+    b.addEventListener('click',function(){
+      document.documentElement.setAttribute('data-theme',b.dataset.theme);
+      try{localStorage.setItem(KEY,b.dataset.theme);}catch(e){}
       syncBtns();
     });
   });
   syncBtns();
 
-  var errLog = [];
-  var badge = document.getElementById('err-badge');
-  var panel = document.getElementById('err-panel');
-  var count = document.getElementById('err-count');
-  var logEl = document.getElementById('err-log');
+  var errLog=[],badge=document.getElementById('err-badge'),panel=document.getElementById('err-panel'),
+      count=document.getElementById('err-count'),logEl=document.getElementById('err-log');
   function logError(msg){
-    errLog.push('[' + new Date().toISOString() + '] ' + msg);
-    count.textContent = errLog.length;
-    badge.style.display = 'block';
-    logEl.textContent = errLog.slice(-20).join('\n\n');
+    errLog.push('['+new Date().toISOString()+'] '+msg);
+    count.textContent=errLog.length;badge.style.display='block';
+    logEl.textContent=errLog.slice(-20).join('\n\n');
   }
-  badge.addEventListener('click', function(){
-    panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
-  });
-  window.addEventListener('error', function(e){
-    logError((e.message || 'Error') + ' @ ' + (e.filename || '?') + ':' + (e.lineno || '?'));
-  });
-  window.addEventListener('unhandledrejection', function(e){
-    var r = e.reason;
-    logError('Unhandled rejection: ' + (r && r.message ? r.message : String(r)));
-  });
+  badge.addEventListener('click',function(){panel.style.display=(panel.style.display==='block')?'none':'block';});
+  window.addEventListener('error',function(e){logError((e.message||'Error')+' @ '+(e.filename||'?')+':'+(e.lineno||'?'));});
+  window.addEventListener('unhandledrejection',function(e){var r=e.reason;logError('Unhandled rejection: '+(r&&r.message?r.message:String(r)));});
 
   document.querySelectorAll('nav.primary a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(ev){
-      var id = a.getAttribute('href').slice(1);
-      var el = document.getElementById(id);
-      if(el){ ev.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+    a.addEventListener('click',function(ev){
+      var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+      if(el){ev.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
     });
   });
 })();
